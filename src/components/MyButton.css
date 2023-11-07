@@ -42,7 +42,7 @@ body{
     letter-spacing:2px;
     color:#fff;
     border:1px solid #040a29;
-    background:rgba(255,255,255,0.075);
+    background:rgba(43, 42, 42, 0.075);
     transform:skew(25deg);
   }
   .container a:before,
@@ -76,8 +76,8 @@ body{
     height:100%;
     background: linear-gradient(
         -144.39deg,
-        #ffffff -278.56%,
-        #6d6d6d -78.47%,
+        #000000 -278.56%,
+        #000000 -78.47%,
         #11101d 91.61%
       );;
     z-index:10;
