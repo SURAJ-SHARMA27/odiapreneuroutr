@@ -15,7 +15,7 @@ const GetStarted = () => {
   // Return your component with the styles and event handlers
   return (
     <body>
-      <div className="container">
+      <div className="containers">
       <a href="#">
         <span>
         Register Now

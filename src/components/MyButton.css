@@ -15,14 +15,14 @@ body{
     font-family: 'Poppins', sans-serif;
 
 }
-.container {
+.containers {
     display:flex;
    
     justify-content:center;
     align-items:center;
    
   }
-  .container a{
+  .containers a{
    position:relative;
    width: 200px;
    height: 50px;
@@ -31,7 +31,7 @@ body{
    align-items: center;
    
   }
-  .container a span::before{
+  .containers a span::before{
     display:inline-block;
     background:#0e1538;
     z-index:10;
@@ -45,8 +45,8 @@ body{
     background:rgba(43, 42, 42, 0.075);
     transform:skew(25deg);
   }
-  .container a:before,
-  .container a:after{
+  .containers a:before,
+  .containers a:after{
     content:'';
     position:absolute;
   inset:0;
@@ -54,19 +54,19 @@ body{
   transition:0.5s;
   
   }
-  .container a:nth-child(1):before,
-  .container a:nth-child(1):after{
+  .containers a:nth-child(1):before,
+  .containers a:nth-child(1):after{
     background: linear-gradient(45deg,#ffffff,#000000,#000000,#3ef4b1)
   }
   
-  .container a:hover:before{
+  .containers a:hover:before{
     inset:-2px;
   }
-  .container a:hover:after{
+  .containers a:hover:after{
     inset:-1px;
     filter:blur(10px);
   }
-  .container a span{
+  .containers a span{
     position:absolute;
     top:0;
     left:0;

@@ -19,6 +19,7 @@ const App = () => (
     
     <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
+     
         <Timeline/>
         <Stats />
         <Business />
