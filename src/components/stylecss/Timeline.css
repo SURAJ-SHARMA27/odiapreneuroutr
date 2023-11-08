@@ -15,7 +15,7 @@
     text-decoration: underline;
     margin:5px;
     margin-bottom: 25px ;
-    font-size: 2.5em;
+    font-size: 3.2em;
 
 }
 
@@ -40,6 +40,9 @@ color:white;
   height: 20px;
   z-index: 2;
   background: #eee;
+}
+.bg_heading{
+color:red;
 }
 .timeline ul li div {
   position: relative;

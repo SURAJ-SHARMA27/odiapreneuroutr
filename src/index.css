@@ -28,15 +28,7 @@
 }
 
 .bg-blue-gradient {
-  background: linear-gradient(
-    157.81deg,
-    #DEF9E8 -43.27%,
-    #C0FBD6 -21.24%,
-    #A0F9C2 12.19%,
-    #83E8AA 29.82%,
-    #00AD42 51.94%,
-    #009737 90.29%
-  );
+  background: linear-gradient(200deg, black, black,black, #3ef4b1)
 }
 
 .bg-black-gradient {
@@ -72,7 +64,30 @@
   }
 }
 
+.glow_static {
+  font-size: 68px;
+  color: #0e3742; /* Dull Black - Adjust as needed */
+  font-weight: bold;
+  
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+  animation: neonGlow_static 10s linear infinite;
+}
 
+@keyframes neonGlow_static {
+ 100% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+   100% {
+    color: #fff;
+    text-shadow: 0 0 5px #219060,
+    0 0 10px #219060,
+    0 0 20px #219060,
+    0 0 40px #219060,
+    0 0 80px #219060,
+    0 0 160px #219060;
+  }
+}
 
 
 .bg-black-gradient-2 {

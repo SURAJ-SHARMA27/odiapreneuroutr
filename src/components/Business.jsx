@@ -21,17 +21,17 @@ const FeatureCard = ({ icon, title, content, index }) => (
 const Business = () =>  (
   <section id="features" className={layout.section}>
     <div className={layout.sectionInfo}>
-      <h2 className={styles.heading2}>
-        You do the business, <br className="sm:block hidden" /> we’ll handle
-        the money.
+      <h2 className="glow" style={{fontSize:"3em"}}>
+     <span  >Judging Criterias</span> 
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        With the right credit card, you can improve your financial life by
-        building credit, earning rewards and saving money. But with hundreds
-        of credit cards on the market.
+      Ideathons are events where participants come up with innovative ideas in a specific field or industry. In an ideathon focused on renewable energy, some potential judging criteria might include:
+Some factors that would go into account are:
       </p>
 
-      <Button styles={`mt-10`} />
+      <button type="button" style={{border:"0.1px solid white"}} className={`py-4 px-6 mt-10 font-poppins font-medium text-[18px] text-white bg-blue-gradient rounded-[10px] outline-none ${styles}`}>
+    Guidelines
+  </button>
     </div>
 
     <div className={`${layout.sectionImg} flex-col`}>

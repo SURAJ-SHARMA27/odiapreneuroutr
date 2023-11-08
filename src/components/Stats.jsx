@@ -1,19 +1,84 @@
-import { stats } from "../constants";
-import styles from "../style";
+import React, { useState } from 'react';
+import CountUp from 'react-countup';
+import ScrollTrigger from 'react-scroll-trigger';
+const Stats = () => {
+ 
 
-const Stats = () => (
-  <section className={`${styles.flexCenter} flex-row flex-wrap sm:mb-20 mb-6`}>
-    {stats.map((stat) => (
-      <div key={stat.id} className={`flex-1 flex justify-start items-center flex-row m-3`} >
-        <h4 className="font-poppins font-semibold xs:text-[40.89px] text-[30.89px] xs:leading-[53.16px] leading-[43.16px] text-white">
-          {stat.value}
-        </h4>
-        <p className="font-poppins font-normal xs:text-[20.45px] text-[15.45px] xs:leading-[26.58px] leading-[21.58px] text-gradient uppercase ml-3">
-          {stat.title}
-        </p>
+  // You can update these values using setFirstPrizeValue, setSecondPrizeValue, and setThirdPrizeValue
+  const [counterOn,setCounterOn]=useState(false);
+  return (
+    <section style={{ marginTop: "150px" , marginBottom:"200px"}}>
+      <ScrollTrigger onEnter={()=>setCounterOn(true)} onExit={()=>setCounterOn(false)}>
+      <h1 id="timeline_heading" className="glow" style={{ marginBottom: "70px" }}>
+        Prizes
+      </h1>
+      <h1 id="timeline_heading" className="glow_static" style={{ marginBottom: "70px", fontSize:"2em" }}>
+        District level prize
+      </h1>
+      
+      <div className="flex flex-wrap justify-center sm:justify-between m-3">
+        <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
+          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
+            ₹{counterOn && <CountUp start={0} end={15000} duration={2} delay={0} />}
+            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4 ">
+              First Prize
+            </p>
+          </h4>
+        </div>
+
+        <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
+          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
+            ₹{counterOn && <CountUp start={0} end={10000} duration={2} delay={0} />}
+            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4">
+              Second Prize
+            </p>
+          </h4>
+        </div>
+
+        <div className="w-full sm:w-1/3 text-center">
+          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
+            ₹{counterOn && <CountUp start={0} end={5000} duration={2} delay={0} />}
+            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4 mr-2">
+              Third Prize
+            </p>
+          </h4>
+        </div>
       </div>
-    ))}
-  </section>
-);
+      <h1 id="timeline_heading" className='glow_static' style={{ marginBottom: "70px", marginTop:"70px", fontSize:"2em"}}>
+        State level prize
+      </h1>
+      
+      <div className="flex flex-wrap justify-center sm:justify-between m-3">
+        <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
+          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
+            ₹{counterOn && <CountUp start={0} end={50000} duration={2} delay={0} />}
+            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4 ">
+              First Prize
+            </p>
+          </h4>
+        </div>
+
+        <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
+          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
+            ₹{counterOn && <CountUp start={0} end={30000} duration={2} delay={0} />}
+            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4">
+              Second Prize
+            </p>
+          </h4>
+        </div>
+
+        <div className="w-full sm:w-1/3 text-center">
+          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
+            ₹{counterOn && <CountUp start={0} end={10000} duration={2} delay={0} />}
+            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4 mr-2">
+              Third Prize
+            </p>
+          </h4>
+        </div>
+      </div>
+      </ScrollTrigger>
+    </section>
+  );
+};
 
 export default Stats;
