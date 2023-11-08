@@ -23,6 +23,7 @@ const Business = () =>  (
     <div className={layout.sectionInfo}>
       <h2 className="glow" style={{fontSize:"3em"}}>
      <span  >Judging Criterias</span> 
+     
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
       Ideathons are events where participants come up with innovative ideas in a specific field or industry. In an ideathon focused on renewable energy, some potential judging criteria might include:
