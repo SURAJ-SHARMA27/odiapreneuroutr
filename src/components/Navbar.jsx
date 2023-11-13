@@ -8,9 +8,11 @@ const Navbar = () => {
   const[user,setUser]=useState({
     name:"",
     email:"",
-    password:"",
+    password:"",  
     cpassword:""
   }); 
+  const[loginEmail,setLoginEmail]=useState("");
+  const[loginPassword,setLoginPassword]=useState("");
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
   const [modal, setModal] = useState(false);
@@ -76,6 +78,7 @@ const Navbar = () => {
     
     const res= await  fetch("/register",{
       method:"POST",
+      credentials: 'include',
       headers:{
         "Content-Type":"application/json"
       },
@@ -84,7 +87,7 @@ const Navbar = () => {
       })
     })
     const data=await res.json();
-    console.log(data);
+   // console.log(data);
     if(data.status===422||!data){
       window.alert("Invalid Registration");
       console.log("invalid registration");
@@ -96,7 +99,32 @@ const Navbar = () => {
     }
   }
   
-
+  const loginUser=async(e)=>{
+    e.preventDefault();
+    console.log(loginPassword,loginEmail);
+    const res=await fetch('/signin',{
+      method:"POST",
+      credentials: "include" ,
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        email:loginEmail,
+        password:loginPassword,
+      }),
+    });
+    const data=await res.json();
+    console.log(data);
+    if(res.status===400 || !data){
+      window.alert("Wrong credentials");
+      console.log("wrong credentials");
+    }
+    else{
+      window.alert("Login Successfull");
+      setModal(false);
+    }
+  }
+  
   return (
     <>
     <nav className={`w-full flex mt-3 justify-between items-center navbar ${modal ? "blur-background" : ""}`}>
@@ -172,19 +200,25 @@ const Navbar = () => {
             <div className="slider-tab"></div>
           </div>
           <div className="form-inner">
-            <form action="#" className={`login ${isLoginFormVisible ? '' : 'hidden'}`}>
+            <form method="POST" className={`login ${isLoginFormVisible ? '' : 'hidden'}`}>
               <div className="field">
-                <input type="text" placeholder="Email Address" required />
+                <input type="email" name="loginEmail" placeholder="Email Address" id="loginEmail"
+                value={loginEmail}
+                onChange={(e)=> setLoginEmail(e.target.value)}
+                required />
               </div>
               <div className="field">
-                <input type="password" placeholder="Password" required />
+                <input type="password" name="loginPassword" placeholder="Password" id="loginPassword" 
+                value={loginPassword}
+                onChange={(e)=> setLoginPassword(e.target.value)}
+                required />
               </div>
               <div className="pass-link">
                 <a href="#">Reset password?</a>
               </div>
               <div className="field btn">
                 <div className="btn-layer"></div>
-                <input type="submit" value="Login" />
+                <input type="submit" name="signin" id="signin" value="Log In" onClick={loginUser} />
               </div>
               <div className="signup-link">
                 Don't Have Account? <a href="">Create A New</a>

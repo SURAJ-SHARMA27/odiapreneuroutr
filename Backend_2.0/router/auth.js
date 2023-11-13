@@ -1,7 +1,10 @@
 const express=require('express');
 const bcrypt=require('bcryptjs');
 const jwt=require('jsonwebtoken');
+const authenticate=require("../middleware/authenticate");
 const router=express.Router();
+const cookieParser = require("cookie-parser");
+router.use(cookieParser());
 require('../db/conn');
 const User=require("../model/userSchema");
 router.get('/',(req,res)=>{
@@ -44,6 +47,7 @@ router.post("/signin",async(req,res)=>{
         if(userLogin){
             const isMatch=await bcrypt.compare(password,userLogin.password);
             const token=await userLogin.generateAuthToken();
+            console.log(token);
             res.cookie("jwtoken",token,{
                 expires:new Date(Date.now()+25892000000),
                 httpOnly:true
@@ -63,4 +67,9 @@ router.post("/signin",async(req,res)=>{
         comsole.log(err)
     }
 })
+
+router.get('/about',authenticate,(req,res)=>{
+    console.log("hello ji")
+    res.send(req.rootUser);
+});
 module.exports=router;

@@ -8,6 +8,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/register': 'http://localhost:3000',
+      '/signin': 'http://localhost:3000',
+      '/about': 'http://localhost:3000'
     },
   },
 });

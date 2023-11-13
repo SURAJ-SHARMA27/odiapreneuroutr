@@ -1,29 +1,19 @@
-import React, { useState } from "react";
+// GetStarted.js
+import React from "react";
+import { Link } from "react-router-dom";
 
 import './MyButton.css';
 import { arrowUp } from "../assets";
 
 const GetStarted = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  // Define the CSS styles
-
-
-
-  
-
-  // Return your component with the styles and event handlers
   return (
-    <body>
-      <div className="containers">
-      <a href="#">
+    <div className="containers">
+      <Link to="/aboutus">
         <span>
-        Register Now
+          Register Now
         </span>
-      </a>
-      </div>
-      </body>
-   
+      </Link>
+    </div>
   );
 };
 
