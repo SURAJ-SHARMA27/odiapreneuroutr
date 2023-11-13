@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import React from 'react';
 import '../components/stylecss/Login.css';
-import { close, logo, menu } from "../assets";
+import { close, logo, menu, ulogo } from "../assets";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
@@ -100,14 +100,15 @@ const Navbar = () => {
   return (
     <>
     <nav className={`w-full flex mt-3 justify-between items-center navbar ${modal ? "blur-background" : ""}`}>
-      <img src={logo} alt="hoobank" className="w-[150px] h-[52px]" />
+      <img src={logo} alt="hoobank" className="w-[350px] h-[70px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1" style={{color:"white"}}>
         <button className="mr-10"> Home </button>
         <button className="mr-10"> About us </button>
         <button className="mr-10"> Timeline </button>
         <button  onClick={handleLoginClick}> Login </button>
-        
+        <img src={ulogo} alt="hoobank" className="w-[80px] h-[75px] ml-5" />
+
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">

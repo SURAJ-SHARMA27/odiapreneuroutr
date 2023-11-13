@@ -15,24 +15,23 @@ const Timeline = () => {
                    <div>
                        <time>First</time>
                        <div class="discovery">
-                           <h1>Orientation</h1>
-                           <p>Day</p>
+                           <h1>Orientation at School level</h1>
+                           
                        </div>
                        <div class="scientists">
-                           <h1>23rd December,</h1>
-                           <span>2023</span>
+                           <h1> By 20th November 2023</h1>
+                           
                        </div>
                    </div>
                </li>
-               <li>
+            <li>
                 <div>
                     <time>Second</time>
                     <div class="discovery">
-                        <h1>Registration</h1>
-                        <p>Open</p>
+                        <h1>Registration closes</h1>
                     </div>
                     <div class="scientists">
-                        <h1>23rd December,</h1>
+                        <h1>5th December,</h1>
                         <span>2022</span>
                     </div>
                 </div>
@@ -41,12 +40,11 @@ const Timeline = () => {
                 <div>
                     <time>Third</time>
                     <div class="discovery">
-                        <h1>Registration</h1>
-                        <p>Close</p>
+                        <h1>District Level</h1>
+                        <p>Compedition</p>
                     </div>
                     <div class="scientists">
-                        <h1>2nd week of </h1>
-                        <span>January, 2023</span>
+                        <h1>By 24th December, 2023</h1>
                     </div>
                 </div>
             </li>
@@ -54,38 +52,11 @@ const Timeline = () => {
                 <div>
                     <time>Fourth</time>
                     <div class="discovery">
-                        <h1>Problem</h1>
-                        <p>Statement Finalization</p>
-                    </div>
-                    <div class="scientists">
-                        <h1>3rd week of</h1>
-                        <span>January ,2023</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>Fifth</time>
-                    <div class="discovery">
-                        <h1>District Level</h1>
-                        <p>Evaluation</p>
+                        <h1>State Level Compedition</h1>
                     </div>
                     <div class="scientists">
                     <h1>3rd week of</h1>
                         <span>January ,2023</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <time>Sixth</time>
-                    <div class="discovery">
-                        <h1>State Level</h1>
-                        <p>Evaluation</p>
-                    </div>
-                    <div class="scientists">
-                        <h1>4th week of</h1>
-                        <span>January, 2023</span>
                     </div>
                 </div>
             </li>

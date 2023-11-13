@@ -1,28 +1,24 @@
 import React, { useState } from "react";
-
+import RegistrationForm from './RegistrationForm';
 import './MyButton.css';
 import { arrowUp } from "../assets";
 
 const GetStarted = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
 
-  // Define the CSS styles
+  const openRegistrationForm = () => {
+    setIsRegistrationOpen(true);
+  };
 
+  const closeRegistrationForm = () => {
+    setIsRegistrationOpen(false);
+  };
 
-
-  
-
-  // Return your component with the styles and event handlers
   return (
-    <body>
-      <div className="containers">
-      <a href="#">
-        <span>
-        Register Now
-        </span>
-      </a>
-      </div>
-      </body>
+    <div>
+    <button onClick={openRegistrationForm} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue">Register Now</button>
+    <RegistrationForm isOpen={isRegistrationOpen} onClose={closeRegistrationForm} />
+  </div>
    
   );
 };
