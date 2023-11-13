@@ -1,6 +1,7 @@
 import styles from "./style";
 import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero } from "./components";
 import Timeline from "./components/Timeline";
+import Judges from "./components/Judges";
 
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
       <div className={`${styles.boxWidth}`}>
      
         <Timeline/>
+        <Judges/>
         <Stats />
         <Business />
         <Billing />
