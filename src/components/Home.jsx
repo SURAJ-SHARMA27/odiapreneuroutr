@@ -22,7 +22,7 @@ const Home = () => (
 
     <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
-        <GetStarted />
+        
         <Timeline />
         <Judges />
         <Stats />

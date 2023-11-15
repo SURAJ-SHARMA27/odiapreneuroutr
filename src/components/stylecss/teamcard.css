@@ -1,0 +1,36 @@
+/* teamcard.css */
+body {
+    background-color: black;
+    
+  }
+.team-card {
+    width: auto; /* Adjust width as needed */
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    background: linear-gradient(100deg, black, black, black,black,black, #3ef4b1);
+
+  box-shadow: 4px 13px 30px 1px
+   rgba(56, 252, 177, 0.2);
+  border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-card h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+  }
+
+  .team-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    color: white;
+  }
+
+  .team-card li {
+    margin-bottom: 5px;
+  }

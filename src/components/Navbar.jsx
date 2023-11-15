@@ -3,8 +3,14 @@ import React from 'react';
 import '../components/stylecss/Login.css';
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
-
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Navbar = () => {
+  const invalidRegistration = () => toast.warning("Invalid Registration");
+  const RegistrationSuccessful = () => toast.success("Registration succesfful");
+  const wrongCredentials=()=>toast.error("Wrong Credentials");
+  const loginSuccessfull=()=>toast.success("Login Successfull");
   const[user,setUser]=useState({
     name:"",
     email:"",
@@ -89,11 +95,11 @@ const Navbar = () => {
     const data=await res.json();
    // console.log(data);
     if(data.status===422||!data){
-      window.alert("Invalid Registration");
+      invalidRegistration();
       console.log("invalid registration");
     }
     else{
-      window.alert("Registration succesfful");
+      RegistrationSuccessful();
       console.log("registration successful");
       setIsLoginFormVisible(true);
     }
@@ -116,11 +122,11 @@ const Navbar = () => {
     const data=await res.json();
     console.log(data);
     if(res.status===400 || !data){
-      window.alert("Wrong credentials");
+      wrongCredentials();
       console.log("wrong credentials");
     }
     else{
-      window.alert("Login Successfull");
+      loginSuccessfull();
       setModal(false);
     }
   }
@@ -131,10 +137,15 @@ const Navbar = () => {
       <img src={logo} alt="hoobank" className="w-[150px] h-[52px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1" style={{color:"white"}}>
-        <button className="mr-10"> Home </button>
+      <Link to="/registeredteams">
+      <button className="mr-10"> Registered Teams </button>
+      </Link> 
         <button className="mr-10"> About us </button>
         <button className="mr-10"> Timeline </button>
-        <button  onClick={handleLoginClick}> Login </button>
+        <button  className="mr-10" onClick={handleLoginClick}> Login </button>
+        <Link to="/logout">
+      <button> Logout </button>
+      </Link>
         
       </ul>
 
@@ -152,8 +163,8 @@ const Navbar = () => {
           } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col" style={{color:"white"}}>
-          <li className="mr-4"> Home </li>
-        <li className="mr-4"> About us </li>
+          <li className="mr-4"> Registered Teams </li>
+           <li className="mr-4"> About us </li>
         <li className="mr-4"> Timeline </li>
         <li className="mr-4"> Login </li>
         

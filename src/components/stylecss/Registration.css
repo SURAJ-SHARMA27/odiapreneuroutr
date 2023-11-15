@@ -1,7 +1,5 @@
 /* RegistrationForm.css */
-body{
-    color:black;
-}
+
 .registration-wrapper {
     display: flex;
     justify-content: center;

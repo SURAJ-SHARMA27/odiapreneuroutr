@@ -8,7 +8,7 @@ import { arrowUp } from "../assets";
 const GetStarted = () => {
   return (
     <div className="containers">
-      <Link to="/aboutus">
+      <Link to="/about">
         <span>
           Register Now
         </span>

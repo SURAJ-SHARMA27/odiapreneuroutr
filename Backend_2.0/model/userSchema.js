@@ -19,6 +19,67 @@ const userSchema=new mongoose.Schema({
             type:String,
             required:true
       },
+      date:{
+        type:Date,
+        default:Date.now
+      },
+      messages:[
+      {
+        name:{
+            type:String,
+            required:true
+            },
+        email:{
+            type:String,
+            required:true
+            }, 
+        teamName:{
+            type:String,
+            required:true
+            },
+        leaderName:{
+            type:String,
+            required:true
+            },
+        leaderEmail:{
+            type:String,
+            required:true
+            },
+        topic:{
+            type:String,
+            required:true
+            },
+        district:{
+            type:String,
+            required:true
+            },
+        block:{
+            type:String,
+            required:true
+            }, 
+        schoolName:{
+            type:String,
+            required:true
+            },
+        schoolCode:{
+            type:String,
+            required:true
+            },
+        coordinatorName:{
+            type:String,
+            required:true
+            },
+        member1:{
+            type:String,
+            required:true
+            },
+        member2:{
+            type:String,
+            required:true
+            },
+      }
+    ],
+
      tokens:[
         {
             token:{
@@ -46,6 +107,39 @@ userSchema.methods.generateAuthToken=async function(){
     return token;
     }catch(err){
         console.log(err);
+    }
+}
+userSchema.methods.addMessage=async function(name,
+    email, 
+    teamName,
+    leaderName,
+    leaderEmail,
+    topic, 
+    district,
+    block, 
+    schoolName,
+    schoolCode,
+    coordinatorName,
+    member1,
+    member2){
+    try{
+        this.messages=this.messages.concat({name,
+            email, 
+            teamName,
+            leaderName,
+            leaderEmail,
+            topic, 
+            district,
+            block, 
+            schoolName,
+            schoolCode,
+            coordinatorName,
+            member1,
+            member2})
+            await this.save();
+            return this.messages;
+    } catch(error){
+        console.log(error)
     }
 }
 const User=mongoose.model('USER',userSchema);

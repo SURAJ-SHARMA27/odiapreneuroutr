@@ -69,7 +69,71 @@ router.post("/signin",async(req,res)=>{
 })
 
 router.get('/about',authenticate,(req,res)=>{
-    console.log("hello ji")
+    console.log("hello ji from jwt login")
     res.send(req.rootUser);
+});
+router.get('/logout',(req,res)=>{
+    console.log("hello ji from logout page")
+    res.clearCookie('jwtoken',{path:'/'});
+    res.status(200).send("User logout successfully");
+});
+router.get('/registeredteams',authenticate,(req,res)=>{
+    console.log("hello ji from jwt registeredteams")
+    res.send(req.rootUser);
+});
+router.post('/contact',authenticate,async (req,res)=>{
+    console.log("hello ji from registration team")
+    try{
+const { name,
+    email, 
+    teamName,
+    leaderName,
+    leaderEmail,
+    topic, 
+    district,
+    block, 
+    schoolName,
+    schoolCode,
+    coordinatorName,
+    member1,
+    member2}=req.body;
+    if( !name ||
+        !email || 
+        !teamName ||
+        !leaderName ||
+        !leaderEmail ||
+        !topic || 
+        !district ||
+        !block || 
+        !schoolName ||
+        !schoolCode ||
+        !coordinatorName ||
+        !member1 ||
+        !member2){
+            console.log("error in the form itself");
+            return res.json({error:"Fill the form"});
+        }
+        const userContact=await User.findOne({_id:req.userID});
+        if(userContact){
+            const userMessage=await userContact.addMessage( name,
+                email, 
+                teamName,
+                leaderName,
+                leaderEmail,
+                topic, 
+                district,
+                block, 
+                schoolName,
+                schoolCode,
+                coordinatorName,
+                member1,
+                member2);
+        }
+        await userContact.save();
+        res.status(201).json({message:"Team registered successfully"});
+
+    }catch(error){
+console.log(error);
+    }
 });
 module.exports=router;
