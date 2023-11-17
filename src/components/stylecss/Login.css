@@ -214,4 +214,22 @@
     background-color: #fff;
     left: 0%;
   }
+  .options-container {
+    color:white;
+    position: absolute;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: black;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .option {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .option:hover {
+    background-color: rgb(35, 33, 33);
+  }
   

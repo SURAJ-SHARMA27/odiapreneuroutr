@@ -7,7 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 // import "./RegistrationForm.css"; // Import the CSS file for additional styles
 
 const RegistrationForm = () => {
-  const toastnew=toast.warning("Only for Authenticated Users");
+  const notify = () => toast.success("Team registered Successfully");
+  const dontallow = () => toast.error("First Login to authenticate");
+
   const navigate = useNavigate();
   const [userData,setUserData]=useState({
   name: "",
@@ -54,11 +56,13 @@ const RegistrationForm = () => {
       if (!res.status === 200) {
         const error = new Error(res.error);
         throw error;
+       
       }
     } catch (err) {
       console.log(err);
+      dontallow();
       navigate('/');
-      toastnew();
+      
     }
   };
 
@@ -119,8 +123,9 @@ const RegistrationForm = () => {
     console.log("message not send");
   }
   else{
-    alert("User registered Succesffuly");
+    notify();
     setUserData({...userData,teamName:""});
+    navigate('/registeredteams');
   }
   }
   return (

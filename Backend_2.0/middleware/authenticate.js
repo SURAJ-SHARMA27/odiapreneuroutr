@@ -1,3 +1,4 @@
+
 const jwt=require("jsonwebtoken")
 const User=require("../model/userSchema");
 
@@ -13,7 +14,6 @@ req.userID=rootUser._id;
 next();
 }catch(err){
     res.status(401).send("Unauthorized:No token provided");
-    
 console.log("unauthorized:No token provided");
 }
 }
