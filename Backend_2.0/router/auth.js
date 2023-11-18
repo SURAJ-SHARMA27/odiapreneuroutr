@@ -4,6 +4,12 @@ const jwt=require('jsonwebtoken');
 const authenticate=require("../middleware/authenticate");
 const router=express.Router();
 const cookieParser = require("cookie-parser");
+const arr = {
+    kvs_India: "abcd12@gmail.com",
+    school2: "abcd2@gmail.com",
+    school3: "abcd3@gmail.com",
+
+  };
 router.use(cookieParser());
 require('../db/conn');
 const User=require("../model/userSchema");
@@ -24,6 +30,13 @@ router.post('/register', async (req,res)=>{
         else if(password!=cpassword){
             return res.status(422).json({error:"passwords are not matching"});
         }
+        else if(!arr.hasOwnProperty(name)){
+            return res.status(422).json({error:"Institute Name not found"});
+        }
+        else if(arr[name] !== email){
+            return res.status(422).json({error:"Institute name & email not mathed"});
+
+        }
         else{
             const user=new User({name,email,password,cpassword});
             await user.save();
@@ -31,6 +44,7 @@ router.post('/register', async (req,res)=>{
         }
         
     } catch (err) {
+        
         console.log(err);
     }
    
@@ -73,7 +87,6 @@ router.get('/about',authenticate,(req,res)=>{
     res.send(req.rootUser);
 });
 router.get('/logout',(req,res)=>{
-    console.log("hello ji from logout page")
     res.clearCookie('jwtoken',{path:'/'});
     res.status(200).send("User logout successfully");
 });
