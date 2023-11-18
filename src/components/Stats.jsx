@@ -10,7 +10,7 @@ const Stats = () => {
     <section style={{ marginTop: "150px" , marginBottom:"200px"}}>
       <ScrollTrigger onEnter={()=>setCounterOn(true)} onExit={()=>setCounterOn(false)}>
       <h1 id="timeline_heading" className="glow" style={{ marginBottom: "70px" }}>
-        Prizes
+        Prizes Worth Rs 10 Lakh!
       </h1>
       <h1 id="timeline_heading" className="glow_static" style={{ marginBottom: "70px", fontSize:"2em" }}>
         District level prize

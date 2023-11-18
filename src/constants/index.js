@@ -29,21 +29,21 @@ export const features = [
     icon: star,
     title: "INNOVATION",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "Innovation as a judging criterion in a hackathon assesses the extent to which participants introduce creative, novel, and groundbreaking solutions to a given problem or challenge.",
   },
   {
     id: "feature-2",
     icon: shield,
     title: "IMPACT / NOVELTY",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "Impact as a judging criterion in a hackathon focuses on the tangible and positive outcomes that a solution can deliver.",
   },
   {
     id: "feature-3",
     icon: send,
     title: "ADAPTABILITY / FEASIBILITY",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "Adaptability and feasibility are crucial judging criteria in a hackathon, assessing the project's ability to be implemented successfully in the real world.",
   },
 ];
 
@@ -51,15 +51,15 @@ export const feedback = [
   {
     id: "feedback-1",
     content:
-      "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-    name: "Herman Jensen",
-    title: "Founder & Leader",
+      "Hackathons like Odiaprenuer are crucial in shaping the young minds towards technological innovations.",
+    name: "Professor Bibhuti Bhusan Biswal",
+    title: "Vice Chancellor , OUTR",
     img: people01,
   },
   {
     id: "feedback-2",
     content:
-      "Money makes your life easier. If you're lucky to have it, you're lucky.",
+      "Hackathons are a great source of learning and inspiration for the budding talent in the state. ",
     name: "Steve Mark",
     title: "Founder & Leader",
     img: people02,
@@ -67,7 +67,7 @@ export const feedback = [
   {
     id: "feedback-3",
     content:
-      "It is usually people in the money business, finance, and international trade that are really rich.",
+      "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
     name: "Kenn Gallagher",
     title: "Founder & Leader",
     img: people03,
@@ -94,68 +94,40 @@ export const stats = [
 
 export const footerLinks = [
   {
-    title: "Useful Links",
+    title: "Website Credits",
     links: [
       {
-        name: "Content",
+        name: "Rahul Jyoti Mishra",
         link: "https://www.hoobank.com/content/",
       },
       {
-        name: "How it Works",
+        name: "Suraj Sharma",
         link: "https://www.hoobank.com/how-it-works/",
       },
       {
-        name: "Create",
+        name: "Purnendu Mishra",
         link: "https://www.hoobank.com/create/",
-      },
-      {
-        name: "Explore",
-        link: "https://www.hoobank.com/explore/",
-      },
-      {
-        name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
       },
     ],
   },
   {
-    title: "Community",
+    title: "Help",
     links: [
       {
-        name: "Help Center",
+        name: "Brochure",
         link: "https://www.hoobank.com/help-center/",
       },
       {
-        name: "Partners",
+        name: "Guideline pdf",
         link: "https://www.hoobank.com/partners/",
       },
       {
-        name: "Suggestions",
+        name: "About OUTR",
         link: "https://www.hoobank.com/suggestions/",
       },
-      {
-        name: "Blog",
-        link: "https://www.hoobank.com/blog/",
-      },
-      {
-        name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
-      },
     ],
   },
-  {
-    title: "Partner",
-    links: [
-      {
-        name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
-      },
-      {
-        name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
-      },
-    ],
-  },
+  
 ];
 
 export const socialMedia = [
@@ -189,10 +161,6 @@ export const clients = [
   {
     id: "client-2",
     logo: binance,
-  },
-  {
-    id: "client-3",
-    logo: coinbase,
   },
   {
     id: "client-4",
