@@ -5,6 +5,7 @@ import Timeline from "./Timeline";
 import Judges from "./Judges";
 import GetStarted from "./GetStarted";
 import RegistrationForm from "./RegistrationForm";
+import Timer from "./Timer";
 
 const Home = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -22,16 +23,16 @@ const Home = () => (
 
     <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
-        
+          <Timer/>
         <Timeline />
         
         <Stats />
+        <Judges />
         <Business />
         <Billing />
         <CardDeal />
         <Testimonials />
         <Clients />
-        <Judges />
         <CTA />
         <Footer />
       </div>

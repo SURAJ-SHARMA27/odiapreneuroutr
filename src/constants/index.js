@@ -97,16 +97,16 @@ export const footerLinks = [
     title: "Website Credits",
     links: [
       {
-        name: "Rahul Jyoti Mishra",
-        link: "https://www.hoobank.com/content/",
+        name: "Suraj Sharma",
+        link: "https://www.linkedin.com/in/suraj-sharma-239894223/",
       },
       {
-        name: "Suraj Sharma",
-        link: "https://www.hoobank.com/how-it-works/",
+        name: "Rahul Jyoti Mishra",
+        link: "https://www.linkedin.com/in/rahulmishraok",
       },
       {
         name: "Purnendu Mishra",
-        link: "https://www.hoobank.com/create/",
+        link: "https://www.linkedin.com/in/purnendu-mishra-81a481244/",
       },
     ],
   },

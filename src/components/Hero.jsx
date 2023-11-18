@@ -1,12 +1,18 @@
 import styles from "../style";
 import { discount, robot } from "../assets";
 import GetStarted from "./GetStarted";
-
+import { useTypewriter,Cursor } from "react-simple-typewriter";
 const Hero = () => {
+  const [text]=useTypewriter({
+    words:['Directorate of Higher Secondary Education, Odisha','School & Mass Education Department , Government of Odisha'],
+    loop:{},
+    typeSpeed:120,
+    deleteSpeed:80,
+  })
   return (
     <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
       <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 `}>
-        <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
+        <div style={{marginBottom:"50px"}} className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
           <img src={discount} alt="discount" className="w-[32px] h-[32px]" />
           <p className={`${styles.paragraph} ml-2`}>
             <span className="text-white">Code</span> Collaborate{" "}
@@ -15,19 +21,22 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-row justify-between items-center w-full">
-        <h1 className="flex-1 font-poppins font-semibold ss:text-[30px] text-[50px] text-white ss:leading-[60px] leading-[60px]">
-            <h1 className="ss:text-[25px] text-[40px] text-lime-400">Organized By</h1>{" "}
-            <h1 className="ss:leading-[35px] leading-[60px]">Directorate of Higher Secondary Education, Odisha</h1> <br/>
-            <h1 className="ss:leading-[35px] leading-[60px]">School & Mass Education Department , Government of Odisha</h1>
-            
-            <h1 className="ss:text-[25px] text-[50px] text-lime-400">In Association With</h1>
-          
-          </h1>
-        
-          <div className="ss:flex hidden md:mr-4 mr-0">
-            <GetStarted />
-          </div>
-        </div>
+  <div className="flex-1 font-poppins font-semibold ss:text-[30px] text-[50px] text-white ss:leading-[60px] leading-[60px]">
+    <div className="ss:text-[33px] text-[30px]" style={{ color: "#727272", height: "60px" }}>
+      Organized By
+    </div>
+    <div className="ss:text-[38px] text-[30px] leading-[45px] leading-[60px] overflow-hidden" style={{ height: "150px"}}>
+      {text} <Cursor cursorStyle='|' />
+    </div>
+    <div className="ss:text-[33px] text-[30px] text-lime-400" style={{ color: "#727272", height: "60px", marginTop:"25px" }}>
+      In Association With
+    </div>
+  </div>
+
+  <div className="ss:flex hidden md:mr-4 mr-0">
+    <GetStarted />
+  </div>
+</div>
         
         
         <div className="glow">OUTR Bhubaneswar & OSEPA</div>

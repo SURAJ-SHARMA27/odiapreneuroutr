@@ -8,7 +8,7 @@ const Judges = () => {
     <div className="icon"><i className="fa-solid fa-house"></i></div>
     <div className="title">What is a hackathon?</div>
     <div className="content">A hackathon is an invention marathon where you can work with people around the globe to build a project related to technology! It isn't about hacking into a system, it's instead about hacking something together and learning a great deal in the process.</div>
-  </li>
+  </li> 
   <li className="card" style={{color:"#ececec",backgroundColor:"#2f2f37"}}>
     <div className="icon"><i className="fa-solid fa-gear"></i></div>
     <div className="title">Can we work on old or ongoing project?</div>

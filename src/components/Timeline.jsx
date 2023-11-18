@@ -7,7 +7,7 @@ const Timeline = () => {
       }, []);
   return (
     <div>
-         <section class="timeline mb-5 mt-5">
+         <section class="timeline mb-5 mt-5" >
             <h1 id="timeline_heading" className="glow">Timeline</h1>
            <ul>
               
@@ -60,7 +60,18 @@ const Timeline = () => {
                     </div>
                 </div>
             </li>
-            
+            <li>
+                <div>
+                    <time>Fifth</time>
+                    <div class="discovery">
+                        <h1>Result Declaration</h1>
+                    </div>
+                    <div class="scientists">
+                    <h1>Coming</h1>
+                        <span>Soon</span>
+                    </div>
+                </div>
+            </li>
            </ul>
        </section>
 
