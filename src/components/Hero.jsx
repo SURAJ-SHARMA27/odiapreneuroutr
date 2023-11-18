@@ -15,9 +15,13 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-row justify-between items-center w-full">
-          <h1 className="flex-1 font-poppins font-semibold ss:text-[70px] text-[50px] text-white ss:leading-[100.8px] leading-[75px]">
-            Crew up <br className="sm:block hidden" />{" "}
-            <span>Engines on</span>{" "}
+        <h1 className="flex-1 font-poppins font-semibold ss:text-[30px] text-[50px] text-white ss:leading-[60px] leading-[60px]">
+            <h1 className="ss:text-[25px] text-[40px] text-lime-400">Organized By</h1>{" "}
+            <h1 className="ss:leading-[35px] leading-[60px]">Directorate of Higher Secondary Education, Odisha</h1> <br/>
+            <h1 className="ss:leading-[35px] leading-[60px]">School & Mass Education Department , Government of Odisha</h1>
+            
+            <h1 className="ss:text-[25px] text-[50px] text-lime-400">In Association With</h1>
+          
           </h1>
         
           <div className="ss:flex hidden md:mr-4 mr-0">
@@ -26,7 +30,7 @@ const Hero = () => {
         </div>
         
         
-        <div className="glow">Blast Off!</div>
+        <div className="glow">OUTR Bhubaneswar & OSEPA</div>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
           
         </p>

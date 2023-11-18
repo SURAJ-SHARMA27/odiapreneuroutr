@@ -6,12 +6,14 @@ const CardDeal = () => (
   <section className={layout.section}>
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
-        Find a better card deal <br className="sm:block hidden" /> in few easy
-        steps.
+        Themes for Hackathon<br className="sm:block hidden" />
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        Arcu tortor, purus in mattis at sed integer faucibus. Aliquet quis
-        aliquet eget mauris tortor.ç Aliquet ultrices ac, ametau.
+        Smart Agriculture<br></br>
+        Healthcare<br></br>
+        Renerwable Energy<br></br>
+        Accessibility , Ecommerce and cybersecurity<br></br>
+        Digitizing Selp Help groups
       </p>
 
       <Button styles={`mt-10`} />
