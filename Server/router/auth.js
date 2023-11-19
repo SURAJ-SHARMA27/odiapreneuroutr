@@ -507,7 +507,7 @@ const User=require("../model/userSchema");
 router.get('/',(req,res)=>{
     res.json({message : 'Hello this is from auth'});
 })
-router.post('/api/register', async (req,res)=>{
+router.post('/register', async (req,res)=>{
     const { name,email,password,cpassword }=req.body;
     if(!name||!email||!password||!cpassword){
         return res.status(422).json({error:"Fill the required fields"});
@@ -541,7 +541,7 @@ router.post('/api/register', async (req,res)=>{
    
     
 })
-router.post("/api/signin",async(req,res)=>{
+router.post("/signin",async(req,res)=>{
     try {
         const {email,password}=req.body;
         if(!email||!password){
