@@ -2,9 +2,11 @@
   "name": "backend_2.0",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "build": "npm run build",
+    "dev": "nodemon"
   },
   "keywords": [],
   "author": "suraj",
@@ -15,6 +17,12 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.1"
+  }, 
+  "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.16.1 <19.0.0"
   }
 }
