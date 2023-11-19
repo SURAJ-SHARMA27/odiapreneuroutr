@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/register"
-  to = "https://odia-preneur.onrender.com/:splat"
+  from = "/register/*"
+  to = "https://odia-preneur.onrender.com/register/:splat"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
