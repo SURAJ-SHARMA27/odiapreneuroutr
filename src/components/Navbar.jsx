@@ -100,7 +100,7 @@ const [loading, setLoading] = useState(false);
     const { name, email, password, cpassword } = user;
 
     try {
-      const res = await fetch("/register", {
+      const res = await fetch("/api/register", {
         method: "POST",
         credentials: 'include',
         headers: {
@@ -135,7 +135,7 @@ const [loading, setLoading] = useState(false);
     const loginUser=async(e)=>{
       e.preventDefault();
       console.log(loginPassword,loginEmail);
-      const res=await fetch('/signin',{
+      const res=await fetch('/api/signin',{
         method:"POST",
         credentials: "include" ,
         headers:{
