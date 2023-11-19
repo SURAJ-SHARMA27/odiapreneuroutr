@@ -100,7 +100,7 @@ const [loading, setLoading] = useState(false);
     const { name, email, password, cpassword } = user;
 
     try {
-      const res = await fetch("/api/register", {
+      const res = await fetch("/register", {
         method: "POST",
         credentials: 'include',
         headers: {

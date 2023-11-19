@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "concurrently \"npm run build\" \"npm run --prefix ./Server dev\""
+    "deploy": "concurrently \"npm run dev\" \"npm run --prefix ./Server dev\""
   },
   "dependencies": {
     "axios": "^1.6.2",

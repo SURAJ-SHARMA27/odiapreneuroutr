@@ -1,3 +1,4 @@
+import React from "react";
 import airbnb from "./airbnb.png";
 import bill from "./bill.png";
 import binance from "./binance.png";
