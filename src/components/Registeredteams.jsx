@@ -6,7 +6,7 @@ const Registeredteams = () => {
 
   const callAboutPage = async () => {
     try {
-      const res = await fetch("/registeredteams", {
+      const res = await fetch("/api/registeredteams", {
         method: "GET",
         headers: {
           Accept: "application/json",
