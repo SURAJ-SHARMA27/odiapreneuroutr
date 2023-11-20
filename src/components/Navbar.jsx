@@ -2,13 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import React from 'react';
 import '../components/stylecss/Login.css';
 import '../components/stylecss/Registration.css';
-import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 import { Link } from "react-router-dom";
 import LoadingSpinner from './LoadingSpinner';
 import { ToastContainer, toast } from 'react-toastify';
 import Select from 'react-select';
-import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 const Navbar = () => {
   
@@ -135,7 +133,7 @@ const [loading, setLoading] = useState(false);
     const loginUser=async(e)=>{
       e.preventDefault();
       console.log(loginPassword,loginEmail);
-      const res=await fetch('/api/signin',{
+      const res=await fetch('/signin',{
         method:"POST",
         credentials: "include" ,
         headers:{
@@ -161,7 +159,7 @@ const [loading, setLoading] = useState(false);
   return (
     <>
     <nav className={`w-full flex mt-3 justify-between items-center navbar ${modal ? "blur-background" : ""}`}>
-      <img src={logo} alt="hoobank" className="w-[220px] h-[52px]" />
+      <img src={"/logo.png"} alt="hoobank" className="w-[220px] h-[52px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1" style={{color:"white"}}>
       <Link to="/registeredteams">
@@ -177,7 +175,7 @@ const [loading, setLoading] = useState(false);
       </ul>
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img
-          src={toggle ? close : menu}
+          src={toggle ? "/close.svg" : "/menu.svg"}
           alt="menu"
           className="w-[28px] h-[28px] object-contain"
           onClick={() => setToggle(!toggle)}
