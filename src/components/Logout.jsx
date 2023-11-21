@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 const Logout = () => {
   const navigate = useNavigate();
 
-  const notify = () => toast.success("Logout successfully");
+  // const notify = () => toast.success("Logout successfully");
 
   useEffect(() => {
-    fetch('/logout', {
+    fetch('/api/logout', {
       method: 'GET',
       headers: {
         Accept: 'application/json',
@@ -18,7 +18,7 @@ const Logout = () => {
       credentials: 'include',
     })
       .then((res) => {
-        notify(); // Use React Toastify instead of window.alert
+        // notify(); // Use React Toastify instead of window.alert
 
         // Add a delay before navigating
         setTimeout(() => {

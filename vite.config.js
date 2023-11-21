@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 
-const useit = `https://odia-preneur.onrender.com`
+const useit = `https://odiapreneurbackend.onrender.com/`
 
 export default defineConfig({
   plugins: [react()],
@@ -14,7 +14,10 @@ export default defineConfig({
       '/about': useit,
       '/contact': useit,
       '/registeredteams': useit,
-      '/logout': useit
+      '/logout': useit,
+      '/search':useit,
+      '/search_so':useit,
+      '/publishstatus':useit
     },
   },
 });

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { TeamCard } from "./TeamCard";
+import { UpdateCard } from "./Updatecard";
 import { Link } from "react-router-dom";
 
-const Registeredteams = () => {
+const Updateapproval = () => {
   const [userData, setUserData] = useState("");
 
   const callAboutPage = async () => {
@@ -31,7 +31,7 @@ const Registeredteams = () => {
   useEffect(() => {
     callAboutPage();
   }, []);
-  
+
   return (
     <div>
       <h3 style={{ color: "white", fontSize: "40px", textAlign: "center", margin: "20px" }} className="glow">Institution Name: {userData.name}</h3>
@@ -39,13 +39,13 @@ const Registeredteams = () => {
       {userData.messages && userData.messages.length > 0 ? ( 
         <div style={{ display: "flex", flexWrap: "wrap" }} >
           {userData.messages.map((message, index) => (
-            <TeamCard key={index} team={message} />
+            <UpdateCard key={index} team={message} />
           ))}
         </div>
       ) : (
         <p style={{ color: "white", fontSize: "20px", textAlign: "center" }}>No teams are registered yet.</p>
       )}
-      <div style={{textAlign:"center",marginTop:"200px",marginBottom:"50px"}}>   
+      <div style={{textAlign:"center",marginTop:"5  0px",marginBottom:"50px"}}>   
      
       <Link to="/updateapproval">
       <button
@@ -68,7 +68,7 @@ const Registeredteams = () => {
     e.target.style.borderColor = '#3ef4b1'; // Reset border color
   }}
 >
-  Update Approval Status
+  Publish Approval Status
 </button>
 </Link>
 </div>
@@ -76,4 +76,4 @@ const Registeredteams = () => {
   );
 };
 
-export default Registeredteams;
+export default Updateapproval;

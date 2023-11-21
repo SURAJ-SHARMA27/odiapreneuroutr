@@ -1,0 +1,17 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px;
+  background-color: black; /* Set the background color of the table to black */
+  color: white; /* Set the text color of the table content to white */
+}
+
+.table th, .table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table tbody tr:hover {
+  background-color: rgb(62, 60, 60);
+}

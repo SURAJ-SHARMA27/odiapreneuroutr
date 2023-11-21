@@ -5,25 +5,33 @@ import '../components/stylecss/Registration.css';
 import { navLinks } from "../constants";
 import { Link } from "react-router-dom";
 import LoadingSpinner from './LoadingSpinner';
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import Select from 'react-select';
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
 const Navbar = () => {
   
 const [loading, setLoading] = useState(false);
   
-  const invalidRegistration = () => toast.warning("Invalid Registration");
-  const RegistrationSuccessful = () => toast.success("Registration succesfful");
-  const wrongCredentials=()=>toast.error("Wrong Credentials");
-  const loginSuccessfull=()=>toast.success("Login Successfull");
+  // const invalidRegistration = () => toast.warning("Invalid Registration");
+  // const RegistrationSuccessful = () => toast.success("Registration succesfful");
+  // const wrongCredentials=()=>toast.error("Wrong Credentials");
+  // const loginSuccessfull=()=>toast.success("Login Successfull");
   const[user,setUser]=useState({
     name:"",
     email:"",
     password:"",  
     cpassword:""
+  
   }); 
   const[loginEmail,setLoginEmail]=useState("");
   const[loginPassword,setLoginPassword]=useState("");
+  const[role,setRole]=useState("");
+  const[signupRole,setSignupRole]=useState("");
+  
+
+
+
+
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
   const [modal, setModal] = useState(false);
@@ -95,17 +103,17 @@ const [loading, setLoading] = useState(false);
   const PostData = async (e) => {
     e.preventDefault();
     setLoading(true); // Set loading to true when starting the fetch request
-    const { name, email, password, cpassword } = user;
+    const { name, email, password, cpassword} = user;
 
     try {
-      const res = await fetch("/register", {
+      const res = await fetch("/api/register", {
         method: "POST",
         credentials: 'include',
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          name, email, password, cpassword
+          name, email, password, cpassword,role:signupRole
         })
       });
 
@@ -113,10 +121,10 @@ const [loading, setLoading] = useState(false);
       console.log(data);
 
       if (data && data.error) {
-        invalidRegistration();
+        // invalidRegistration();
         console.log("invalid registration");
       } else {
-        RegistrationSuccessful();
+        // RegistrationSuccessful();
         console.log(data.status);
         setIsLoginFormVisible(true);
       }
@@ -133,7 +141,7 @@ const [loading, setLoading] = useState(false);
     const loginUser=async(e)=>{
       e.preventDefault();
       console.log(loginPassword,loginEmail);
-      const res=await fetch('/signin',{
+      const res=await fetch('/api/signin',{
         method:"POST",
         credentials: "include" ,
         headers:{
@@ -142,16 +150,17 @@ const [loading, setLoading] = useState(false);
         body:JSON.stringify({
           email:loginEmail,
           password:loginPassword,
+          role:role,
         }),
       });
       const data=await res.json();
       console.log(data);
       if(res.status===400 || !data){
-        wrongCredentials();
+        // wrongCredentials();
         console.log("wrong credentials");
       }
       else{
-        loginSuccessfull();
+        // loginSuccessfull();
         setModal(false);
       }
     }
@@ -165,6 +174,13 @@ const [loading, setLoading] = useState(false);
       <Link to="/registeredteams">
       <button className="mr-10"> Registered Teams </button>
       </Link> 
+      <Link to="/search">
+      <button className="mr-10"> District wise </button>
+      </Link> 
+      <Link to="/search_so">
+      <button className="mr-10"> State wise </button>
+      </Link> 
+      
         <button className="mr-10"> About us </button>
         <button className="mr-10"> Timeline </button>
         <button  className="mr-10" onClick={handleLoginClick}> Login </button>
@@ -250,6 +266,19 @@ const [loading, setLoading] = useState(false);
                 onChange={(e)=> setLoginPassword(e.target.value)}
                 required />
               </div>
+              <div className="field">
+  <select style={{backgroundColor:"black"}} className="name_select" value={role}  onChange={(e)=> setRole(e.target.value)} name="role" id="role" required>
+    <option value="">Role</option>
+    <option value="Institute">Institute</option>
+    <option value="District_Officer">District Officer</option>
+    <option value="State_Officer">State Officer</option>
+    <option value="Super_Admin">Super-Admin</option>
+
+
+    </select>
+    </div>
+
+              
               <div className="pass-link">
                 <a href="#">Reset password?</a>
               </div>
@@ -267,6 +296,10 @@ const [loading, setLoading] = useState(false);
   <select style={{backgroundColor:"black"}} className="name_select" value={user.name} onChange={handleInputs} name="name" id="name" required>
     <option value="">Institute Name</option>
     <option value="Sri_Sri_Jagannath_Higher_Secondary_School_Badakera">Sri Sri Jagannath Higher Secondary School, Badakera</option>
+    <option value="suraj">suraj</option>
+    <option value="purnendu">purnendu</option>
+
+
 <option value="Evening_Higher_Secondary_School_Angul">Evening Higher Secondary School, Angul</option>
 <option value="Kashi_Bishwanath_Higher_Secondary_School_Paikasahi">Kashi Bishwanath Higher Secondary School, Paikasahi</option>
 <option value="Satyabadi_Meher_Higher_Secondary_School_Madhapur">Satyabadi Meher Higher Secondary School, Madhapur</option>
@@ -765,6 +798,17 @@ const [loading, setLoading] = useState(false);
    
   </select>
 </div>
+<div className="field">
+  <select style={{backgroundColor:"black"}} className="name_select" value={signupRole} onChange={(e)=> setSignupRole(e.target.value)} name="signupRole" id="signupRole" required>
+    <option value="">Role</option>
+    <option value="Institute">Institute</option>
+    <option value="District_Officer">District Officer</option>
+    <option value="State_Officer">State Officer</option>
+    <option value="Super_Admin">Super-Admin</option>
+
+
+    </select>
+    </div>
 {console.log(user.name)}
 
               <div className="field">
