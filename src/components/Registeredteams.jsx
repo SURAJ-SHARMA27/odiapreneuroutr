@@ -24,7 +24,7 @@ const Registeredteams = () => {
       }
     } catch (err) {
       console.log(err);
-      navigate("/");
+      
     }
   };
 

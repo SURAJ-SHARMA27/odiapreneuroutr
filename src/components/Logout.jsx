@@ -23,11 +23,14 @@ const Logout = () => {
         // Add a delay before navigating
         setTimeout(() => {
           navigate('/', { replace: true });
-        }, 4000); // Adjust the delay time as needed
-
+        }, 3000); // Adjust the delay time as needed
+ 
         if (res.status !== 200) {
           const error = new Error(res.error);
           throw error;
+        }
+        if(res.status===200){
+          console.log("logout successfull");
         }
       })
       .catch((err) => {

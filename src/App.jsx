@@ -4,7 +4,7 @@ import RegistrationForm from "./components/RegistrationForm";
 import Home from "./components/Home";
 import Registeredteams from './components/Registeredteams';
 import Logout from './components/Logout';
-import { ToastContainer } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DoDashboard from './components/DoDashboard';
 import SoDashboard from './components/SoDashboard';
@@ -22,7 +22,7 @@ const App = () => (
       <Route path="/" element={<Home />} />
 
     </Routes>
-    <ToastContainer />
+    {/* <ToastContainer /> */}
   </div>
 );
 
