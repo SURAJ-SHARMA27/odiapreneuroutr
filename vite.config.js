@@ -10,15 +10,15 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api/register': useitforlocal,
-      '/api/signin': useitforlocal,
-      '/api/about': useitforlocal,
-      '/api/contact': useitforlocal,
-      '/api/registeredteams': useitforlocal,
-      '/api/logout': useitforlocal,
-      '/api/search':useitforlocal,
-      '/api/search_so':useitforlocal,
-      '/api/publishstatus':useitforlocal
+      'api/register': useitforlocal,
+      'api/signin': useitforlocal,
+      'api/about': useitforlocal,
+      'api/contact': useitforlocal,
+      'api/registeredteams': useitforlocal,
+      'api/logout': useitforlocal,
+      'api/search':useitforlocal,
+      'api/search_so':useitforlocal,
+      'api/publishstatus':useitforlocal
     },
   },
 });
