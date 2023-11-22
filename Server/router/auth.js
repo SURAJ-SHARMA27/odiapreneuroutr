@@ -499,7 +499,14 @@ const arr = {
     Jasoda_Bishnu_NMP_Higher_Secondary_School_Jogimal:"30193101@gmail.com",
     Maharshi_Dayanand_Higher_Secondary_School_GarhMahulpali:"30193102@gmail.com",
     Ujalpur_Higher_Secondary_School_Ujalpur:"30193103@gmail.com",
+    "suraj":"suraj@gmail.com",
+    "purnendu":"purnendu@gmail.com"
 
+  };
+  const arr1 = {
+    "suraj@gmail.com": "delhi",
+    "purnendu@gmail.com": "bbsr",
+    "rahul@gmail.com": "ctc",
   };
 router.use(cookieParser());
 require('../db/conn');
@@ -508,7 +515,7 @@ router.get('/',(req,res)=>{
     res.json({message : 'Hello this is from auth'});
 })
 router.post('/register', async (req,res)=>{
-    const { name,email,password,cpassword }=req.body;
+    const { name,email,password,cpassword,role}=req.body;
     if(!name||!email||!password||!cpassword){
         return res.status(422).json({error:"Fill the required fields"});
     }
@@ -529,9 +536,11 @@ router.post('/register', async (req,res)=>{
 
         }
         else{
-            const user=new User({name,email,password,cpassword});
+            const user=new User({name,email,password,cpassword,role});
             await user.save();
             res.status(201).json({message:"user registered successfully"});
+           
+
         }
         
     } catch (err) {
@@ -543,10 +552,9 @@ router.post('/register', async (req,res)=>{
 })
 router.post("/signin",async(req,res)=>{
     try {
-        const {email,password}=req.body;
-        if(!email||!password){
+        const {email,password,role}=req.body;
+        if(!email||!password||!role){
             return res.status(400).json({error:"Data not filled correctly"});
-
         }
         const userLogin=await User.findOne({email:email});
         if(userLogin){
@@ -561,7 +569,8 @@ router.post("/signin",async(req,res)=>{
                 res.status(400).json({error:"Invalid credentials"});
             }
             else{
-                res.json({message:"user signin successfully"});
+                res.json({message:role});
+             
             }
         }else{
             res.status(400).json({error:"Invalid credentials"});
@@ -569,9 +578,10 @@ router.post("/signin",async(req,res)=>{
         }
        
     } catch (err) {
-        comsole.log(err)
+        console.log(err)
     }
 })
+  
 
 router.get('/about',authenticate,(req,res)=>{
     console.log("hello ji from jwt login")
@@ -585,6 +595,116 @@ router.get('/registeredteams',authenticate,(req,res)=>{
     console.log("hello ji from jwt registeredteams")
     res.send(req.rootUser);
 });
+router.get('/search', authenticate, async (req, res) => {
+    console.log("hello ji from jwt search district");
+    const dist = arr1[String(req.rootUser.email)];
+    console.log(dist);
+    try {
+      const city = dist;
+  
+      // Use Mongoose to find all users
+      const users = await User.find();
+  
+      // Extract messages that match the provided city and include specific fields
+      const matchingMessages = users.flatMap((user) =>
+        user.messages
+          .filter((message) => message.district === city)
+          .map((message) => ({
+            name: message.name,
+            email: message.email,
+            teamName: message.teamName,
+            leaderName: message.leaderName,
+            leaderEmail: message.leaderEmail,
+            district: message.district,
+            block: message.block,
+            schoolName: message.schoolName,
+            topic: message.topic
+          }))
+      );
+  
+      // Send both matchingMessages and req.rootUser in the response
+      res.json({
+        matchingMessages,
+        rootUser: req.rootUser,
+        district:city
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+  router.get('/search_so', authenticate, async (req, res) => {
+    console.log("hello ji from jwt search state");
+    const dist = arr1[String(req.rootUser.email)];
+    console.log(dist);
+    try {
+      const city = dist;
+  
+      // Use Mongoose to find all users
+      const users = await User.find();
+  
+      // Extract messages that match the provided city and include specific fields
+      const matchingMessages = users.flatMap((user) =>
+      user.messages.map((message) => ({
+    name: message.name,
+    email: message.email,
+    teamName: message.teamName,
+    leaderName: message.leaderName,
+    leaderEmail: message.leaderEmail,
+    district: message.district,
+    block: message.block,
+    schoolName: message.schoolName,
+    topic: message.topic
+  }))
+      );
+  
+      // Send both matchingMessages and req.rootUser in the response
+      res.json({
+        matchingMessages,
+        rootUser: req.rootUser,
+        district:city
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+  // Assuming your authentication middleware sets user information on req.user
+router.post('/publishstatus', authenticate, async (req, res) => {
+    try {
+        const { teamName, approvalStatus } = req.body;
+        // Check if teamName and approvalStatus are provided
+        if (!teamName || approvalStatus === undefined) {
+            return res.status(400).json({ error: "teamName and approvalStatus are required" });
+        }
+       // Use req.user._id if your authentication middleware sets user information on req.user
+        const user = await User.findOne({ _id: req.userID });
+        // Check if the user exists
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+        // Find the team in the messages array based on teamName
+        const teamIndex = user.messages.findIndex(message => message.teamName === teamName);
+        // Check if the team is found
+        if (teamIndex === -1) {
+            return res.status(404).json({ error: "Team not found" });
+        }
+
+        // Update the approvalStatus for the team
+        user.messages[teamIndex].approvalStatus = approvalStatus;
+
+        // Save the updated user
+        await user.save();
+
+        res.status(200).json({ message: "Approval status updated successfully" });
+  
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
 router.post('/contact',authenticate,async (req,res)=>{
     console.log("hello ji from registration team")
     try{

@@ -51,7 +51,7 @@ export const feedback = [
     id: "feedback-1",
     content:
       "Hackathons like Odiaprenuer are crucial in shaping the young minds towards technological innovations.",
-    name: "Professor Bibhuti Bhusan Biswal",
+    name: "Prof. Bibhuti Bhusan Biswal",
     title: "Vice Chancellor , OUTR",
     img: "./people01.png",
   },
@@ -59,7 +59,7 @@ export const feedback = [
     id: "feedback-2",
     content:
       "Hackathons are a great source of learning and inspiration for the budding talent in the state. ",
-    name: "Steve Mark",
+    name: "Dr. Sanatan Panda",
     title: "Founder & Leader",
     img: "./people02.png",
   },
@@ -67,7 +67,15 @@ export const feedback = [
     id: "feedback-3",
     content:
       "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
-    name: "Kenn Gallagher",
+    name: "Dr. B K Kandi",
+    title: "Founder & Leader",
+    img: "./people03.png",
+  },
+  {
+    id: "feedback-3",
+    content:
+      "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
+    name: "Dr. R K Pradhan",
     title: "Founder & Leader",
     img: "./people03.png",
   },
@@ -93,7 +101,7 @@ export const stats = [
 
 export const footerLinks = [
   {
-    title: "Website Credits",
+    title: "Website Developers",
     links: [
       {
         name: "Suraj Sharma",

@@ -123,7 +123,9 @@ color:red;
         background: #8bfff4;
     }
     .timeline ul li{
+
         margin-left: 6px;
+
 
     }
     .timeline ul li div{
@@ -133,3 +135,4 @@ color:red;
         left: 45px;
     }
 }
+

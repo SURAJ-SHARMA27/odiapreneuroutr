@@ -11,6 +11,11 @@ const userSchema=new mongoose.Schema({
   required: true,
   unique: true
      },
+     role:{
+  type: String,
+  required: true,
+     },
+     
     password:{
         type:String,
         required:true
@@ -23,62 +28,66 @@ const userSchema=new mongoose.Schema({
         type:Date,
         default:Date.now
       },
-      messages:[
-      {
-        name:{
-            type:String,
-            required:true
-            },
-        email:{
-            type:String,
-            required:true
-            }, 
-        teamName:{
-            type:String,
-            required:true
-            },
-        leaderName:{
-            type:String,
-            required:true
-            },
-        leaderEmail:{
-            type:String,
-            required:true
-            },
-        topic:{
-            type:String,
-            required:true
-            },
-        district:{
-            type:String,
-            required:true
-            },
-        block:{
-            type:String,
-            required:true
-            }, 
-        schoolName:{
-            type:String,
-            required:true
-            },
-        schoolCode:{
-            type:String,
-            required:true
-            },
-        coordinatorName:{
-            type:String,
-            required:true
-            },
-        member1:{
-            type:String,
-            required:true
-            },
-        member2:{
-            type:String,
-            required:true
-            },
-      }
-    ],
+        messages:[
+        {
+            name:{
+                type:String,
+                required:true
+                },
+            email:{
+                type:String,
+                required:true
+                }, 
+            teamName:{
+                type:String,
+                required:true
+                },
+            leaderName:{
+                type:String,
+                required:true
+                },
+            leaderEmail:{
+                type:String,
+                required:true
+                },
+            topic:{
+                type:String,
+                required:true
+                },
+            district:{
+                type:String,
+                required:true
+                },
+            block:{
+                type:String,
+                required:true
+                }, 
+            schoolName:{
+                type:String,
+                required:true
+                },
+            schoolCode:{
+                type:String,
+                required:true
+                },
+            coordinatorName:{
+                type:String,
+                required:true
+                },
+            member1:{
+                type:String,
+                required:true
+                },
+            member2:{
+                type:String,
+                required:true
+                },
+                approvalStatus: {
+                    type: Boolean,
+                    default: false, 
+                  },
+        }
+        ],
 
      tokens:[
         {

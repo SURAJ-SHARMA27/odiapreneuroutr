@@ -20,7 +20,7 @@ export const TeamCard = ({ team }) => {
       <div style={{backgroundColor:"black"}} className="team-card">
         <h3  style={{fontSize:"25px",textTransform:"uppercase"}} className='glow_static'>{teamName}</h3>
         <ul style={{fontSize:"18px"}}>
-        
+          
           <li>Team Leader Name: {leaderName}</li>
           <li>Team Leader Email: {leaderEmail}</li>
           <li>Topic: {topic}</li>
