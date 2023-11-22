@@ -164,6 +164,7 @@ const [loading, setLoading] = useState(false);
   
     const loginUser=async(e)=>{
       e.preventDefault();
+      setLoading(true);
       console.log(loginPassword,loginEmail);
       const res=await fetch('/api/signin',{
         method:"POST",
@@ -191,7 +192,10 @@ const [loading, setLoading] = useState(false);
   
   return (
     <>
-    <nav className={`w-full flex mt-3 justify-between items-center navbar ${modal ? "blur-background" : ""}`}>
+    <nav className={`w-full flex mt-3 justify-between items-center navbar ${modal ? "blur-background" : ""}`}
+  
+    
+    >
       <img src={"/logo.png"} alt="hoobank" className="w-[350px] h-[85px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1" style={{color:"white"}}>
@@ -227,11 +231,23 @@ const [loading, setLoading] = useState(false);
           } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col" style={{color:"white"}}>
-          <li className="mr-4"> Registered Teams </li>
+          
+          <Link to="/registeredteams">
+      <li className="mr-4"> Registered Teams </li>
+      </Link> 
+      <Link to="/search">
+      <li className="mr-4"> District wise </li>
+      </Link> 
+      <Link to="/search_so">
+      <li className="mr-4"> State wise </li>
+      </Link> 
+      <li className="mr-4" onClick={handleLoginClick}> Login </li>
+
            <li className="mr-4"> About us </li>
         <li className="mr-4"> Timeline </li>
-        <li className="mr-4"> Login </li>
-        
+        <Link to="/logout">
+      <li> Logout </li>
+      </Link>
           </ul>
         </div>
       </div>

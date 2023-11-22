@@ -27,12 +27,13 @@ const Home = () => (
         <Timeline />
         
         <Stats />
-        <Judges />
         <Business />
         <Billing />
         <CardDeal />
         <Testimonials />
         <Clients />
+        <Judges />
+
         <CTA />
         <Footer />
       </div>
