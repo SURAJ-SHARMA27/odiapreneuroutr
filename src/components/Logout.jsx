@@ -17,7 +17,7 @@ const Logout = () => {
 });
 
   useEffect(() => {
-    fetch('/api/logout', {
+    fetch('/logout', {
       method: 'GET',
       headers: {
         Accept: 'application/json',

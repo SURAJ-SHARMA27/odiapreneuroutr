@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/api*"
+  from = "*/api"
   to = "https://odia-preneur.onrender.com/:splat"
   status = 200

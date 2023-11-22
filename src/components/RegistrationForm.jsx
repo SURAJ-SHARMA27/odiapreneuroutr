@@ -45,7 +45,7 @@ const dontallow = () => {
   });
   const callAboutPage = async () => {
     try {
-      const res = await fetch('/api/about', {
+      const res = await fetch('/about', {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -115,7 +115,7 @@ const dontallow = () => {
       member1,
       member2
     }=userData;
-    const res=await fetch('/api/contact',{
+    const res=await fetch('/contact',{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -178,32 +178,74 @@ const dontallow = () => {
 
           <div className="row">
             <div className="field">
-              <label style={{color:"white"}} htmlFor="topic">Topic:</label>
+              <label style={{color:"white"}} htmlFor="topic">Theme:</label>
               <select value={userData.topic} onChange={handleInputs} name="topic" id="topic" required>
                 <option value="topic1">select</option>
-                <option value="topic2">Topic 2</option>
+                <option value="Agriculture_food_tech_and_Rural_development">Agriculture, food tech, and Rural development</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Renewable_Sustainable_energy">Renewable/Sustainable energy</option>
+                <option value="Accessibility_e_Commerce_and_Cybersecurity">Accessibility, e-Commerce and Cybersecurity</option>
+                <option value="Self_Help_Groups">Self Help Groups</option>
+                <option value="Smart_Education">Smart Education</option>
+                <option value="Disaster_Management">Disaster Management</option>
+                <option value="Toys_and_Games">Toys and Games</option>
+                <option value="Waste_Management">Waste Management</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+
+
+
                 {/* Add more options as needed */}
               </select>
             </div>
             <div className="field">
               <label style={{color:"white"}} htmlFor="district">District:</label>
               <select value={userData.district}  onChange={handleInputs} name="district" id="district" required>
-                <option value="district1">select</option>
-                <option value="district2">District 2</option>
-                <option value="delhi">delhi</option>
-                <option value="bbsr">bbsr</option>
-
+              <option value="select">Select</option>
+    <option value="Angul">Angul</option>
+    <option value="Balasore">Balasore</option>
+    <option value="Bargarh">Bargarh</option>
+    <option value="Bhadrak">Bhadrak</option>
+    <option value="Bolangir">Bolangir</option>
+    <option value="Boudh">Boudh</option>
+    <option value="Cuttack">Cuttack</option>
+    <option value="Deogarh">Deogarh</option>
+    <option value="Dhenkanal">Dhenkanal</option>
+    <option value="Gajapati">Gajapati</option>
+    <option value="Ganjam">Ganjam</option>
+    <option value="Jagatsinghpur">Jagatsinghpur</option>
+    <option value="Jajpur">Jajpur</option>
+    <option value="Jharsuguda">Jharsuguda</option>
+    <option value="Kalahandi">Kalahandi</option>
+    <option value="Kandhamal">Kandhamal</option>
+    <option value="Kendrapada">Kendrapada</option>
+    <option value="Keonjhar">Keonjhar</option>
+    <option value="Khordha">Khordha</option>
+    <option value="Koraput">Koraput</option>
+    <option value="Malkangiri">Malkangiri</option>
+    <option value="Mayurbhanj">Mayurbhanj</option>
+    <option value="Nabarangapur">Nabarangapur</option>
+    <option value="Nayagarh">Nayagarh</option>
+    <option value="Nuapada">Nuapada</option>
+    <option value="Puri">Puri</option>
+    <option value="Rayagada">Rayagada</option>
+    <option value="Sambalpur">Sambalpur</option>
+    <option value="Sonepur">Sonepur</option>
+    <option value="Sundargarh">Sundargarh</option>
                 {/* Add more options as needed */}
               </select>
             </div>
           </div>
-
+           
           <div className="row">
             <div className="field">
               <input value={userData.block} onChange={handleInputs} type="text" name="block" id="block" placeholder="Block" required />
             </div>
           </div>
-
+          <div className="row">
+            <div className="field">
+              <input value={userData.block} onChange={handleInputs} type="text" name="drive" id="drive" placeholder="Drive link for idea-template" required />
+            </div>
+          </div>
           <div className="row">
             <div className="field">
               <input type="text" value={userData.schoolName} onChange={handleInputs} name="schoolName" id="schoolName" placeholder="School Name" required />

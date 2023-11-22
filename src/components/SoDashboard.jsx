@@ -11,7 +11,7 @@ const SoDashboard = () => {
 
   const callAboutPage = async () => {
     try {
-      const res = await fetch("/api/search_so", {
+      const res = await fetch("/search_so", {
         method: "GET",
         headers: {
           Accept: "application/json",

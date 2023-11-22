@@ -28,7 +28,7 @@ export const UpdateCard = ({ team }) => {
 
     try {
         // Make a POST request to the /publishstatus API
-        const response = await fetch('/api/publishstatus', {
+        const response = await fetch('/publishstatus', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
