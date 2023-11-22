@@ -11,7 +11,7 @@ const DoDashboard = () => {
 
   const callAboutPage = async () => {
     try {
-      const res = await fetch("/search", {
+      const res = await fetch("/api/search", {
         method: "GET",
         headers: {
           Accept: "application/json",

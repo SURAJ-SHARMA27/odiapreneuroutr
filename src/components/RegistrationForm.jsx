@@ -37,6 +37,7 @@ const dontallow = () => {
   topic: "topic1", // Assuming you want to set a default value for the select field
   district: "district1", // Assuming you want to set a default value for the select field
   block: "",
+  drive:"",
   schoolName: "",
   schoolCode: "",
   coordinatorName: "",
@@ -45,7 +46,7 @@ const dontallow = () => {
   });
   const callAboutPage = async () => {
     try {
-      const res = await fetch('/about', {
+      const res = await fetch('/api/about', {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -64,6 +65,7 @@ const dontallow = () => {
         topic: userData.topic,
         district: userData.district,
         block: userData.block,
+        drive:userData.drive,
         schoolName: userData.schoolName,
         schoolCode: userData.schoolCode,
         coordinatorName: userData.coordinatorName,
@@ -108,14 +110,15 @@ const dontallow = () => {
       leaderEmail,
       topic, 
       district,
-      block, 
+      block,
+      drive, 
       schoolName,
       schoolCode,
       coordinatorName,
       member1,
       member2
     }=userData;
-    const res=await fetch('/contact',{
+    const res=await fetch('/api/contact',{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -128,7 +131,8 @@ const dontallow = () => {
         leaderEmail,
         topic, 
         district,
-        block, 
+        block,
+        drive,
         schoolName,
         schoolCode,
         coordinatorName,

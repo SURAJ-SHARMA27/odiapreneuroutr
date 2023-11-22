@@ -166,7 +166,7 @@ const [loading, setLoading] = useState(false);
       e.preventDefault();
       setLoading(true);
       console.log(loginPassword,loginEmail);
-      const res=await fetch('/signin',{
+      const res=await fetch('/api/signin',{
         method:"POST",
         credentials: "include" ,
         headers:{
@@ -191,7 +191,7 @@ const [loading, setLoading] = useState(false);
     }
   
   return (
-=======
+
     <>
     <nav className={`w-full flex mt-3 justify-between items-center navbar ${modal ? "blur-background" : ""}`}
   
