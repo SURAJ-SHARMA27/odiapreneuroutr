@@ -9,7 +9,12 @@ const Logout = () => {
   const navigate = useNavigate();
 
   // const notify = () => toast.success("Logout successfully");
-  const notify = () => toast.success('Logout Successfully');
+  const notify = () => toast.success('Logout Successfully', {style: {
+    borderRadius: '10px',
+    background: '#333',
+    color: '#fff',
+  },
+});
 
   useEffect(() => {
     fetch('/api/logout', {

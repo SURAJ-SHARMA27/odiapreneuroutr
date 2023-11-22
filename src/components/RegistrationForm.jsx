@@ -2,13 +2,30 @@
 import React, { useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../components/stylecss/Registration.css';
+import toast, { Toaster } from 'react-hot-toast';
+
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 // import "./RegistrationForm.css"; // Import the CSS file for additional styles
 
 const RegistrationForm = () => {
-  // const notify = () => toast.success("Team registered Successfully");
-  // const dontallow = () => toast.error("First Login to authenticate");
+   const notify = () => toast.success("Team registered Successfully", {style: {
+    borderRadius: '10px',
+    background: '#333',
+    color: '#fff',
+  },
+});
+const dontallow = () => {
+  toast.error("First Login to authenticate", {
+    style: {
+      borderRadius: '10px',
+      background: '#333',
+      color: '#fff',
+    },
+  });
+
+ 
+};
 
   const navigate = useNavigate();
   const [userData,setUserData]=useState({
@@ -60,9 +77,10 @@ const RegistrationForm = () => {
       }
     } catch (err) {
       console.log(err);
-      // dontallow();
-      navigate('/');
-      
+      setTimeout(() => {
+        dontallow();
+      }, 1000);
+       navigate('/');
     }
   };
 
@@ -123,7 +141,7 @@ const RegistrationForm = () => {
     console.log("message not send");
   }
   else{
-    // notify();
+    notify();
     setUserData({...userData,teamName:""});
     navigate('/registeredteams');
   }

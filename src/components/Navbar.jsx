@@ -6,16 +6,40 @@ import { navLinks } from "../constants";
 import { Link } from "react-router-dom";
 import LoadingSpinner from './LoadingSpinner';
 // import { ToastContainer, toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast';
 import Select from 'react-select';
 // import 'react-toastify/dist/ReactToastify.css';
 const Navbar = () => {
   
 const [loading, setLoading] = useState(false);
   
-  // const invalidRegistration = () => toast.warning("Invalid Registration");
-  // const RegistrationSuccessful = () => toast.success("Registration succesfful");
-  // const wrongCredentials=()=>toast.error("Wrong Credentials");
-  // const loginSuccessfull=()=>toast.success("Login Successfull");
+  const invalidRegistration = () => toast.error('Wrong Credentials!',
+  {style: {
+      borderRadius: '10px',
+      background: '#333',
+      color: '#fff',
+    },
+  }
+);
+  const RegistrationSuccessful = () => toast.success("Registration succesfful",
+  {style: {
+    borderRadius: '10px',
+    background: '#333',
+    color: '#fff',
+  },
+});
+  const wrongCredentials=()=>toast.error("Wrong Credentials", {style: {
+    borderRadius: '10px',
+    background: '#333',
+    color: '#fff',
+  },
+});
+  const loginSuccessfull=()=>toast.success("Login Successfull", {style: {
+    borderRadius: '10px',
+    background: '#333',
+    color: '#fff',
+  },
+});
   const[user,setUser]=useState({
     name:"",
     email:"",
@@ -121,10 +145,10 @@ const [loading, setLoading] = useState(false);
       console.log(data);
 
       if (data && data.error) {
-        // invalidRegistration();
+         invalidRegistration();
         console.log("invalid registration");
       } else {
-        // RegistrationSuccessful();
+        RegistrationSuccessful();
         console.log(data.status);
         setIsLoginFormVisible(true);
       }
@@ -156,11 +180,11 @@ const [loading, setLoading] = useState(false);
       const data=await res.json();
       console.log(data);
       if(res.status===400 || !data){
-        // wrongCredentials();
+         wrongCredentials();
         console.log("wrong credentials");
       }
       else{
-        // loginSuccessfull();
+        loginSuccessfull();
         setModal(false);
       }
     }
@@ -837,6 +861,10 @@ const [loading, setLoading] = useState(false);
       </div>
     )}
     {modal && <div className="overlay" onClick={closeModal}></div>}
+    <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
     </>
   );
 };
