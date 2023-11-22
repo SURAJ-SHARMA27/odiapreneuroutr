@@ -157,9 +157,10 @@ const [loading, setLoading] = useState(false);
     }
   
   return (
-    <>
-    <nav className={`w-full flex mt-3 justify-between items-center navbar ${modal ? "blur-background" : ""}`}>
-      <img src={"/logo.png"} alt="hoobank" className="w-[220px] h-[52px]" />
+    <div>
+    <nav className={`w-full flex mt-3 justify-between items-center navbar `}>
+    <img src={"/logo.png"} alt="hoobank" class="h-[55px] w-[200px] md:h-[100px] md:w-[360px]" />
+
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1" style={{color:"white"}}>
       <Link to="/registeredteams">
@@ -793,7 +794,7 @@ const [loading, setLoading] = useState(false);
       </div>
     )}
     {modal && <div className="overlay" onClick={closeModal}></div>}
-    </>
+    </div>
   );
 };
 
