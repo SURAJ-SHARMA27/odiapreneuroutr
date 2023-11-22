@@ -47,9 +47,9 @@ const Timer = () => {
   }, []); // The empty dependency array ensures that the effect runs once when the component mounts
 
   return (
-    <div style={{ color: 'white', margin: "30px", marginBottom: "100px" }}>
+    <div style={{ color: 'white', margin: "20px", marginBottom: "100px" }}>
       <div className="custom-container">
-        <h1 style={{ fontSize: "30px", color: "#828282" }} className="custom-heading">Registration will start soon:</h1>
+        <h1 style={{ fontSize: "25px", color: "#828282" }} className="custom-heading">Registration will start soon:</h1>
         <div id="countdown" style={{ color: "#828282" }}>
           <ul className="timer-list">
             <li className="timer-list-item"><span id="days" className="timer-label"></span>days</li>

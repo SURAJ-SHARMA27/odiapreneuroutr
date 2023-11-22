@@ -14,10 +14,10 @@ const Hero = () => {
     >
       <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 `}>
         <div style={{marginBottom:"50px"}} className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
-          <img src={"/discount.svg"} alt="discount" className="w-[32px] h-[32px]" />
+          <img src={"/discount.svg"} alt="discount" className="md:w-[32px] md:h-[32px] w-[20px] h-[20px]" />
           <p className={`${styles.paragraph} ml-2`}>
-            <span className="text-white">Code</span> Collaborate{" "}
-            <span className="text-white">Conquer</span> 
+            <span className="text-white md:text-[20px] text-[15px]">Code</span>{' '}<span className="md:text-[20px] text-[15px]">Collaborate</span> {' '}
+            <span className="text-white md:text-[20px] text-[15px]">Conquer</span> 
           </p>
         </div>
 
@@ -26,7 +26,7 @@ const Hero = () => {
     <div className="ss:text-[33px] text-[30px]" style={{ color: "#727272", height: "60px" }}>
       Organized By
     </div>
-    <div className="ss:text-[38px] text-[30px] leading-[45px] leading-[60px] overflow-hidden" style={{ height: "150px"}}>
+    <div className="md:text-[35px] text-[28px]  leading-[40px] lg:leading-[50px] overflow-hidden " style={{ height: "200px"}}>
       {text} <Cursor cursorStyle='|' />
     </div>
     <div className="ss:text-[33px] text-[30px] text-lime-400" style={{ color: "#727272", height: "60px", marginTop:"25px" }}>

@@ -18,27 +18,27 @@ const Stats = () => {
       
       <div className="flex flex-wrap justify-center sm:justify-between m-3">
         <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
-          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
-            ₹{counterOn && <CountUp start={0} end={15000} duration={2} delay={0} />}
-            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4 ">
+          <h4 className="font-poppins font-semibold  xs:leading-[53.16px] sm:leading-[43.16px] text-white">
+            <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={15000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
+            <p className="font-poppins font-normal xs:text-[20px] xs:leading-[20px] text-gradient uppercase ml-3 mt-4 ">
               First Prize
             </p>
           </h4>
         </div>
 
         <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
-          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
-            ₹{counterOn && <CountUp start={0} end={10000} duration={2} delay={0} />}
-            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4">
+          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white" >
+          <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={10000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
+            <p className="font-poppins font-normal sm:text-[20px] sm:leading-[20px] text-gradient uppercase ml-3 mt-4">
               Second Prize
             </p>
           </h4>
         </div>
 
         <div className="w-full sm:w-1/3 text-center">
-          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
-            ₹{counterOn && <CountUp start={0} end={5000} duration={2} delay={0} />}
-            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4 mr-2">
+          <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white" >
+          <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={5000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
+            <p className="font-poppins font-normal sm:text-[20px] sm:leading-[20px] text-gradient uppercase ml-3 mt-4 mr-2">
               Third Prize
             </p>
           </h4>
@@ -51,8 +51,8 @@ const Stats = () => {
       <div className="flex flex-wrap justify-center sm:justify-between m-3">
         <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
           <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
-            ₹{counterOn && <CountUp start={0} end={50000} duration={2} delay={0} />}
-            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4 ">
+          <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={50000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
+            <p className="font-poppins font-normal sm:text-[20px] sm:leading-[20px] text-gradient uppercase ml-3 mt-4 ">
               First Prize
             </p>
           </h4>
@@ -60,8 +60,8 @@ const Stats = () => {
 
         <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
           <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
-            ₹{counterOn && <CountUp start={0} end={30000} duration={2} delay={0} />}
-            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4">
+          <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={30000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
+            <p className="font-poppins font-normal sm:text-[20px] sm:leading-[20px] text-gradient uppercase ml-3 mt-4">
               Second Prize
             </p>
           </h4>
@@ -69,8 +69,8 @@ const Stats = () => {
 
         <div className="w-full sm:w-1/3 text-center">
           <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
-            ₹{counterOn && <CountUp start={0} end={10000} duration={2} delay={0} />}
-            <p className="font-poppins font-normal xs:text-[20.45px] sm:text-[20.45px] xs:leading-[26.58px] sm:leading-[21.58px] text-gradient uppercase ml-3 mt-4 mr-2">
+          <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={10000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
+            <p className="font-poppins font-normal sm:text-[20px] sm:leading-[20px] text-gradient uppercase ml-3 mt-4 mr-2">
               Third Prize
             </p>
           </h4>

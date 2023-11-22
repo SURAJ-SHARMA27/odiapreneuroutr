@@ -1,0 +1,47 @@
+CardComponent.css
+
+body {
+  background-color: #100e17;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container2 {
+  /* position: absolute; */
+  height: 600px;
+  width: 800px;
+  top: 60px;
+  left: calc(50% - 300px);
+  display: flex;
+  margin-left:50px;
+  /* overflow: hidden; */
+}
+
+.card1 {
+  display: flex;
+  height: 200px;
+  width: 700px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+  margin-left: -50px;
+}
+
+.carousel-image{
+    margin-top:20px;
+}
+
+.card1:hover {
+  transform: translateZ(-200px);
+  transition: 0.4s ease-out;
+}
+
+.card1:hover ~ .card1 {
+  position: relative;
+  left: 100px;
+  transition: 0.4s ease-out;
+}
+
+/* ... (rest of the CSS styles) */
