@@ -3,22 +3,22 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 
-const useit = `https://odiapreneurbackend.onrender.com/`
-const useitforlocal=`http://localhost:3000/`
+const useitforlocal = `https://odiapreneurbackend.onrender.com/`
+// const useitforlocal=`http://localhost:3000/`
 
 export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/register': useit,
-      '/signin': useit,
-      '/about': useit,
-      '/contact': useit,
-      '/registeredteams': useit,
-      '/logout': useit,
-      '/search':useit,
-      '/search_so':useit,
-      '/publishstatus':useit
+      '/register': useitforlocal,
+      '/signin': useitforlocal,
+      '/about': useitforlocal,
+      '/contact': useitforlocal,
+      '/registeredteams': useitforlocal,
+      '/logout': useitforlocal,
+      '/search':useitforlocal,
+      '/search_so':useitforlocal,
+      '/publishstatus':useitforlocal
     },
   },
 });

@@ -670,7 +670,7 @@ router.get('/search', authenticate, async (req, res) => {
     }
   });
   // Assuming your authentication middleware sets user information on req.user
-router.post('/api/publishstatus', authenticate, async (req, res) => {
+router.post('/publishstatus', authenticate, async (req, res) => {
     try {
         const { teamName, approvalStatus } = req.body;
         // Check if teamName and approvalStatus are provided

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
@@ -7,6 +9,7 @@ const Logout = () => {
   const navigate = useNavigate();
 
   // const notify = () => toast.success("Logout successfully");
+  const notify = () => toast.success('Logout Successfully');
 
   useEffect(() => {
     fetch('/api/logout', {
@@ -18,19 +21,19 @@ const Logout = () => {
       credentials: 'include',
     })
       .then((res) => {
-        // notify(); // Use React Toastify instead of window.alert
+        
 
         // Add a delay before navigating
         setTimeout(() => {
           navigate('/', { replace: true });
-        }, 3000); // Adjust the delay time as needed
- 
+        }, 4000); // Adjust the delay time as needed
+        if(res.status===200){
+          notify();
+          console.log("logout Successfully")
+        }
         if (res.status !== 200) {
           const error = new Error(res.error);
           throw error;
-        }
-        if(res.status===200){
-          console.log("logout successfull");
         }
       })
       .catch((err) => {
@@ -44,7 +47,10 @@ const Logout = () => {
       Logout successfully
       
     </div>
-   
+    <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
     </>
   );
 };
