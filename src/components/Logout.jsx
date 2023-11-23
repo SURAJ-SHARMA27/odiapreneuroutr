@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
+import React, { useEffect,useContext } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
-
+import { UserContext } from '../App';
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
 const Logout = () => {
   const navigate = useNavigate();
-
+  const {state,dispatch} = useContext(UserContext);
   // const notify = () => toast.success("Logout successfully");
   const notify = () => toast.success('Logout Successfully', {style: {
     borderRadius: '10px',
@@ -39,7 +41,9 @@ const Logout = () => {
         if (res.status !== 200) {
           const error = new Error(res.error);
           throw error;
+          
         }
+        dispatch({type:"USER",payload:''});
       })
       .catch((err) => {
         console.log(err);

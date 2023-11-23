@@ -1,13 +1,13 @@
 import styles from "../style";
 import GetStarted from "./GetStarted";
-import { useTypewriter,Cursor } from "react-simple-typewriter";
+// import { useTypewriter,Cursor } from "react-simple-typewriter";
+import Typewriter from 'typewriter-effect';
+
 const Hero = () => {
-  const [text]=useTypewriter({
-    words:['Directorate of Higher Secondary Education, Odisha','School & Mass Education Department , Government of Odisha'],
-    loop:{},
-    typeSpeed:120,
-    deleteSpeed:80,
-  })
+  const words = [
+    'Directorate of Higher Secondary Education, Odisha',
+    'School & Mass Education Department , Government of Odisha',
+  ];
   return (
     <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}
      
@@ -27,7 +27,15 @@ const Hero = () => {
       Organized By
     </div>
     <div className="md:text-[35px] text-[28px]  leading-[40px] lg:leading-[50px] overflow-hidden " style={{ height: "200px"}}>
-      {text} <Cursor cursorStyle='|' />
+      {/* {text} <Cursor cursorStyle='|' /> */}
+      <Typewriter
+      options={{
+        strings: words,
+        autoStart: true,
+        loop: true,
+        delay: 50, // Adjust the typing speed as needed
+      }}
+    />
     </div>
     <div className="ss:text-[33px] text-[30px] text-lime-400" style={{ color: "#727272", height: "60px", marginTop:"25px" }}>
       In Association With

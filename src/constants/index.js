@@ -72,13 +72,30 @@ export const feedback = [
     img: "./people03.png",
   },
   {
-    id: "feedback-3",
+    id: "feedback-4",
     content:
       "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
     name: "Dr. R K Pradhan",
     title: "Founder & Leader",
     img: "./people03.png",
   },
+  {
+    id: "feedback-5",
+    content:
+      "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
+    name: "Dr. B K Kandi",
+    title: "Founder & Leader",
+    img: "./people03.png",
+  },
+  {
+    id: "feedback-6",
+    content:
+      "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
+    name: "Dr. B K Kandi",
+    title: "Founder & Leader",
+    img: "./people03.png",
+  },
+
 ];
 
 export const stats = [

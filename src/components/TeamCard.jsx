@@ -9,6 +9,7 @@ export const TeamCard = ({ team }) => {
       topic,
       district,
       block,
+      drive,
       schoolName,
       schoolCode,
       coordinatorName,
@@ -26,6 +27,9 @@ export const TeamCard = ({ team }) => {
           <li>Topic: {topic}</li>
           <li>District: {district}</li>
           <li>Block: {block}</li>
+          <li>Drive:<a href={drive} target="_blank" >
+      {drive}
+    </a></li>
           <li>School Name: {schoolName}</li>
           <li>School Code: {schoolCode}</li>
           <li>Coordinator Name: {coordinatorName}</li>

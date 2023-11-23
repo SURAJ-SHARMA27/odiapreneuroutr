@@ -12,6 +12,7 @@ export const UpdateCard = ({ team }) => {
       topic,
       district,
       block,
+      drive,
       schoolName,
       schoolCode,
       coordinatorName,
@@ -61,6 +62,9 @@ export const UpdateCard = ({ team }) => {
           <li>Topic: {topic}</li>
           <li>District: {district}</li>
           <li>Block: {block}</li>
+          <li><a href={drive} target="_blank" rel="noopener noreferrer">
+      {drive}
+    </a></li>
           <li>School Name: {schoolName}</li>
           <li>School Code: {schoolCode}</li>
           <li>Coordinator Name: {coordinatorName}</li>

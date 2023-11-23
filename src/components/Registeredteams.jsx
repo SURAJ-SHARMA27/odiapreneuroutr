@@ -47,7 +47,7 @@ const Registeredteams = () => {
       )}
       <div style={{textAlign:"center",marginTop:"200px",marginBottom:"50px"}}>   
      
-      <Link to="/updateapproval">
+      <Link to="">
       <button
   style={{
     background: 'linear-gradient(200deg, black, black,black, #3ef4b1)',
@@ -67,8 +67,34 @@ const Registeredteams = () => {
     e.target.style.background = 'linear-gradient(100deg, black, black, black, black, black, #3ef4b1)'; // Reset background gradient
     e.target.style.borderColor = '#3ef4b1'; // Reset border color
   }}
+  title="This button will be enabled after registration closes"
 >
   Update Approval Status
+</button>
+</Link>
+<Link to="/">
+<button
+  style={{
+    background: 'linear-gradient(200deg, black, black,black, #3ef4b1)',
+    color: 'white',
+    padding: '10px 20px',
+    border: '2px solid #3ef4b1', // Initial border color
+    borderRadius: '4px',
+    margin:"20px",
+    textAlign:'center',
+    cursor: 'pointer',
+    transition: 'background 0.3s, border-color 0.3s', // Transition for background and border color
+  }}
+  onMouseOver={(e) => {
+    e.target.style.background = 'linear-gradient(100deg,black, black, black,red)'; // Hover background gradient
+    e.target.style.borderColor = 'red'; // Hover border color
+  }}
+  onMouseOut={(e) => {
+    e.target.style.background = 'linear-gradient(100deg, black, black, black, black, black, #3ef4b1)'; // Reset background gradient
+    e.target.style.borderColor = '#3ef4b1'; // Reset border color
+  }}
+>
+  Home
 </button>
 </Link>
 </div>

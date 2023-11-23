@@ -7,8 +7,46 @@ const DoDashboard = () => {
   const [userName, setUserName] = useState("");
   const [userdistrict, setUserdistrict] = useState("");
 
-  const [loading, setLoading] = useState(true);
+//to commit
+  // const [inputValue1, setInputValue1] = useState('');
+  const [inputValue2, setInputValue2] = useState('');
+  const [inputValue3, setInputValue3] = useState('');
+  const [inputValue4, setInputValue4] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
+  // const handleInputChange1 = (event) => {
+  //   setInputValue1(event.target.value);
+  //   performSearch();
+  // };
+  const handleInputChange2 = (event) => {
+    setInputValue2(event.target.value);
+    performSearch();
+  };
+  const handleInputChange3 = (event) => {
+    setInputValue3(event.target.value);
+    performSearch();
+  };
+  const handleInputChange4 = (event) => {
+    setInputValue4(event.target.value);
+    performSearch();
+  };
+  const performSearch = () => {
+    // Filter the data based on all three input values
+      const results = userData.filter(item =>
+        item.block.toLowerCase().includes(inputValue2.toLowerCase())&&
+        item.schoolName.toLowerCase().includes(inputValue3.toLowerCase()) &&
+        item.teamName.toLowerCase().includes(inputValue4.toLowerCase()) 
+      );
+      // console.log(results.length);
+      setSearchResults(results);
+  };
+  useEffect(() => {
+    // console.log("Current URL:", window.location.href);
+    performSearch();
+  }, [inputValue2,inputValue3,inputValue4]);
+  //closed commit
+
+  const [loading, setLoading] = useState(true);
   const callAboutPage = async () => {
     try {
       const res = await fetch("/api/search", {
@@ -65,6 +103,48 @@ const DoDashboard = () => {
       <h3 style={{ color: "white", fontSize: "40px", textAlign: "center", margin: "20px" }} className="glow">
         District Officer Name: {userName}
       </h3>
+      {/* commit start */}
+      <div class="search-container">
+      {/* <div>
+        <input
+          type="text"
+          value={inputValue1}
+          onChange={handleInputChange1}
+          placeholder="Search by District"
+        />
+      </div> */}
+      <div>
+        <input
+          type="text"
+          value={inputValue2}
+          onChange={handleInputChange2}
+          placeholder="Search by Block Name"
+          className="search-input"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          value={inputValue3}
+          onChange={handleInputChange3}
+          placeholder="Search by School Name"
+          className="search-input"
+        />
+      </div>
+
+      <div>
+        <input
+          type="text"
+          value={inputValue4}
+          onChange={handleInputChange4}
+          placeholder="Search by Team Name"
+          className="search-input"
+        />
+      </div>
+      </div>
+      {/* commit end */}
+
+
       <h2 style={{ color: "white", fontSize: "30px", textAlign: "center", marginBottom: "20px", marginTop: "40px" }} className="">
         Total Registered Teams in {userdistrict}  : {userData.length}
       </h2>
@@ -85,18 +165,29 @@ const DoDashboard = () => {
           </tr>
         </thead>
         <tbody>
-          {userData.map((row, index) => (
-            <tr key={index} style={{ color: 'white' }}>
-              <th scope="row">{index + 1}</th>
-              <td>{row.schoolName}</td>
-              <td>{row.teamName}</td>
-              <td>{row.leaderName}</td>
-              <td>{row.leaderEmail}</td>
-              {/* <td>{row.themeName}</td> */}
-              <td>{row.block}</td>
-              <td>{row.district}</td>
-            </tr>
-          ))}
+        {searchResults.length > 0
+            ? searchResults.map((row, index) => (
+                <tr key={index} style={{ color: "white" }}>
+                  <th scope="row" data-label="No">{index + 1}</th>
+                  <td data-label="School Name">{row.schoolName}</td>
+                  <td data-label="Team Name">{row.teamName}</td>
+                  <td data-label="Leader Name">{row.leaderName}</td>
+                  <td data-label="Leader Email">{row.leaderEmail}</td>
+                  <td data-label="Block Name">{row.block}</td>
+                  <td data-label="District">{row.district}</td>
+                </tr>
+              ))
+            : userData.map((row, index) => (
+                <tr key={index} style={{ color: "white" }}>
+                  <th scope="row" data-label="No">{index + 1}</th>
+                  <td data-label="School Name">{row.schoolName}</td>
+                  <td data-label="Team Name">{row.teamName}</td>
+                  <td data-label="Leader Name">{row.leaderName}</td>
+                  <td data-label="Leader Email">{row.leaderEmail}</td>
+                  <td data-label="Block Name">{row.block}</td>
+                  <td data-label="District">{row.district}</td>
+                </tr>
+              ))}
         </tbody>
       </table>
     </div>

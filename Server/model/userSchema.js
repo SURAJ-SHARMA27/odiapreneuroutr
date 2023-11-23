@@ -62,6 +62,10 @@ const userSchema=new mongoose.Schema({
                 type:String,
                 required:true
                 }, 
+                drive:{
+                    type:String,
+                    required:true
+                    },     
             schoolName:{
                 type:String,
                 required:true
@@ -125,7 +129,8 @@ userSchema.methods.addMessage=async function(name,
     leaderEmail,
     topic, 
     district,
-    block, 
+    block,
+    drive, 
     schoolName,
     schoolCode,
     coordinatorName,
@@ -140,6 +145,7 @@ userSchema.methods.addMessage=async function(name,
             topic, 
             district,
             block, 
+            drive,
             schoolName,
             schoolCode,
             coordinatorName,
