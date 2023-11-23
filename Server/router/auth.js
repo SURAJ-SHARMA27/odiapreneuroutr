@@ -500,15 +500,13 @@ const arr = {
     Maharshi_Dayanand_Higher_Secondary_School_GarhMahulpali:"30193102@gmail.com",
     Ujalpur_Higher_Secondary_School_Ujalpur:"30193103@gmail.com",
     "suraj":"suraj@gmail.com",
-    "purnendu":"purnendu@gmail.com",
-    "a":"a@gmail.com"
+    "purnendu":"purnendu@gmail.com"
 
   };
   const arr1 = {
     "suraj@gmail.com": "delhi",
     "purnendu@gmail.com": "bbsr",
     "rahul@gmail.com": "ctc",
-    "a@gmail.com":"khorda"
   };
 router.use(cookieParser());
 require('../db/conn');
