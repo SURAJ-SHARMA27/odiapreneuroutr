@@ -28,7 +28,7 @@ const RegistrationForm = () => {
   });
   const callAboutPage = async () => {
     try {
-      const res = await fetch('/api/about', {
+      const res = await fetch('/about', {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -97,7 +97,7 @@ const RegistrationForm = () => {
       member1,
       member2
     }=userData;
-    const res=await fetch('/api/contact',{
+    const res=await fetch('/contact',{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
