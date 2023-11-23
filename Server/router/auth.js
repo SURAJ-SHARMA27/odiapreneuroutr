@@ -568,6 +568,9 @@ router.post("/signin",async(req,res)=>{
             if(!isMatch){
                 res.status(400).json({error:"Invalid credentials"});
             }
+            if (role !== userLogin.role) {
+                return res.status(400).json({ error: "Role entered incorrectly" });
+            }
             else{
                 res.json({message:role});
              
