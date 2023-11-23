@@ -6,11 +6,17 @@ import { navLinks } from "../constants";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "./LoadingSpinner";
 // import { ToastContainer, toast } from 'react-toastify';
+
 import Select from "react-select";
 import { UserContext } from "../App";
+
+import toast, { Toaster } from 'react-hot-toast';
+import Select from 'react-select';
+
 // import 'react-toastify/dist/ReactToastify.css';
 // Conditionally render links based on the role
 const Navbar = () => {
+
   const { state, dispatch } = useContext(UserContext);
   const [role1, setRole1] = useState("");
   const RenderLinks = () => {
@@ -37,7 +43,7 @@ const Navbar = () => {
       return (
         <>
           <Link to="/search_so">
-            <button>SO Link</button>
+            <button>State Wise</button>
           </Link>
           <button className="mr-10"> About us </button>
           <button className="mr-10"> Timeline </button>
@@ -101,6 +107,53 @@ const Navbar = () => {
   const [loginPassword, setLoginPassword] = useState("");
   const [role, setRole] = useState("");
   const [signupRole, setSignupRole] = useState("");
+
+  
+const [loading, setLoading] = useState(false);
+  
+  const invalidRegistration = () => toast.error('Wrong Credentials!',
+  {style: {
+      borderRadius: '10px',
+      background: '#333',
+      color: '#fff',
+    },
+  }
+);
+  const RegistrationSuccessful = () => toast.success("Registration succesfful",
+  {style: {
+    borderRadius: '10px',
+    background: '#333',
+    color: '#fff',
+  },
+});
+  const wrongCredentials=()=>toast.error("Wrong Credentials", {style: {
+    borderRadius: '10px',
+    background: '#333',
+    color: '#fff',
+  },
+});
+  const loginSuccessfull=()=>toast.success("Login Successfull", {style: {
+    borderRadius: '10px',
+    background: '#333',
+    color: '#fff',
+  },
+});
+  const[user,setUser]=useState({
+    name:"",
+    email:"",
+    password:"",  
+    cpassword:""
+  
+  }); 
+  const[loginEmail,setLoginEmail]=useState("");
+  const[loginPassword,setLoginPassword]=useState("");
+  const[role,setRole]=useState("");
+  const[signupRole,setSignupRole]=useState("");
+  
+
+
+
+
 
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
@@ -195,10 +248,10 @@ const Navbar = () => {
       console.log(data);
 
       if (data && data.error) {
-        // invalidRegistration();
+         invalidRegistration();
         console.log("invalid registration");
       } else {
-        // RegistrationSuccessful();
+        RegistrationSuccessful();
         console.log(data.status);
         setIsLoginFormVisible(true);
         // dispatch({type:"USER",payload:data.message});
@@ -211,6 +264,7 @@ const Navbar = () => {
       }, 400);
       // Set loading back to false after the fetch request is complete
     }
+
   };
 
   const loginUser = async (e) => {
@@ -238,22 +292,56 @@ const Navbar = () => {
       setModal(false);
       console.log(data.message);
       dispatch({ type: "USER", payload: data.message });
+
+  }
+  
+    const loginUser=async(e)=>{
+      e.preventDefault();
+      setLoading(true);
+      console.log(loginPassword,loginEmail);
+      const res=await fetch('/api/signin',{
+        method:"POST",
+        credentials: "include" ,
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+          email:loginEmail,
+          password:loginPassword,
+          role:role,
+        }),
+      });
+      const data=await res.json();
+      console.log(data);
+      if(res.status===400 || !data){
+         wrongCredentials();
+        console.log("wrong credentials");
+      }
+      else{
+        loginSuccessfull();
+        setModal(false);
+      }
+
     }
   };
 
   return (
+
     <>
-      <nav
-        className={`w-full flex mt-3 justify-between items-center navbar ${
-          modal ? "blur-background" : ""
-        }`}
-      >
-        <img src={"/logo.png"} alt="hoobank" className="w-[350px] h-[85px]" />
+
+   
+    <nav className={`w-full flex mt-3 justify-between items-center navbar ${modal ? "blur-background" : ""}`}
+  
+    
+    >
+      <img src={"/logo.png"} alt="hoobank" className="h-[55px] w-[200px] md:h-[100px] md:w-[360px]" />
+
 
         <ul
           className="list-none sm:flex hidden justify-end items-center flex-1"
           style={{ color: "white" }}
         >
+
           <RenderLinks />
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -264,23 +352,29 @@ const Navbar = () => {
             onClick={() => setToggle(!toggle)}
           />
 
-          <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
-          >
-            <ul
-              className="list-none flex justify-end items-start flex-1 flex-col"
-              style={{ color: "white" }}
-            >
-              <li className="mr-4"> Registered Teams </li>
-              <li className="mr-4"> About us </li>
-              <li className="mr-4"> Timeline </li>
-              <li className="mr-4"> Login </li>
-            </ul>
-          </div>
+          <ul className="list-none flex justify-end items-start flex-1 flex-col" style={{color:"white"}}>
+          
+          <Link to="/registeredteams">
+      <li className="mr-4"> Registered Teams </li>
+      </Link> 
+      <Link to="/search">
+      <li className="mr-4"> District wise </li>
+      </Link> 
+      <Link to="/search_so">
+      <li className="mr-4"> State wise </li>
+      </Link> 
+      <li className="mr-4" onClick={handleLoginClick}> Login </li>
+
+           <li className="mr-4"> About us </li>
+        <li className="mr-4"> Timeline </li>
+        <Link to="/logout">
+      <li> Logout </li>
+      </Link>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+  
       {modal && (
         <div className="wrapper" style={{ color: "white" }}>
           {loading && <LoadingSpinner />}
@@ -2021,9 +2115,20 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      )}
-      {modal && <div className="overlay" onClick={closeModal}></div>}
+
+      </div>
+    )}
+    {modal && <div className="overlay" onClick={closeModal}></div>}
+
+   
+
+    <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
+
     </>
+
   );
 };
 

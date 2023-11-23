@@ -2,13 +2,30 @@
 import React, { useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../components/stylecss/Registration.css';
+import toast, { Toaster } from 'react-hot-toast';
+
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 // import "./RegistrationForm.css"; // Import the CSS file for additional styles
 
 const RegistrationForm = () => {
-  // const notify = () => toast.success("Team registered Successfully");
-  // const dontallow = () => toast.error("First Login to authenticate");
+   const notify = () => toast.success("Team registered Successfully", {style: {
+    borderRadius: '10px',
+    background: '#333',
+    color: '#fff',
+  },
+});
+const dontallow = () => {
+  toast.error("First Login to authenticate", {
+    style: {
+      borderRadius: '10px',
+      background: '#333',
+      color: '#fff',
+    },
+  });
+
+ 
+};
 
   const navigate = useNavigate();
   const [userData,setUserData]=useState({
@@ -20,6 +37,7 @@ const RegistrationForm = () => {
   topic: "topic1", // Assuming you want to set a default value for the select field
   district: "district1", // Assuming you want to set a default value for the select field
   block: "",
+  drive:"",
   schoolName: "",
   schoolCode: "",
   coordinatorName: "",
@@ -47,6 +65,7 @@ const RegistrationForm = () => {
         topic: userData.topic,
         district: userData.district,
         block: userData.block,
+        drive:userData.drive,
         schoolName: userData.schoolName,
         schoolCode: userData.schoolCode,
         coordinatorName: userData.coordinatorName,
@@ -60,9 +79,10 @@ const RegistrationForm = () => {
       }
     } catch (err) {
       console.log(err);
-      // dontallow();
-      navigate('/');
-      
+      setTimeout(() => {
+        dontallow();
+      }, 1000);
+       navigate('/');
     }
   };
 
@@ -90,7 +110,8 @@ const RegistrationForm = () => {
       leaderEmail,
       topic, 
       district,
-      block, 
+      block,
+      drive, 
       schoolName,
       schoolCode,
       coordinatorName,
@@ -110,7 +131,8 @@ const RegistrationForm = () => {
         leaderEmail,
         topic, 
         district,
-        block, 
+        block,
+        drive,
         schoolName,
         schoolCode,
         coordinatorName,
@@ -123,7 +145,7 @@ const RegistrationForm = () => {
     console.log("message not send");
   }
   else{
-    // notify();
+    notify();
     setUserData({...userData,teamName:""});
     navigate('/registeredteams');
   }
@@ -160,32 +182,74 @@ const RegistrationForm = () => {
 
           <div className="row">
             <div className="field">
-              <label style={{color:"white"}} htmlFor="topic">Topic:</label>
+              <label style={{color:"white"}} htmlFor="topic">Theme:</label>
               <select value={userData.topic} onChange={handleInputs} name="topic" id="topic" required>
                 <option value="topic1">select</option>
-                <option value="topic2">Topic 2</option>
+                <option value="Agriculture_food_tech_and_Rural_development">Agriculture, food tech, and Rural development</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Renewable_Sustainable_energy">Renewable/Sustainable energy</option>
+                <option value="Accessibility_e_Commerce_and_Cybersecurity">Accessibility, e-Commerce and Cybersecurity</option>
+                <option value="Self_Help_Groups">Self Help Groups</option>
+                <option value="Smart_Education">Smart Education</option>
+                <option value="Disaster_Management">Disaster Management</option>
+                <option value="Toys_and_Games">Toys and Games</option>
+                <option value="Waste_Management">Waste Management</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+
+
+
                 {/* Add more options as needed */}
               </select>
             </div>
             <div className="field">
               <label style={{color:"white"}} htmlFor="district">District:</label>
               <select value={userData.district}  onChange={handleInputs} name="district" id="district" required>
-                <option value="district1">select</option>
-                <option value="district2">District 2</option>
-                <option value="delhi">delhi</option>
-                <option value="bbsr">bbsr</option>
-
+              <option value="select">Select</option>
+    <option value="Angul">Angul</option>
+    <option value="Balasore">Balasore</option>
+    <option value="Bargarh">Bargarh</option>
+    <option value="Bhadrak">Bhadrak</option>
+    <option value="Bolangir">Bolangir</option>
+    <option value="Boudh">Boudh</option>
+    <option value="Cuttack">Cuttack</option>
+    <option value="Deogarh">Deogarh</option>
+    <option value="Dhenkanal">Dhenkanal</option>
+    <option value="Gajapati">Gajapati</option>
+    <option value="Ganjam">Ganjam</option>
+    <option value="Jagatsinghpur">Jagatsinghpur</option>
+    <option value="Jajpur">Jajpur</option>
+    <option value="Jharsuguda">Jharsuguda</option>
+    <option value="Kalahandi">Kalahandi</option>
+    <option value="Kandhamal">Kandhamal</option>
+    <option value="Kendrapada">Kendrapada</option>
+    <option value="Keonjhar">Keonjhar</option>
+    <option value="Khordha">Khordha</option>
+    <option value="Koraput">Koraput</option>
+    <option value="Malkangiri">Malkangiri</option>
+    <option value="Mayurbhanj">Mayurbhanj</option>
+    <option value="Nabarangapur">Nabarangapur</option>
+    <option value="Nayagarh">Nayagarh</option>
+    <option value="Nuapada">Nuapada</option>
+    <option value="Puri">Puri</option>
+    <option value="Rayagada">Rayagada</option>
+    <option value="Sambalpur">Sambalpur</option>
+    <option value="Sonepur">Sonepur</option>
+    <option value="Sundargarh">Sundargarh</option>
                 {/* Add more options as needed */}
               </select>
             </div>
           </div>
-
+           
           <div className="row">
             <div className="field">
               <input value={userData.block} onChange={handleInputs} type="text" name="block" id="block" placeholder="Block" required />
             </div>
           </div>
-
+          <div className="row">
+            <div className="field">
+              <input value={userData.block} onChange={handleInputs} type="text" name="drive" id="drive" placeholder="Drive link for idea-template" required />
+            </div>
+          </div>
           <div className="row">
             <div className="field">
               <input type="text" value={userData.schoolName} onChange={handleInputs} name="schoolName" id="schoolName" placeholder="School Name" required />
