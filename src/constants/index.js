@@ -56,11 +56,19 @@ export const feedback = [
     img: "./people01.png",
   },
   {
+    id: "feedback-6",
+    content:
+      "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
+    name: "Mr. Raghuram R Iyer",
+    title: "Director HSC",
+    img: "./people03.png",
+  },
+  {
     id: "feedback-2",
     content:
       "Hackathons are a great source of learning and inspiration for the budding talent in the state. ",
     name: "Dr. Sanatan Panda",
-    title: "Founder & Leader",
+    title: "Joint Director,DHSE(O)",
     img: "./people02.png",
   },
   {
@@ -68,7 +76,7 @@ export const feedback = [
     content:
       "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
     name: "Dr. B K Kandi",
-    title: "Founder & Leader",
+    title: "Deputy Director,DHSE(O)",
     img: "./people03.png",
   },
   {
@@ -76,25 +84,18 @@ export const feedback = [
     content:
       "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
     name: "Dr. R K Pradhan",
-    title: "Founder & Leader",
+    title: "PIC IIEC",
     img: "./people03.png",
   },
   {
     id: "feedback-5",
     content:
       "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
-    name: "Dr. B K Kandi",
-    title: "Founder & Leader",
+    name: "Dr. Sudhansu Sekhar Sahoo",
+    title: "PIC CoE",
     img: "./people03.png",
   },
-  {
-    id: "feedback-6",
-    content:
-      "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
-    name: "Dr. B K Kandi",
-    title: "Founder & Leader",
-    img: "./people03.png",
-  },
+ 
 
 ];
 
@@ -135,22 +136,29 @@ export const footerLinks = [
     ],
   },
   {
-    title: "Help",
-    links: [
-      {
-        name: "Brochure",
-        link: "https://www.hoobank.com/help-center/",
-      },
-      {
-        name: "Guideline pdf",
-        link: "https://www.hoobank.com/partners/",
-      },
-      {
-        name: "About OUTR",
-        link: "https://www.hoobank.com/suggestions/",
-      },
-    ],
+      title: "Help",
+      links: [
+      
+      
+        {
+          name: "About OUTR",
+          link: "https://www.cet.edu.in/",
+        },
+      ],
+      title: "Student Coordinator",
+      links: [
+      
+      
+        {
+          name: "Diptiranjan Rath",
+          link: "https://www.linkedin.com/in/diptiranjan-rath-574125221/",
+        },
+      ],
+    
+    
+
   },
+  
   
 ];
 
