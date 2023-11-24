@@ -9,7 +9,7 @@ const Hero = () => {
     'School & Mass Education Department , Government of Odisha',
   ];
   return (
-    <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}
+    <section id="home" style={{margin:"0px"}} className={`flex md:flex-row flex-col ${styles.paddingY}`}
      
     >
       <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 `}>
