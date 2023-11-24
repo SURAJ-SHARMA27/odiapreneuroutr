@@ -5,15 +5,18 @@ const userSchema=new mongoose.Schema({
     name:{
     type:String,
     required:true
+    
     },
     email:{
         type: String,
-  required: true,
+        required:true,
+  
   unique: true
      },
      role:{
   type: String,
-  required: true,
+  required:true
+  
      },
      
     password:{
@@ -40,7 +43,8 @@ const userSchema=new mongoose.Schema({
                 }, 
             teamName:{
                 type:String,
-                required:true
+                required:true,
+                unique: true
                 },
             leaderName:{
                 type:String,
@@ -62,7 +66,7 @@ const userSchema=new mongoose.Schema({
                 type:String,
                 required:true
                 }, 
-                drive:{
+            drive:{
                     type:String,
                     required:true
                     },     

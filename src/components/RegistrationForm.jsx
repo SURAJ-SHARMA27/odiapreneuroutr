@@ -67,7 +67,7 @@ const dontallow = () => {
         district: userData.district,
         block: userData.block,
         drive:userData.drive,
-        schoolName: userData.schoolName,
+        schoolName: data.name,
         schoolCode: userData.schoolCode,
         coordinatorName: userData.coordinatorName,
         member1: userData.member1,
@@ -78,6 +78,7 @@ const dontallow = () => {
         throw error;
        
       }
+    console.log(userData);
     } catch (err) {
       console.log(err);
       setTimeout(() => {
@@ -143,6 +144,7 @@ const dontallow = () => {
       })
     })
   const data=await res.json();
+  console.log(data);
   if(!data){
     console.log("message not send");
   }
@@ -160,7 +162,7 @@ const dontallow = () => {
           <div className="row">
             <div className="field">
               <input type="text" name="institutionName" value={userData.name}  onChange={handleInputs} id="name" placeholder="Institution Name" required />
-              {console.log("here is my name"+ userData)}
+              {/* {console.log("here is my name"+ userData)} */}
             </div>
             <div className="field">
               <input type="email" name="institutionEmail" value={userData.email} onChange={handleInputs} id="email" placeholder="Email Address" required />
@@ -244,7 +246,7 @@ const dontallow = () => {
            
           <div className="row">
             <div className="field">
-            <label style={{color:"white"}} htmlFor="district">Block:</label>
+            <label style={{color:"white"}} htmlFor="block">Block:</label>
               <select value={userData.block}  onChange={handleInputs} name="block" id="block" required>
               <option value="select">Select</option>
               
@@ -1417,7 +1419,7 @@ const dontallow = () => {
 <option value="Sundargarh (MPL)">Sundargarh (MPL)</option>
 <option value="Tangarpali">Tangarpali</option>
 <option value="Tangarpali">Tangarpali</option>
-<option value="Tangarpalion>">Tangarpalion></option>
+<option value="Tangarpalion>">Tangarpalion</option>
 
 
               </select>
@@ -1430,14 +1432,14 @@ const dontallow = () => {
           </div>
           <div className="row">
             <div className="field">   
-              <input type="text" value={userData.name} onChange={handleInputs} name="schoolName" id="schoolName" placeholder="School Name" required />
+              <input type="text" value={userData.name} onChange={handleInputs}  id="schoolName" placeholder="School Name" required />
             </div>
            
 
             </div>
             <div>
             <div className="field">
-            <label style={{color:"white"}} htmlFor="district">School Code:</label>
+            <label style={{color:"white"}} htmlFor="schoolcode">School Code:</label>
               <select value={userData.schoolCode}  onChange={handleInputs} name="schoolCode" id="schoolCode" required>
               <option value="select">Select</option>
               <option value="01012101">01012101</option>
@@ -2636,14 +2638,14 @@ const dontallow = () => {
               <input type="submit" onClick={contactForm} name="signup" id="signup" value="Register Now" />
             </div>
           </div>
-          <Link to="/"> 
+          {/* <Link to="/"> 
           <div className="row">
             <div className="field btn">
               <div className="btn-layer"></div>
               <input type="submit" name="Home" id="Home" value="Go Back Home" />
             </div>
           </div>
-          </Link>
+          </Link> */}
         </form>
       </div>
     </div>

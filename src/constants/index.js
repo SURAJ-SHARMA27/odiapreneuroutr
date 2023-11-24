@@ -58,9 +58,9 @@ export const feedback = [
   {
     id: "feedback-6",
     content:
-      "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
+      "The Odisha government has taken a big step with Odiapreneur. They foster the intellectual, creative, and inspirational growth of school and college students. ",
     name: "Mr. Raghuram R Iyer",
-    title: "Director HSC",
+    title: "Director HSC(O)",
     img: "./people03.png",
   },
   {
@@ -84,7 +84,7 @@ export const feedback = [
     content:
       "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
     name: "Dr. R K Pradhan",
-    title: "PIC IIEC",
+    title: "PIC, IIEC",
     img: "./people03.png",
   },
   {
@@ -92,7 +92,7 @@ export const feedback = [
     content:
       "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
     name: "Dr. Sudhansu Sekhar Sahoo",
-    title: "PIC CoE",
+    title: "PIC, CoE",
     img: "./people03.png",
   },
  
