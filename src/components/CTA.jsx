@@ -10,7 +10,7 @@ const CTA = () => (
         Prof Ranjan Kumar Pradhan : rkpradhan@outr.ac.in<br/>
         Prof Sudhansu S Sahoo : sudhansu@outr.ac.in<br/>
         Mail us at: 
-        outr@gmail.com
+        piciic@outr.ac.in
 
       </p>
     </div>
