@@ -415,7 +415,7 @@ const timedout=()=>toast.error("Connection timedout try again", {style: {
             <div className="field">
   <select style={{backgroundColor:"black"}} className="name_select"  value={user.name} onChange={handleInputs} name="name" id="name" required>
     <option value="">Institute</option>
-    <option value="surajnew">surajnew</option>
+    {/* <option value="surajnew">surajnew</option> */}
     
 <option value="Shri Chandrasekhar Higher Secondary School, Bantala">Shri Chandrasekhar Higher Secondary School, Bantala</option>
 <option value="Sri Sri Jagannath Higher Secondary School, Badakera">Sri Sri Jagannath Higher Secondary School, Badakera</option>

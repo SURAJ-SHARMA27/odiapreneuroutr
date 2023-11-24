@@ -42,7 +42,7 @@ const CTA = () => {
               <p>For any further technical-related queries, feel free to email our technical team.</p>
               <p style={{color:"black",fontSize:"1em",fontWeight:"bold"}}>surajrace@gmail.com</p>
               <p  style={{color:"black",fontSize:"1em",fontWeight:"bold"}}>purnendumishra129th@gmail.com</p>
-              <p></p>
+              <p style={{color:"black",fontSize:"1em",fontWeight:"bold"}}>rahuljyotimishra2002@gmail.com</p>
 
               <button
   type="button"
