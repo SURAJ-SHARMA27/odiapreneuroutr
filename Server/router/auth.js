@@ -9,7 +9,7 @@ const arr = {
     "surajnew":"surajnew@gmail.com",
     "suraj":"suraj@gmail.com",
     "purnendu":"purnendu@gmail.com",
-    
+    "district officer testing":"khordha@gmail.com",
 "Shri Chandrasekhar Higher Secondary School, Bantala":"01012101@gmail.com",
 "Sri Sri Jagannath Higher Secondary School, Badakera":"01013101@gmail.com",
 "Angul Mahila Higher Secondary School, Angul":"01042201@gmail.com",
@@ -1189,7 +1189,7 @@ const arr = {
     "Smt. Susmita Sahoo": "Angul",
   "Smt. Prativa Manjari Das": "Balasore",
   "Shri Mitra BhanuKachhap": "Bargarh",
-  "Shri AkrurBarik": "Bhadrak",
+  "Shri AkrurBarik ": "Bhadrak",
   "Shri Dhruba Charan Behera": "Bolangir",
   "Shri Gendra Kujur": "Boudh",
   "Shri Krushna Chandra Nayak": "Cuttack",
@@ -1216,6 +1216,8 @@ const arr = {
   "Smt. Meenarani Mangal": "Sambalpur",
   "Shri LaxmanBhoi": "Sonepur",
   "Shri Amulya Kumar Pradhan": "Sundargarh",
+  "District officer testing":"bbsr",
+  "khordha@gmail.com":"khordha"
   };
 router.use(cookieParser());
 require('../db/conn');
@@ -1320,7 +1322,7 @@ router.get('/search', authenticate, async (req, res) => {
       // Extract messages that match the provided city and include specific fields
       const matchingMessages = users.flatMap((user) =>
         user.messages
-          .filter((message) => message.district === city)
+          .filter((message) => message.district.toLowerCase() === city.toLowerCase())
           .map((message) => ({
             name: message.name,
             email: message.email,
@@ -1382,7 +1384,7 @@ router.get('/search', authenticate, async (req, res) => {
     }
   });
   // Assuming your authentication middleware sets user information on req.user
-router.post('/publishstatus', authenticate, async (req, res) => {
+router.post('/api/publishstatus', authenticate, async (req, res) => {
     try {
         const { teamName, approvalStatus } = req.body;
         // Check if teamName and approvalStatus are provided
@@ -1433,7 +1435,9 @@ const { name,
     schoolCode,
     coordinatorName,
     member1,
-    member2}=req.body;
+    member2,
+    member3,
+    member4}=req.body;
     if (!name ||
         !email ||
         !teamName ||
@@ -1446,8 +1450,8 @@ const { name,
         !schoolName ||
         !schoolCode ||
         !coordinatorName ||
-        !member1 ||
-        !member2) {
+        !member1
+       ) {
         const missingFields = [];
         if (!name) missingFields.push('name');
         if (!email) missingFields.push('email');
@@ -1463,6 +1467,9 @@ const { name,
         if (!coordinatorName) missingFields.push('coordinatorName');
         if (!member1) missingFields.push('member1');
         if (!member2) missingFields.push('member2');
+         if (!member3) missingFields.push('member3');
+        if (!member4) missingFields.push('member4');
+
     
         console.log("Error in the form itself. Missing fields: ", missingFields);
         return res.json({ error: "Fill the form. Missing fields: " + missingFields.join(', ') });
@@ -1483,7 +1490,10 @@ const { name,
                 schoolCode,
                 coordinatorName,
                 member1,
-                member2);
+                member2,
+                member3,
+                member4
+                );
         }
         await userContact.save();
         res.status(201).json({message:"Team registered successfully"});

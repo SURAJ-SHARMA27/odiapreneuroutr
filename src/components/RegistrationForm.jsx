@@ -43,7 +43,10 @@ const dontallow = () => {
   schoolCode: "",
   coordinatorName: "",
   member1: "",
-  member2: ""
+  member2: "",
+  member3: "",
+  member4: "",
+
   });
   const callAboutPage = async () => {
     try {
@@ -71,7 +74,9 @@ const dontallow = () => {
         schoolCode: userData.schoolCode,
         coordinatorName: userData.coordinatorName,
         member1: userData.member1,
-        member2: userData.member2
+        member2: userData.member2,
+        member3:userData.member3,
+        member4:userData.member4
       });
       if (!res.status === 200) {
         const error = new Error(res.error);
@@ -119,7 +124,9 @@ const dontallow = () => {
       schoolCode,
       coordinatorName,
       member1,
-      member2
+      member2,
+      member3,
+      member4
     }=userData;
     const res=await fetch('/api/contact',{
       method:"POST",
@@ -140,7 +147,9 @@ const dontallow = () => {
         schoolCode,
         coordinatorName,
         member1,
-        member2
+        member2,
+        member3,
+        member4
       })
     })
   const data=await res.json();
@@ -2628,10 +2637,17 @@ const dontallow = () => {
               <input type="text" name="member1" id="member1" value={userData.member1} onChange={handleInputs} placeholder="Name of member 1" />
             </div>
             <div className="field">
-              <input type="text" name="member2" id="member2" value={userData.member2} onChange={handleInputs} placeholder="Name of member 2" />
+              <input type="text" name="member2" id="member2" value={userData.member2} onChange={handleInputs} placeholder="Name of member 2 (optional)" />
             </div>
           </div>
-
+          <div className="row">
+            <div className="field">
+              <input type="text" name="member3" id="member3" value={userData.member3} onChange={handleInputs} placeholder="Name of member 3 (optional)" />
+            </div>
+            <div className="field">
+              <input type="text" name="member4" id="member4" value={userData.member4} onChange={handleInputs} placeholder="Name of member 4 (optional)" />
+            </div>
+          </div>
           <div className="row">
             <div className="field btn">
               <div className="btn-layer"></div>

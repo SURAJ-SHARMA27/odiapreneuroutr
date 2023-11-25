@@ -88,8 +88,15 @@ const userSchema=new mongoose.Schema({
                 },
             member2:{
                 type:String,
-                required:true
+                // required:true
                 },
+                member3:{
+                    type:String,
+                    // required:true
+                    },member4:{
+                        type:String,
+                        // required:true
+                        },
                 approvalStatus: {
                     type: Boolean,
                     default: false, 
@@ -139,7 +146,9 @@ userSchema.methods.addMessage=async function(name,
     schoolCode,
     coordinatorName,
     member1,
-    member2){
+    member2,
+    member3,
+    member4){
     try{
         this.messages=this.messages.concat({name,
             email, 
@@ -154,7 +163,9 @@ userSchema.methods.addMessage=async function(name,
             schoolCode,
             coordinatorName,
             member1,
-            member2})
+            member2,
+        member3,
+    member4})
             await this.save();
             return this.messages;
     } catch(error){

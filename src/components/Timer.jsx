@@ -1,37 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../components/stylecss/Timer.css';
 
 const Timer = () => {
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    isExpired: false,
+  });
+
   useEffect(() => {
-    const second = 1000,
-      minute = second * 60,
-      hour = minute * 60,
-      day = hour * 24;
-
-    // Set the countdown to 12 days from now
-    const countdownDays = 12;
-
     const calculateCountdown = () => {
       const now = new Date().getTime();
-      const today = new Date();
-      const next12Days = new Date(today.getFullYear(), today.getMonth(), today.getDate() + countdownDays);
-      const countDown = next12Days.getTime();
+      const targetDate = new Date('December 11, 2023 00:00:00').getTime();
+      const distance = targetDate - now;
 
-      return countDown - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      return {
+        days,
+        hours,
+        minutes,
+        seconds,
+        isExpired: distance < 0,
+      };
     };
 
     const updateCountdown = () => {
-      const distance = calculateCountdown();
+      const countdownValues = calculateCountdown();
+      setCountdown(countdownValues);
 
-      document.getElementById("days").innerText = Math.floor(distance / day);
-      document.getElementById("hours").innerText = Math.floor((distance % day) / hour);
-      document.getElementById("minutes").innerText = Math.floor((distance % hour) / minute);
-      document.getElementById("seconds").innerText = Math.floor((distance % minute) / second);
-
-      if (distance < 0) {
-        document.getElementById("headline").innerText = "It's my birthday!";
-        document.getElementById("countdown").style.display = "none";
-        document.getElementById("content").style.display = "block";
+      if (countdownValues.isExpired) {
         clearInterval(intervalId);
       }
     };
@@ -44,24 +47,44 @@ const Timer = () => {
 
     // Cleanup the interval when the component unmounts
     return () => clearInterval(intervalId);
-  }, []); // The empty dependency array ensures that the effect runs once when the component mounts
+  }, []);
 
   return (
-    <div style={{ color: 'white', margin: "20px", marginBottom: "100px" }}>
+    <div style={{ color: 'white', margin: '20px', marginBottom: '100px' }}>
       <div className="custom-container">
-        <h1 style={{ fontSize: "25px", color: "#828282" }} className="custom-heading">Registration will end in:</h1>
-        <div id="countdown" style={{ color: "#828282" }}>
+        <h1 style={{ fontSize: '25px', color: '#828282' }} className="custom-heading">
+          Registration will end in:
+        </h1>
+        <div id="countdown" style={{ color: '#828282' }}>
           <ul className="timer-list">
-            <li className="timer-list-item"><span id="days" className="timer-label"></span>days</li>
-            <li className="timer-list-item"><span id="hours" className="timer-label"></span>Hours</li>
-            <li className="timer-list-item"><span id="minutes" className="timer-label"></span>Minutes</li>
-            <li className="timer-list-item"><span id="seconds" className="timer-label"></span>Seconds</li>
+            <li className="timer-list-item">
+              <span id="days" className="timer-label">
+                {countdown.days}
+              </span>
+              days
+            </li>
+            <li className="timer-list-item">
+              <span id="hours" className="timer-label">
+                {countdown.hours}
+              </span>
+              Hours
+            </li>
+            <li className="timer-list-item">
+              <span id="minutes" className="timer-label">
+                {countdown.minutes}
+              </span>
+              Minutes
+            </li>
+            <li className="timer-list-item">
+              <span id="seconds" className="timer-label">
+                {countdown.seconds}
+              </span>
+              Seconds
+            </li>
           </ul>
         </div>
         <div id="content" className="emoji">
-          <span>🥳</span>
-          <span>🎉</span>
-          <span>🎂</span>
+          {countdown.isExpired && <span>🥳🎉🎂</span>}
         </div>
       </div>
     </div>

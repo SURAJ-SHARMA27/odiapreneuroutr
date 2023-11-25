@@ -417,7 +417,9 @@ const timedout=()=>toast.error("Connection timedout try again", {style: {
     <option value="">Institute</option>
     {/* <option value="surajnew">surajnew</option> */}
     
-<option value="Shri Chandrasekhar Higher Secondary School, Bantala">Shri Chandrasekhar Higher Secondary School, Bantala</option>
+<option value="district officer testing">District officer testing</option>
+<option value="Sri Sri Jagannath Higher Secondary School, Badakera">Sri Sri Jagannath Higher Secondary School, Badakera</option>
+
 <option value="Sri Sri Jagannath Higher Secondary School, Badakera">Sri Sri Jagannath Higher Secondary School, Badakera</option>
 <option value="Angul Mahila Higher Secondary School, Angul">Angul Mahila Higher Secondary School, Angul</option>
 <option value="Evening Higher Secondary School, Angul">Evening Higher Secondary School, Angul</option>

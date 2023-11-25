@@ -41,7 +41,7 @@ const Timeline = () => {
                     <time>Third</time>
                     <div class="discovery">
                         <h1>District Level</h1>
-                        <p>Compedition</p>
+                        <p>Competition</p>
                     </div>
                     <div class="scientists">
                         <h1>By 24th December, 2023</h1>

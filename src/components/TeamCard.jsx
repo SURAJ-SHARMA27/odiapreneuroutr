@@ -15,6 +15,8 @@ export const TeamCard = ({ team }) => {
       coordinatorName,
       member1,
       member2,
+      member3,
+      member4
     } = team;
   
     return (
@@ -34,7 +36,10 @@ export const TeamCard = ({ team }) => {
           <li>School Code: {schoolCode}</li>
           <li>Coordinator Name: {coordinatorName}</li>
           <li>Member 1 Name: {member1}</li>
-          <li>Member 2 Name: {member2}</li>
+          {member2 && <li>Member 2 Name: {member2}</li>}
+        {member3 && <li>Member 3 Name: {member3}</li>}
+        {member4 && <li>Member 4 Name: {member4}</li>}
+
         </ul>
       </div>
     );
