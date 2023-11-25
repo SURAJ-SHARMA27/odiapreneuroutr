@@ -1261,7 +1261,7 @@ router.post('/register', async (req,res)=>{
    
     
 })
-router.post("/api/signin",async(req,res)=>{
+router.post("/signin",async(req,res)=>{
     try {
         const {email,password,role}=req.body;
         if(!email||!password||!role){
