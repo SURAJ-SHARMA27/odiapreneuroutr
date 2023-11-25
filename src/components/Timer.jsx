@@ -13,7 +13,7 @@ const Timer = () => {
   useEffect(() => {
     const calculateCountdown = () => {
       const now = new Date().getTime();
-      const targetDate = new Date('December 11, 2023 00:00:00').getTime();
+      const targetDate = new Date(2023, 11, 11, 0, 0, 0).getTime(); // December is 11 (0-indexed)
       const distance = targetDate - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
