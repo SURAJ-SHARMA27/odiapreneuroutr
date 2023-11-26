@@ -1438,6 +1438,12 @@ const { name,
     member2,
     member3,
     member4}=req.body;
+const existingTeam = await User.findOne({ 'messages.teamName': teamName });
+const allTeams = await User.distinct('messages.teamName');
+        console.log('All team names in the database:', allTeams);
+        if (existingTeam) {
+            return res.status(400).json({ error: "Team name already exists. Please choose a different team name." });
+        }
     if (!name ||
         !email ||
         !teamName ||
@@ -1501,4 +1507,96 @@ const { name,
 console.log(error);
     }
 });
+// router.post('/contact', authenticate, async (req, res) => {
+//     console.log("hello ji from registration team");
+//     try {
+//         const {
+//             name,
+//             email,
+//             teamName,
+//             leaderName,
+//             leaderEmail,
+//             topic,
+//             district,
+//             block,
+//             drive,
+//             schoolName,
+//             schoolCode,
+//             coordinatorName,
+//             member1,
+//             member2,
+//             member3,
+//             member4
+//         } = req.body;
+
+//         // Check if teamName already exists in the database
+//         const existingTeam = await User.findOne({ 'messages.teamName': teamName });
+//         if (existingTeam) {
+//             return res.status(400).json({ error: "Team name already exists. Please choose a different team name." });
+//         }
+//         if (!name ||
+//             !email ||
+//             !teamName ||
+//             !leaderName ||
+//             !leaderEmail ||
+//             !topic ||
+//             !district ||
+//             !block ||
+//             !drive ||
+//             !schoolName ||
+//             !schoolCode
+//         ) {
+//             const missingFields = [];
+//             // ... (rest of your existing missingFields checks)
+//             if (!name) missingFields.push('name');
+//             if (!email) missingFields.push('email');
+//             if (!teamName) missingFields.push('teamName');
+//             if (!leaderName) missingFields.push('leaderName');
+//             if (!leaderEmail) missingFields.push('leaderEmail');
+//             if (!topic) missingFields.push('topic');
+//             if (!district) missingFields.push('district');
+//             if (!block) missingFields.push('block');
+//             if (!drive) missingFields.push('drive');
+//             if (!schoolName) missingFields.push('schoolName');
+//             if (!schoolCode) missingFields.push('schoolCode');
+//             if (!coordinatorName) missingFields.push('coordinatorName');
+//             if (!member1) missingFields.push('member1');
+//             if (!member2) missingFields.push('member2');
+//              if (!member3) missingFields.push('member3');
+//             if (!member4) missingFields.push('member4');
+//             console.log("Error in the form itself. Missing fields: ", missingFields);
+//             return res.json({ error: "Fill the form. Missing fields: " + missingFields.join(', ') });
+//         }
+
+//         const userContact = await User.findOne({ _id: req.userID });
+//         if (userContact) {
+//             // Assuming you have a method addTeam in your User model to add a new team
+//             const userMessage = await userContact.addMessage({
+//                 name,
+//                 email,
+//                 teamName,
+//                 leaderName,
+//                 leaderEmail,
+//                 topic,
+//                 district,
+//                 block,
+//                 drive,
+//                 schoolName,
+//                 schoolCode,
+//                 coordinatorName,
+//                 member1,
+//                 member2,
+//                 member3,
+//                 member4
+//             });
+//         }
+//         await userContact.save();
+//         res.status(201).json({ message: "Team registered successfully" });
+
+//     } catch (error) {
+//         res.status(400).json({ message: "There is an error" });
+//         console.log(error);
+//     }
+// });
+
 module.exports=router;

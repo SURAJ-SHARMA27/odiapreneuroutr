@@ -154,7 +154,11 @@ const dontallow = () => {
     })
   const data=await res.json();
   console.log(data);
-  if(!data){
+  if (res.status === 400 && data.error === "Team name already exists. Please choose a different team name.") {
+    // Display window.alert if the team already exists
+    window.alert("Team name already exists. Please choose a different team name.");
+}
+  else if(!data){
     console.log("message not send");
   }
   else{

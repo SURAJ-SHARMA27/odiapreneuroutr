@@ -32,7 +32,7 @@ const Timeline = () => {
                     </div>
                     <div class="scientists">
                         <h1>11th December,</h1>
-                        <span>2022</span>
+                        <span>2023</span>
                     </div>
                 </div>
             </li>
