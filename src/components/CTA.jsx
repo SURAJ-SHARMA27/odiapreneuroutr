@@ -22,7 +22,7 @@ const CTA = () => {
             Event Coordinators <br />
             Prof Ranjan Kumar Pradhan : rkpradhan@outr.ac.in<br />
             Prof Sudhansu S Sahoo : sudhansu@outr.ac.in<br />
-            Mail us at: piciic@outr.ac.in
+            Mail us at: piciiec@outr.ac.in
           </p>
         </div>
 
@@ -40,9 +40,11 @@ const CTA = () => {
               {/* Your modal content here */}
               <p>If you have any queries or doubts, refer to our YouTube tutorial video for detailed instructions.</p>
               <p>For any further technical-related queries, feel free to email our technical team.</p>
-              <p style={{color:"black",fontSize:"1em",fontWeight:"bold"}}>surajrace@gmail.com</p>
-              <p  style={{color:"black",fontSize:"1em",fontWeight:"bold"}}>purnendumishra129th@gmail.com</p>
-              <p style={{color:"black",fontSize:"1em",fontWeight:"bold"}}>rahuljyotimishra2002@gmail.com</p>
+              <p style={{color:"grey",fontSize:"1em",fontWeight:"bold"}}>surajrace@gmail.com</p>
+              <p  style={{color:"grey",fontSize:"1em",fontWeight:"bold"}}>purnendumishra129th@gmail.com</p>
+              <p style={{color:"grey",fontSize:"1em",fontWeight:"bold"}}>rahuljyotimishra2002@gmail.com</p>
+              <p style={{color:"grey",fontSize:"1em",fontWeight:"bold"}}>diptiranjanrath2001@gmail.com</p>
+              
 
               <button
   type="button"

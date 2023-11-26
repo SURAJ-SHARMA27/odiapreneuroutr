@@ -19,7 +19,7 @@ const Timeline = () => {
                            
                        </div>
                        <div class="scientists">
-                           <h1> By 20th November 2023</h1>
+                           <h1> After 24th November 2023</h1>
                            
                        </div>
                    </div>
@@ -31,7 +31,7 @@ const Timeline = () => {
                         <h1>Registration closes</h1>
                     </div>
                     <div class="scientists">
-                        <h1>5th December,</h1>
+                        <h1>11th December,</h1>
                         <span>2022</span>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ const Timeline = () => {
                 <div>
                     <time>Fourth</time>
                     <div class="discovery">
-                        <h1>State Level Compedition</h1>
+                        <h1>State Level Competition</h1>
                     </div>
                     <div class="scientists">
                     <h1>3rd week of</h1>

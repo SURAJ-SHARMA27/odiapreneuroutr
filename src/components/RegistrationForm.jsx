@@ -2628,26 +2628,26 @@ const dontallow = () => {
           <div className="row">
             
             <div className="field">
-              <input type="text" value={userData.coordinatorName} onChange={handleInputs} name="coordinatorName" id="coordinatorName" placeholder="Coordinator Name" required />
+              <input type="text" value={userData.coordinatorName} onChange={handleInputs} name="coordinatorName" id="coordinatorName" placeholder="Coordinator Name (optional)" required />
             </div>
           </div>
 
           <div className="row">
             <div className="field">
-              <input type="text" name="member1" id="member1" value={userData.member1} onChange={handleInputs} placeholder="Name of member 1" />
+              <input type="text" name="member1" id="member1" value={userData.member1} onChange={handleInputs} placeholder="Name of member 1 (optional)" />
             </div>
             <div className="field">
               <input type="text" name="member2" id="member2" value={userData.member2} onChange={handleInputs} placeholder="Name of member 2 (optional)" />
             </div>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <div className="field">
               <input type="text" name="member3" id="member3" value={userData.member3} onChange={handleInputs} placeholder="Name of member 3 (optional)" />
             </div>
             <div className="field">
               <input type="text" name="member4" id="member4" value={userData.member4} onChange={handleInputs} placeholder="Name of member 4 (optional)" />
             </div>
-          </div>
+          </div> */}
           <div className="row">
             <div className="field btn">
               <div className="btn-layer"></div>

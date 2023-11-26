@@ -59,8 +59,8 @@ const data = [
   },
   {
     question: 'How many members do we need in a team?',
-    answer: 'Submissions must be made as a team with a minimum of 1 members and a maximum of 4 members. Solo submissions is also allowed.',
-    height: 130,
+    answer: 'Submissions can be made either as a solo submission or as a team with a maximum of three members, including the team leader and two additional members. The minimum team size is one member.',
+    height: 145,
   },
   {
     question: 'When can I start working on my project?',

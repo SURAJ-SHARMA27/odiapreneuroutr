@@ -34,7 +34,7 @@ const Registeredteams = () => {
   
   return (
     <div>
-      <h3 style={{ color: "white", fontSize: "40px", textAlign: "center", margin: "20px" }} className="glow">Institution Name: {userData.name}</h3>
+      <h3 style={{ color: "white", fontSize: "40px", textAlign: "center", margin: "" }} className="glow">Institution Name: {userData.name}</h3>
       <h2 style={{ color: "white", fontSize: "30px", textAlign: "center", marginBottom: "20px", marginTop: "40px" }} className="">Registered Teams:</h2>
       {userData.messages && userData.messages.length > 0 ? ( 
         <div style={{ display: "flex", flexWrap: "wrap" }} >

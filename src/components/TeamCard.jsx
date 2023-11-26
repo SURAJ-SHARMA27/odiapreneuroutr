@@ -1,47 +1,44 @@
+// Updated TeamCard component
+
+import React from 'react';
 import '../components/stylecss/teamcard.css';
+
 export const TeamCard = ({ team }) => {
-    const {
-      name,
-      email,
-      teamName,
-      leaderName,
-      leaderEmail,
-      topic,
-      district,
-      block,
-      drive,
-      schoolName,
-      schoolCode,
-      coordinatorName,
-      member1,
-      member2,
-      member3,
-      member4
-    } = team;
-  
-    return (
-      <div style={{backgroundColor:"black"}} className="team-card">
-        <h3  style={{fontSize:"25px",textTransform:"uppercase"}} className='glow_static'>{teamName}</h3>
-        <ul style={{fontSize:"18px"}}>
-          
-          <li>Team Leader Name: {leaderName}</li>
-          <li>Team Leader Email: {leaderEmail}</li>
-          <li>Topic: {topic}</li>
-          <li>District: {district}</li>
-          <li>Block: {block}</li>
-          <li>Drive:<a href={drive} target="_blank" >
-      {drive}
-    </a></li>
-          <li>School Name: {schoolName}</li>
-          <li>School Code: {schoolCode}</li>
-          <li>Coordinator Name: {coordinatorName}</li>
-          <li>Member 1 Name: {member1}</li>
-          {member2 && <li>Member 2 Name: {member2}</li>}
+  const {
+    teamName,
+    leaderName,
+    leaderEmail,
+    topic,
+    district,
+    block,
+    drive,
+    schoolName,
+    schoolCode,
+    coordinatorName,
+    member1,
+    member2,
+    member3,
+    member4
+  } = team;
+
+  return (
+    <div className="custom-team-card">
+      <h3 style={{fontSize:"21px"}} className='custom-team-title glow_static'>{teamName}</h3>
+      <ul className='custom-team-list'>
+        <li>Team Leader Name: {leaderName}</li>
+        <li>Team Leader Email: {leaderEmail}</li>
+        <li>Topic: {topic}</li>
+        <li>District: {district}</li>
+        <li>Block: {block}</li>
+        <li>Drive: <a href={drive} target="_blank" rel="noopener noreferrer">{drive}</a></li>
+        <li>School Name: {schoolName}</li>
+        <li>School Code: {schoolCode}</li>
+        {coordinatorName && <li>Coordinator Name: {coordinatorName}</li>}
+        {member1 && <li>Member 1 Name: {member1}</li>}
+        {member2 && <li>Member 2 Name: {member2}</li>}
         {member3 && <li>Member 3 Name: {member3}</li>}
         {member4 && <li>Member 4 Name: {member4}</li>}
-
-        </ul>
-      </div>
-    );
-  };
-  
+      </ul>
+    </div>
+  );
+};

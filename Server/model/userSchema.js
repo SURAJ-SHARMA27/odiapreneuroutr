@@ -80,11 +80,11 @@ const userSchema=new mongoose.Schema({
                 },
             coordinatorName:{
                 type:String,
-                required:true
+               
                 },
             member1:{
                 type:String,
-                required:true
+                // required:true
                 },
             member2:{
                 type:String,

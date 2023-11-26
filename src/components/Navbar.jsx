@@ -12,6 +12,12 @@ import Select from 'react-select';
 import { UserContext } from "../App";
 const Navbar = () => {
   const { state, dispatch } = useContext(UserContext);
+  const handleButtonClick = () => {
+    window.open(
+      'https://drive.google.com/file/d/11onIM1dPmYiAIMYrF-fObNiVR6EgxBM8/view?usp=sharing',
+      '_blank'
+    );
+  };
   const [role1, setRole1] = useState("");
   const RenderLinks = () => {
     console.log("role", role1);
@@ -26,7 +32,7 @@ const Navbar = () => {
             <button className={`mr-${!toggle?10:4}`}>District wise</button>
           </Link>
           <button className={`mr-${!toggle?10:4}`}> About us </button>
-          <button className={`mr-${!toggle?10:4}`}> Timeline </button>
+          {/* <button className={`mr-${!toggle?10:4}`}> Timeline </button> */}
           <Link to="/logout">
             <button> Logout </button>
           </Link>
@@ -39,8 +45,8 @@ const Navbar = () => {
           <Link to="/search_so" className={`mr-${!toggle?10:4}`}>
             <button>State Wise</button>
           </Link>
-          <button className={`mr-${!toggle?10:4}`}> About us </button>
-          <button className={`mr-${!toggle?10:4}`}> Timeline </button>
+          <button  className={`mr-${!toggle?10:4}`} onClick={handleButtonClick}> About us </button>
+          {/* <button className={`mr-${!toggle?10:4}`}> Timeline </button> */}
           <Link to="/logout">
             <button> Logout </button>
           </Link>
@@ -52,8 +58,8 @@ const Navbar = () => {
           <Link to="/registeredteams">
             <button className={`mr-${!toggle?10:4}`}> Registered Teams </button>
           </Link>
-          <button className={`mr-${!toggle?10:4}`}> About us </button>
-          <button className={`mr-${!toggle?10:4}`}> Timeline </button>
+          <button className={`mr-${!toggle?10:4}`} onClick={handleButtonClick}> About us </button>
+          {/* <button className={`mr-${!toggle?10:4}`}> Timeline </button> */}
           <Link to="/logout">
             <button> Logout </button>
           </Link>
@@ -62,8 +68,8 @@ const Navbar = () => {
     } else {
       return (
         <>
-          <button className={`mr-${!toggle?10:4}`}> About us </button>
-          <button className={`mr-${!toggle?10:4}`}> Timeline </button>
+          <button className={`mr-${!toggle?10:4}`} onClick={handleButtonClick}> About us </button>
+          {/* <button className={`mr-${!toggle?10:4}`}> Timeline </button> */}
           <button className={`mr-${!toggle?10:4}`} onClick={handleLoginClick}>
             Login
           </button>
@@ -406,9 +412,9 @@ const timedout=()=>toast.error("Connection timedout try again", {style: {
                 <div className="btn-layer"></div>
                 <input type="submit" name="signin" id="signin" value="Log In" onClick={loginUser} />
               </div>
-              <div className="signup-link">
+              {/* <div className="signup-link">
                 Don't Have Account? <a href="">Create A New</a>
-              </div>
+              </div> */}
             </form>
             <form method="POST" id="registration-form" className={`signup ${!isLoginFormVisible ? '' : 'hidden'}`}>
           

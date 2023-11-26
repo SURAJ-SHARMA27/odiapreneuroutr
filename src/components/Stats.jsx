@@ -29,7 +29,7 @@ const Stats = () => {
         <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
           <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white" >
           <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={10000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
-            <p className="font-poppins font-normal sm:text-[20px] sm:leading-[20px] text-gradient uppercase ml-3 mt-4">
+          <p className="font-poppins font-normal xs:text-[20px] xs:leading-[20px] text-gradient uppercase ml-3 mt-4 ">
               Second Prize
             </p>
           </h4>
@@ -38,7 +38,7 @@ const Stats = () => {
         <div className="w-full sm:w-1/3 text-center">
           <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white" >
           <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={5000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
-            <p className="font-poppins font-normal sm:text-[20px] sm:leading-[20px] text-gradient uppercase ml-3 mt-4 mr-2">
+          <p className="font-poppins font-normal xs:text-[20px] xs:leading-[20px] text-gradient uppercase ml-3 mt-4 ">
               Third Prize
             </p>
           </h4>
@@ -52,7 +52,7 @@ const Stats = () => {
         <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
           <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
           <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={50000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
-            <p className="font-poppins font-normal sm:text-[20px] sm:leading-[20px] text-gradient uppercase ml-3 mt-4 ">
+          <p className="font-poppins font-normal xs:text-[20px] xs:leading-[20px] text-gradient uppercase ml-3 mt-4 ">
               First Prize
             </p>
           </h4>
@@ -61,7 +61,7 @@ const Stats = () => {
         <div className="w-full sm:w-1/3 mb-3 sm:mb-0 text-center">
           <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
           <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={30000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
-            <p className="font-poppins font-normal sm:text-[20px] sm:leading-[20px] text-gradient uppercase ml-3 mt-4">
+          <p className="font-poppins font-normal xs:text-[20px] xs:leading-[20px] text-gradient uppercase ml-3 mt-4 ">
               Second Prize
             </p>
           </h4>
@@ -70,7 +70,7 @@ const Stats = () => {
         <div className="w-full sm:w-1/3 text-center">
           <h4 className="font-poppins font-semibold xs:text-[70.89px] sm:text-[65.89px] xs:leading-[53.16px] sm:leading-[43.16px] text-white">
           <span style={{fontSize:"50px"}}>₹</span>{counterOn && <CountUp start={0} end={10000} duration={2} delay={0} style={{fontSize:"50px"}}/>}
-            <p className="font-poppins font-normal sm:text-[20px] sm:leading-[20px] text-gradient uppercase ml-3 mt-4 mr-2">
+          <p className="font-poppins font-normal xs:text-[20px] xs:leading-[20px] text-gradient uppercase ml-3 mt-4 ">
               Third Prize
             </p>
           </h4>

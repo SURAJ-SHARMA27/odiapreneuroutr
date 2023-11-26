@@ -1448,9 +1448,7 @@ const { name,
         !block ||
         !drive ||
         !schoolName ||
-        !schoolCode ||
-        !coordinatorName ||
-        !member1
+        !schoolCode 
        ) {
         const missingFields = [];
         if (!name) missingFields.push('name');
