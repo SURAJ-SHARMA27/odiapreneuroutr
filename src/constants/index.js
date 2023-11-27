@@ -74,7 +74,7 @@ export const feedback = [
   {
     id: "feedback-3",
     content:
-      "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
+      "Odiapreneur has been a game-changer for our higher secondary students. It's not just a platform; it's a gateway to problem-solving mastery  ",
     name: "Dr. B K Kandi",
     title: "Deputy Director,DHSE(O)",
     img: "./people03.png",
@@ -82,9 +82,9 @@ export const feedback = [
   {
     id: "feedback-4",
     content:
-      "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative. ",
+      "Odiapreneur provides an excellent platform for higher secondary students to practice problem-based learning and get early exposure to technologies that can help solving real-life problems creatively and collaboratively.",
     name: "Dr. R.K. Pradhan",
-    title: "PIC, IIEC OUTR-BBSR",
+    title: "PIC, IIEC OUTR-Bhubaneswar",
     img: "./people03.png",
   },
   {
@@ -92,7 +92,7 @@ export const feedback = [
     content:
       "The Odisha government has taken a big step with Odiapreneur. They foster the intellectual, creative, and inspirational growth of school and college students.",
     name: "Dr. Sudhansu Sekhar Sahoo",
-    title: "PIC, CoE OUTR-BBSR",
+    title: "PIC, CoE OUTR-Bhubaneswar",
     img: "./people03.png",
   },
  
@@ -152,6 +152,10 @@ export const footerLinks = [
         {
           name: "Diptiranjan Rath",
           link: "https://www.linkedin.com/in/diptiranjan-rath-574125221/",
+        },
+        {
+          name: "Ronak Mohanty",
+          link: "https://www.linkedin.com/in/ronak22mohanty/",
         },
       ],
     

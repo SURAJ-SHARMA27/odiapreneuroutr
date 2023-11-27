@@ -67,6 +67,16 @@ const data = [
     answer: 'As soon as the hackathon opens on November 24. To keep the playing field fair, we don’t allow teams to begin building prior to the start of the hackathon. If your project is an upgrade to an existing project, please check with us beforehand.',
     height: 200,
   },
+  {
+    question: 'How to register for Odiapreneur 2.0?',
+    answer: 'Registration of students can only be done by the school Admin. Students need to submit the details to the school admin. To get the detailed idea of registration what the Youtube video. Link : Coming soom',
+    height: 200,
+  },
+  {
+    question: 'How to contact in case of any issue?',
+    answer: 'In the contact Us section of the website the is a button of helpdesk by clicking on it you will see three email ids you can mail any of the three email ids at any point of time stating the issue and can expect a timlet response as the maintainers of the website are always active',
+    height: 200,
+  },
 ];
 
 export default Judges;

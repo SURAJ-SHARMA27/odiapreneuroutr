@@ -17,7 +17,7 @@ const Billing = () => (
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5 ml-[10px]`}>
        Odisha University of Technology And Research is known to be a leading University that fosters knowledge provides transformative education along with the scope for extraordinary research and an enabling environment to create technocrats and innovators equipped to address the challenges of society and industry.<br/>
-       The Odisha School Education Programme Authority shall act as an autonomous and independent body for implementation of the Odisha School Education Programmes (Class - I to XII) as outlined by the Government of Odisha or Government of India. 
+       The Odisha School Education Programme Authority is responsible for implementing the Samagra Shiksha Abhiyan (SSA), an integral centrally sponsored scheme for school education i.e. pre-primary to higher secondary (+2) level of education. Alongwith universalization of elementary education, some of its key interventions include educational planning, inclusive education, enabling infrastructure for schools, maintaining data and information (MIS), community mobilization, gender and girls education, KGBVs, the school student helpline etc. 
       </p>
 
      
