@@ -7,19 +7,34 @@ const CardDeal = () => (
       <h2 className={`${styles.heading2} ml-10`}>
         Themes for Hackathon<br className="sm:block hidden"/>
       </h2>
-      <p className={`${styles.paragraph} max-w-[470px] mt-5 ml-10`}>
+      {/* <p className={`${styles.paragraph} max-w-[470px] mt-5 ml-10`}>
       Agriculture, food tech, and Rural development<br/>
-Healthcare<br/>
-Renewable/Sustainable energy<br/>
-Accessibility, e-Commerce and Cybersecurity<br/>
-Self Help Groups<br/>
-Smart Education<br/>
-Disaster Management<br/>
-Toys and Games<br/>
-Waste Management<br/>
-Miscellaneous
+      Healthcare<br/>
+      Renewable/Sustainable energy<br/>
+      Accessibility, e-Commerce and Cybersecurity<br/>
+      Self Help Groups<br/>
+      Smart Education<br/>
+      Disaster Management<br/>
+      Toys and Games<br/>
+      Waste Management<br/>
+      Miscellaneous
 
-      </p>
+      </p> */}
+
+      <ul className={`${styles.paragraph} max-w-[470px] mt-2 ml-10 marker:text-white list-disc list-inside  `}>
+        <li>Agriculture, food tech, and Rural development</li>
+        <li>Healthcare</li>
+        <li>Renewable/Sustainable energy</li>
+        <li>Accessibility, e-Commerce and Cybersecurity</li>
+        <li>Self Help Groups</li>
+        <li>Disaster Management</li>
+        <li>Toys and Games</li>
+        <li>Waste Management</li>
+        <li>Smart Education</li>
+        <li>Miscellaneous</li>
+      </ul>
+
+        
 
       <a
   href="https://drive.google.com/file/d/11onIM1dPmYiAIMYrF-fObNiVR6EgxBM8/view?usp=sharing"
