@@ -1438,6 +1438,22 @@ const dontallow = () => {
               </select>
             </div>
           </div>
+          <p style={{color:"white"}}>
+          PPT should be uploaded in given {" "}
+          <a
+  href="https://docs.google.com/presentation/d/1CykuFPt6IVPyDyewRFjyoIDocKcbmEs0/edit#slide=id.p1"
+  
+  style={{ color:"red" }}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Template 
+</a>
+{" "}
+format only
+          </p>
+        
+          
           <div className="row">
             <div className="field">
               <input value={userData.drive} onChange={handleInputs} type="text" name="drive" id="drive" placeholder="Drive link for idea-template" required />

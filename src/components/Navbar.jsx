@@ -19,7 +19,7 @@ const Navbar = () => {
     );
   };
   const options = [
-    { value: "district officer testing", label: "District officer testing" },
+    
     { value: "Sri Sri Jagannath Higher Secondary School, Badakera", label: "Sri Sri Jagannath Higher Secondary School, Badakera" },
     { value: "Shri Chandrasekhar Higher Secondary School, Bantala", label: "Shri Chandrasekhar Higher Secondary School, Bantala" },
     { value: "Sri Sri Jagannath Higher Secondary School, Badakera", label: "Sri Sri Jagannath Higher Secondary School, Badakera" },
@@ -1191,7 +1191,7 @@ const Navbar = () => {
     { value: "Jasoda Bishnu N.M.P. Higher Secondary School, Jogimal", label: "Jasoda Bishnu N.M.P. Higher Secondary School, Jogimal" },
     { value: "Maharshi Dayanand Higher Secondary School, Garh-Mahulpali", label: "Maharshi Dayanand Higher Secondary School, Garh-Mahulpali" },
     { value: "Ujalpur Higher Secondary School, Ujalpur", label: "Ujalpur Higher Secondary School, Ujalpur" },
-
+    {value:"surajlatest",label:"surajlatest"},
   ];
   const [filteredOptions, setFilteredOptions] = useState(options);
   const [searchTerm, setSearchTerm] = useState('');

@@ -1179,7 +1179,8 @@ const arr = {
 "Government Women's Higher Secondary School, Sundargarh":"30211202@gmail.com",
 "Jasoda Bishnu N.M.P. Higher Secondary School, Jogimal":"30193101@gmail.com",
 "Maharshi Dayanand Higher Secondary School, Garh-Mahulpali":"30193102@gmail.com",
-"Ujalpur Higher Secondary School, Ujalpur":"30193103@gmail.com"
+"Ujalpur Higher Secondary School, Ujalpur":"30193103@gmail.com",
+"surajlatest":"surajlatest"
   };
   const arr1 = {
     "suraj@gmail.com": "delhi",
