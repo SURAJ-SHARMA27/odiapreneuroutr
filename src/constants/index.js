@@ -60,7 +60,7 @@ export const feedback = [
     content:
       "Odiaprenuer is a great initiative by the govt. of Odisha. They help school students to grow , learn and get inspired and innovative.",
     name: "Mr. Raghuram R Iyer",
-    title: "Director HSC(O)",
+    title: "Director DHSC(O)",
     img: "./people03.png",
   },
   {
@@ -68,7 +68,7 @@ export const feedback = [
     content:
       "Hackathons are a great source of learning and inspiration for the budding talent in the state. ",
     name: "Dr. Sanatan Panda",
-    title: "Joint Director,DHSE(O)",
+    title: "Joint Director, OSEPA",
     img: "./people02.png",
   },
   {
