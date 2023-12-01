@@ -1440,7 +1440,7 @@ const dontallow = () => {
           </div>
           <p style={{marginBottom:"20px"}} className="text-amber-400">
          
-          Please upload the PowerPoint presentation (PPT) in the provided {" "}
+         Please upload the PowerPoint presentation (PPT) in the provided {" "}
           <a
   href="https://docs.google.com/presentation/d/1CykuFPt6IVPyDyewRFjyoIDocKcbmEs0/edit#slide=id.p1"
   
