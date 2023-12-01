@@ -1438,8 +1438,9 @@ const dontallow = () => {
               </select>
             </div>
           </div>
-          <p style={{color:"white"}}>
-          PPT should be uploaded in given {" "}
+          <p style={{marginBottom:"20px"}} className="text-amber-400">
+         
+          Please upload the PowerPoint presentation (PPT) in the provided {" "}
           <a
   href="https://docs.google.com/presentation/d/1CykuFPt6IVPyDyewRFjyoIDocKcbmEs0/edit#slide=id.p1"
   
@@ -1450,7 +1451,7 @@ const dontallow = () => {
   Template 
 </a>
 {" "}
-format only
+format only. After uploading your project to Google Drive, click on the "Share" option and generate a shareable link. Copy the link and paste it below.
           </p>
         
           
