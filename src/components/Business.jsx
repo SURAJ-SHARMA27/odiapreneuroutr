@@ -30,7 +30,7 @@ const Business = () =>  (
       </p>
 
       <a
-  href="https://docs.google.com/presentation/d/1CykuFPt6IVPyDyewRFjyoIDocKcbmEs0/edit#slide=id.p1"
+  href="https://docs.google.com/presentation/d/1CykuFPt6IVPyDyewRFjyoIDocKcbmEs0/edit?usp=sharing&ouid=116749576180320047820&rtpof=true&sd=true"
   className={`py-4 px-6 mt-10 font-poppins font-medium text-[18px] text-white bg-blue-gradient rounded-[10px] outline-none ${styles} ml-10`}
   style={{ border: "0.1px solid white", textDecoration: "none" }}
   target="_blank"

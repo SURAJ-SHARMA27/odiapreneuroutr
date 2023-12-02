@@ -1442,7 +1442,7 @@ const dontallow = () => {
          
          Please upload the PowerPoint presentation (PPT) in the provided {" "}
           <a
-  href="https://docs.google.com/presentation/d/1CykuFPt6IVPyDyewRFjyoIDocKcbmEs0/edit#slide=id.p1"
+  href="https://docs.google.com/presentation/d/1CykuFPt6IVPyDyewRFjyoIDocKcbmEs0/edit?usp=sharing&ouid=116749576180320047820&rtpof=true&sd=true"
   
   style={{ color:"red" }}
   target="_blank"
