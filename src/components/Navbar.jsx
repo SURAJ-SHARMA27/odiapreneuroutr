@@ -1191,7 +1191,7 @@ const Navbar = () => {
     { value: "Jasoda Bishnu N.M.P. Higher Secondary School, Jogimal", label: "Jasoda Bishnu N.M.P. Higher Secondary School, Jogimal" },
     { value: "Maharshi Dayanand Higher Secondary School, Garh-Mahulpali", label: "Maharshi Dayanand Higher Secondary School, Garh-Mahulpali" },
     { value: "Ujalpur Higher Secondary School, Ujalpur", label: "Ujalpur Higher Secondary School, Ujalpur" },
-    {value:"surajlatest",label:"surajlatest"},
+    {value:"SURAJ SHARMA TESTING",label:"SURAJ SHARMA TESTING"},
   ];
   const [filteredOptions, setFilteredOptions] = useState(options);
   const [searchTerm, setSearchTerm] = useState('');
@@ -1286,15 +1286,15 @@ const Navbar = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const invalidRegistration = () => toast.error('Wrong Credentials!',
-    {
-      style: {
-        borderRadius: '10px',
-        background: '#333',
-        color: '#fff',
-      },
-    }
-  );
+  const invalidRegistration = (errorMessage) => {
+    toast.error(`Wrong Credentials! ${errorMessage}`, {
+        style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+        },
+    });
+};
   const RegistrationSuccessful = () => toast.success("Registration succesfful",
     {
       style: {
@@ -1429,7 +1429,7 @@ const Navbar = () => {
       console.log(data);
 
       if (data && data.error) {
-        invalidRegistration();
+        invalidRegistration(data.error);
         console.log("invalid registration");
       } else {
         RegistrationSuccessful();

@@ -731,6 +731,7 @@ const arr = {
 "Kushaleswar Anchalik Higher Secondary School, Rekutia":"18022102@gmail.com",
 "Patita Paban Higher Secondary School, Sainkula":"18022103@gmail.com",
 "Laxmi Narayan Higher Secondary School, Pipilia":"18113101@gmail.com",
+"SURAJ SHARMA TESTING":"suraj@gmail.com",
 "Regional S.N. Higher Secondary School, Dhenkikote":"18113102@gmail.com",
 "Tarini Thakurani Higher Secondary School, Ghatagaon":"18112101@gmail.com",
 "Brajabandhu Higher Secondary School, Harichandanpur":"18122102@gmail.com",
@@ -1235,10 +1236,10 @@ router.post('/register', async (req,res)=>{
     try {
         const userExist= await User.findOne({email:email})
         if(userExist){
-            return res.status(422).json({error:"Email already exist"});
+            return res.status(422).json({error:"Already Registered"});
         }
         else if(password!=cpassword){
-            return res.status(422).json({error:"passwords are not matching"});
+            return res.status(422).json({error:"Passwords are not matching"});
         }
         else if(!arr.hasOwnProperty(name)){
             return res.status(422).json({error:"Institute Name not found"});
