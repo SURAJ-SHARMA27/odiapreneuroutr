@@ -1472,7 +1472,7 @@ const Navbar = () => {
               timedout();
               reject(new Error('Request timed out'));
             }
-          }, 7000) // Adjust the timeout duration (in milliseconds) as needed
+          }, 15000) // Adjust the timeout duration (in milliseconds) as needed
         ),
       ]);
 
