@@ -1383,6 +1383,36 @@ const Navbar = () => {
 {value:"OAV RAJGANGPUR", label:"OAV RAJGANGPUR"},
 {value:"OAV SIMDEGA", label:"OAV SIMDEGA"},
 {value:"OAV TALASANKARA", label:"OAV TALASANKARA"},
+{value:"Smt. Susmita Sahoo", label:"Angul"},
+{value:"Smt. Prativa Manjari Das", label:"Balasore"},
+{value:"Shri Mitra BhanuKachhap", label:"Bargarh"},
+{value:"Shri AkrurBarik", label:"Bhadrak"},
+{value:"Shri Dhruba Charan Behera", label:"Bolangir"},
+{value:"Shri Gendra Kujur", label:"Boudh"},
+{value:"Shri Krushna Chandra Nayak", label:"Cuttack"},
+{value:"Shri Sachidananda Behera", label:"Deogarh"},
+{value:"Smt. Binita Senapati", label:"Dhenkanal"},
+{value:"Shri Pradosh Kumar Nayak", label:"Gajapati"},
+{value:"Smt. AmitaPattanaik", label:"Ganjam"},
+{value:"Shri Niranjan Behera", label:"Jagatsinghpur"},
+{value:"Smt. NibeditaPani", label:"Jajpur"},
+{value:"Smt. PuspaMinj", label:"Jharsuguda"},
+{value:"Shri Sushant Kumar Chopdar", label:"Kalahandi"},
+{value:"Shri Pramod Kumar Sarangi", label:"Kandhamal"},
+{value:"Smt. SubhalaxmiNayak, ADEO I/C", label:"Kendrapada"},
+{value:"Smt Gouri Rani Naik", label:"Keonjhar"},
+{value:"Shri BiswanathTarai", label:"Khordha"},
+{value:"Shri Rama Chandra Nahak", label:"Koraput"},
+{value:"Shri Manas Kumar Jena", label:"Malkangiri"},
+{value:"Shri Purna Ch. Sethy", label:"Mayurbhanj"},
+{value:"Shri Pradeep Kumar Nag", label:"Nabarangapur"},
+{value:"Smt. Rajashree Pattanaik", label:"Nayagarh"},
+{value:"Shri Karunakar Bhue", label:"Nuapada"},
+{value:"Shri Biswojit Ghose", label:"Puri"},
+{value:"Shri Purna Ch. Bariha", label:"Rayagada"},
+{value:"Smt. Meenarani Mangal", label:"Sambalpur"},
+{value:"Shri LaxmanBhoi", label:"Sonepur"},
+{value:"Shri Amulya Kumar Pradhan", label:"Sundargarh"},
 
   ];
   const [filteredOptions, setFilteredOptions] = useState(options);
@@ -1763,7 +1793,7 @@ const Navbar = () => {
               <div className="slider-tab"></div>
             </div>
             <div>
-              <p className="text-[13px] text-red-400 ">N.B:<span className="text-amber-400"> To SignUp the correct email address of an institute is institute_SAMS_Code@gmail.com. For example if the SAMS code of an institute is 123456 then its correct mail id will be 123456@gmail.com rest all other email ids will not be authenticated.</span></p>
+              <p className="text-[11.5px] text-red-400 ">N.B:<span className="text-amber-400"> For institute signup, use the SAMS code as the prefix in the email address, like SAMScode@gmail.com (e.g., 123456@gmail.com). For OAVs, the mail ID format is UDISECODE@gmail.com.</span></p>
             </div>
             <div className="form-inner">
               <form method="POST" className={`login ${isLoginFormVisible ? '' : 'hidden'}`}>
