@@ -1410,38 +1410,37 @@ const arr = {
     "purnendu@gmail.com": "bbsr",
     "rahul@gmail.com": "ctc",
     "surajsharma@gmail.com":"Angul" ,
-    "Smt. Susmita Sahoo": "Angul",
-  "Smt. Prativa Manjari Das": "Balasore",
-  "Shri Mitra BhanuKachhap": "Bargarh",
-  "Shri AkrurBarik ": "Bhadrak",
-  "Shri Dhruba Charan Behera": "Bolangir",
-  "Shri Gendra Kujur": "Boudh",
-  "Shri Krushna Chandra Nayak": "Cuttack",
-  "Shri Sachidananda Behera": "Deogarh",
-  "Smt. Binita Senapati": "Dhenkanal",
-  "Shri Pradosh Kumar Nayak": "Gajapati",
-  "Smt. AmitaPattanaik": "Ganjam",
-  "Shri Niranjan Behera": "Jagatsinghpur",
-  "Smt. NibeditaPani": "Jajpur",
-  "Smt. PuspaMinj": "Jharsuguda",
-  "Shri Sushant Kumar Chopdar": "Kalahandi",
-  "Shri Pramod Kumar Sarangi": "Kandhamal",
-  "Smt. SubhalaxmiNayak, ADEO I/C": "Kendrapada",
-  "Smt Gouri Rani Naik": "Keonjhar",
-  "Shri BiswanathTarai": "Khordha",
-  "Shri Rama Chandra Nahak": "Koraput",
-  "Shri Manas Kumar Jena": "Malkangiri",
-  "Shri Purna Ch. Sethy": "Mayurbhanj",
-  "Shri Pradeep Kumar Nag": "Nabarangapur",
-  "Smt. Rajashree Pattanaik": "Nayagarh",
-  "Shri Karunakar Bhue": "Nuapada",
-  "Shri Biswojit Ghose": "Puri",
-  "Shri Purna Ch. Bariha": "Rayagada",
-  "Smt. Meenarani Mangal": "Sambalpur",
-  "Shri LaxmanBhoi": "Sonepur",
-  "Shri Amulya Kumar Pradhan": "Sundargarh",
-  "District officer testing":"bbsr",
-  "khordha@gmail.com":"khordha"
+    "Angul":"Angul",
+    "Balasore":"Balasore",
+    "Bargarh":"Bargarh",
+    "Bhadrak":"Bhadrak",
+    "Bolangir":"Bolangir",
+    "Boudh":"Boudh",
+    "Cuttack":"Cuttack",
+    "Deogarh":"Deogarh",
+    "Dhenkanal":"Dhenkanal",
+    "Gajapati":"Gajapati",
+    "Ganjam":"Ganjam",
+    "Jagatsinghpur":"Jagatsinghpur",
+    "Jajpur":"Jajpur",
+    "Jharsuguda":"Jharsuguda",
+    "Kalahandi":"Kalahandi",
+    "Kandhamal":"Kandhamal",
+    "Kendrapada":"Kendrapada",
+    "Keonjhar":"Keonjhar",
+    "Khordha":"Khordha",
+    "Koraput":"Koraput",
+    "Malkangiri":"Malkangiri",
+    "Mayurbhanj":"Mayurbhanj",
+    "Nabarangapur":"Nabarangapur",
+    "Nayagarh":"Nayagarh",
+    "Nuapada":"Nuapada",
+    "Puri":"Puri",
+    "Rayagada":"Rayagada",
+    "Sambalpur":"Sambalpur",
+    "Sonepur":"Sonepur",
+    "Sundargarh":"Sundargarh",
+    
   };
 router.use(cookieParser());
 require('../db/conn');
@@ -1533,44 +1532,44 @@ router.get('/registeredteams',authenticate,(req,res)=>{
     console.log("hello ji from jwt registeredteams")
     res.send(req.rootUser);
 });
-router.get('/search', authenticate, async (req, res) => {
-    console.log("hello ji from jwt search district");
-    const dist = arr1[String(req.rootUser.email)];
-    console.log(dist);
-    try {
-      const city = dist;
-  
-      // Use Mongoose to find all users
-      const users = await User.find();
-  
-      // Extract messages that match the provided city and include specific fields
-      const matchingMessages = users.flatMap((user) =>
-        user.messages
-          .filter((message) => message.district.toLowerCase() === city.toLowerCase())
-          .map((message) => ({
-            name: message.name,
-            email: message.email,
-            teamName: message.teamName,
-            leaderName: message.leaderName,
-            leaderEmail: message.leaderEmail,
-            district: message.district,
-            block: message.block,
-            schoolName: message.schoolName,
-            topic: message.topic
-          }))
-      );
-  
-      // Send both matchingMessages and req.rootUser in the response
-      res.json({
-        matchingMessages,
-        rootUser: req.rootUser,
-        district:city
-      });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    }
-  });
+    router.get('/search', authenticate, async (req, res) => {
+        console.log("hello ji from jwt search district");
+        const dist = arr1[String(req.rootUser.email)];
+        console.log(dist);
+        try {
+        const city = dist;
+    
+        // Use Mongoose to find all users
+        const users = await User.find();
+    
+        // Extract messages that match the provided city and include specific fields
+        const matchingMessages = users.flatMap((user) =>
+            user.messages
+            .filter((message) => message.district.toLowerCase() === city.toLowerCase())
+            .map((message) => ({
+                name: message.name,
+                email: message.email,
+                teamName: message.teamName,
+                leaderName: message.leaderName,
+                leaderEmail: message.leaderEmail,
+                district: message.district,
+                block: message.block,
+                schoolName: message.schoolName,
+                topic: message.topic
+            }))
+        );
+    
+        // Send both matchingMessages and req.rootUser in the response
+        res.json({
+            matchingMessages,
+            rootUser: req.rootUser,
+            district:city
+        });
+        } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+        }
+    });
   router.get('/search_so', authenticate, async (req, res) => {
     console.log("hello ji from jwt search state");
     const dist = arr1[String(req.rootUser.email)];
