@@ -1375,7 +1375,7 @@ const arr = {
 "Smt. Susmita Sahoo": "Angul",
 "Smt. Prativa Manjari Das": "Balasore",
 "Shri Mitra BhanuKachhap": "Bargarh",
-"Shri AkrurBarik ": "Bhadrak",
+"Shri AkrurBarik": "Bhadrak",
 "Shri Dhruba Charan Behera": "Bolangir",
 "Shri Gendra Kujur": "Boudh",
 "Shri Krushna Chandra Nayak": "Cuttack",
