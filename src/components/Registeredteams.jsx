@@ -31,7 +31,26 @@ const Registeredteams = () => {
   useEffect(() => {
     callAboutPage();
   }, []);
-  
+  const handleDelete = async (teamId) => {
+    try {
+      const res = await fetch(`/api/registeredteams/${teamId}`, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+
+      const data = await res.json();
+      console.log(data);
+
+      // Refresh the page or update the state to reflect the changes
+      callAboutPage();
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div>
       <h3 style={{ color: "white", fontSize: "40px", textAlign: "center", margin: "" }} className="glow">Institution Name: {userData.name}</h3>
@@ -39,7 +58,7 @@ const Registeredteams = () => {
       {userData.messages && userData.messages.length > 0 ? ( 
         <div style={{ display: "flex", flexWrap: "wrap" }} >
           {userData.messages.map((message, index) => (
-            <TeamCard key={index} team={message} />
+            <TeamCard key={index} team={message} onDelete={handleDelete} />
           ))}
         </div>
       ) : (

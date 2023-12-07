@@ -3,7 +3,10 @@
 import React from 'react';
 import '../components/stylecss/teamcard.css';
 
-export const TeamCard = ({ team }) => {
+export const TeamCard = ({ team,onDelete}) => {
+  const handleDelete = () => {
+    onDelete(team._id); // Assuming the team ID is stored in the _id field
+  };
   const {
     teamName,
     leaderName,
@@ -38,6 +41,8 @@ export const TeamCard = ({ team }) => {
         {member2 && <li>Member 2 Name: {member2}</li>}
         {member3 && <li>Member 3 Name: {member3}</li>}
         {member4 && <li>Member 4 Name: {member4}</li>}
+       <li> <button style={{color:"red"}} onClick={handleDelete}>Delete Team</button></li>
+      
       </ul>
     </div>
   );

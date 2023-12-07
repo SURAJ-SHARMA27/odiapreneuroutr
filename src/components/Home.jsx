@@ -7,6 +7,7 @@ import GetStarted from "./GetStarted";
 import RegistrationForm from "./RegistrationForm";
 import Image from "./Image"
 import Timer from "./Timer";
+import Marquee from "./Marquee";
 
 
 const Home = () => (
@@ -16,7 +17,9 @@ const Home = () => (
         <Navbar />
       </div>
     </div>
-
+<div>
+  <Marquee/>
+</div>
     <div className={`bg-primary ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Hero />

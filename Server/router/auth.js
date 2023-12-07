@@ -1484,6 +1484,30 @@ router.post('/register', async (req,res)=>{
    
     
 })
+router.delete("/registeredteams/:id", authenticate, async (req, res) => {
+    try {
+      const teamId = req.params.id;
+      const userId = req.userID;
+  
+      const result = await User.updateOne(
+        { _id: userId },
+        { $pull: { messages: { _id: teamId } } }
+      );
+  
+      if (result.modifiedCount > 0) {
+        // Documents were modified, indicating a successful delete
+        return res.status(200).json({ message: "Team deleted successfully" });
+      }
+  
+      // If modifiedCount is 0 or less, the team was not found
+      return res.status(404).json({ message: "Team not found" });
+  
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+  
 router.post("/signin",async(req,res)=>{
     try {
         const {email,password,role}=req.body;
