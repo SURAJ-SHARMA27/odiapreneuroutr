@@ -64,6 +64,7 @@ const DoDashboard = () => {
 
       const data = await res.json();
       setUserData(data.matchingMessages);
+      setSearchResults(data.matchingMessages);
       setUserName(data.rootUser.name);
       setUserdistrict(data.district);
       console.log(data.district);
@@ -77,7 +78,7 @@ const DoDashboard = () => {
   useEffect(() => {
     // console.log("Current URL:", window.location.href);
     callAboutPage();
-    
+    performSearch();
   }, []); // Empty dependency array ensures it runs only once when the component mounts
 
 
@@ -165,10 +166,13 @@ const DoDashboard = () => {
           </tr>
         </thead>
         <tbody>
-        {searchResults.length > 0
-            ? searchResults.map((row, index) => (
+        {
+            searchResults.length > 0 ? (
+              searchResults.map((row, index) => (
                 <tr key={index} style={{ color: "white" }}>
-                  <th scope="row" data-label="No">{index + 1}</th>
+                  <th scope="row" data-label="No">
+                    {index + 1}
+                  </th>
                   <td data-label="School Name">{row.schoolName}</td>
                   <td data-label="Team Name">{row.teamName}</td>
                   <td data-label="Leader Name">{row.leaderName}</td>
@@ -177,17 +181,12 @@ const DoDashboard = () => {
                   <td data-label="District">{row.district}</td>
                 </tr>
               ))
-            : userData.map((row, index) => (
-                <tr key={index} style={{ color: "white" }}>
-                  <th scope="row" data-label="No">{index + 1}</th>
-                  <td data-label="School Name">{row.schoolName}</td>
-                  <td data-label="Team Name">{row.teamName}</td>
-                  <td data-label="Leader Name">{row.leaderName}</td>
-                  <td data-label="Leader Email">{row.leaderEmail}</td>
-                  <td data-label="Block Name">{row.block}</td>
-                  <td data-label="District">{row.district}</td>
-                </tr>
-              ))}
+            ) : (
+              <tr style={{ color: "white" }}>
+                <td colSpan="7">No results found</td>
+              </tr>
+            )
+          }
         </tbody>
       </table>
     </div>
