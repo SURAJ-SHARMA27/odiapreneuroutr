@@ -44,6 +44,9 @@ const CTA = () => {
               <p  style={{color:"grey",fontSize:"1em",fontWeight:"bold"}}>purnendumishra129th@gmail.com</p>
               <p style={{color:"grey",fontSize:"1em",fontWeight:"bold"}}>rahuljyotimishra2002@gmail.com</p>
               <p style={{color:"grey",fontSize:"1em",fontWeight:"bold"}}>diptiranjanrath2001@gmail.com</p>
+              <p>For signup, login, and team registration-related queries, please email:</p>
+              <p style={{color:"grey",fontSize:"1em",fontWeight:"bold"}}>surajrace21@gmail.com</p>
+              
               
 
               <button
