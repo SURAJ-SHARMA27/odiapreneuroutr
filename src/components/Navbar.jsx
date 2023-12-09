@@ -606,6 +606,8 @@ const Navbar = () => {
     { value: "Laxmi Narayan Higher Secondary School, Jharsuguda", label: "Laxmi Narayan Higher Secondary School, Jharsuguda" },
     { value: "Arda Higher Secondary School, Arda", label: "Arda Higher Secondary School, Arda" },
     { value:"suraj testing so",label:"suraj testing so"},
+    { value:"OUTR Testing Group",label:"OUTR Testing Group"},
+    { value:"a1",label:"a1"},
     { value: "Sovan Memorial Panchayat Higher Secondary School, Kirmira", label: "Sovan Memorial Panchayat Higher Secondary School, Kirmira" },
     { value: "Basumati Science Higher Secondary School, Samasingha", label: "Basumati Science Higher Secondary School, Samasingha" },
     { value: "Dwarika Prasad Agrawalla Higher Secondary School, Bagmara", label: "Dwarika Prasad Agrawalla Higher Secondary School, Bagmara" },
@@ -1446,7 +1448,7 @@ const Navbar = () => {
       return (
         <>
           <Link to="/search">
-            <button className={`mr-${!toggle ? 10 : 4}`}>District wise</button>
+            <button className={`mr-${!toggle ? 10 : 4}`}>Dashboard</button>
           </Link>
           <button className={`mr-${!toggle ? 10 : 4}`}> About us </button>
           {/* <button className={`mr-${!toggle?10:4}`}> Timeline </button> */}
@@ -1460,7 +1462,7 @@ const Navbar = () => {
       return (
         <>
           <Link to="/search_so" className={`mr-${!toggle ? 10 : 4}`}>
-            <button>State Wise</button>
+            <button>Dashboard</button>
           </Link>
           <button className={`mr-${!toggle ? 10 : 4}`} onClick={handleButtonClick}> About us </button>
           {/* <button className={`mr-${!toggle?10:4}`}> Timeline </button> */}
@@ -1643,6 +1645,7 @@ const Navbar = () => {
     const { name, email, password, cpassword } = user;
 
     try {
+      // const res = await fetch("/register", {
       const res = await fetch("/api/register", {
         method: "POST",
         credentials: 'include',
@@ -1682,6 +1685,7 @@ const Navbar = () => {
 
     try {
       const res = await Promise.race([
+        // fetch('/signin', {
         fetch('/api/signin', {
           method: 'POST',
           credentials: 'include',

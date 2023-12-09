@@ -7,6 +7,7 @@ const Registeredteams = () => {
 
   const callAboutPage = async () => {
     try {
+      // const res = await fetch("/registeredteams", {
       const res = await fetch("/api/registeredteams", {
         method: "GET",
         headers: {
@@ -33,6 +34,7 @@ const Registeredteams = () => {
   }, []);
   const handleDelete = async (teamId) => {
     try {
+      // const res = await fetch(`/registeredteams/${teamId}`, {
       const res = await fetch(`/api/registeredteams/${teamId}`, {
         method: "DELETE",
         headers: {

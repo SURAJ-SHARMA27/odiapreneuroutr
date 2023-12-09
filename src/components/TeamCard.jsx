@@ -11,6 +11,7 @@ export const TeamCard = ({ team,onDelete}) => {
     teamName,
     leaderName,
     leaderEmail,
+    number,
     topic,
     district,
     block,
@@ -30,6 +31,7 @@ export const TeamCard = ({ team,onDelete}) => {
       <ul className='custom-team-list'>
         <li>Team Leader Name: {leaderName}</li>
         <li>Team Leader Email: {leaderEmail}</li>
+        <li>Team Leader Number: {number}</li>
         <li>Topic: {topic}</li>
         <li>District: {district}</li>
         <li>Block: {block}</li>
