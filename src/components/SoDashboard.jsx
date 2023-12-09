@@ -55,10 +55,26 @@ const SoDashboard = () => {
   }, [inputValue1, inputValue2, inputValue3, inputValue4]);
   //closed commit
 
+  const handleRowClick=(driveValue)=> {
+    if (isValidURL(driveValue)) {
+      window.open(driveValue, '_blank');
+    } else {
+      window.alert('Invalid URL: No PPT uploaded');
+    }
+  }
+  const isValidURL = (url) => {
+    try {
+      new URL(url);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  };
   const [loading, setLoading] = useState(true);
 
   const callAboutPage = async () => {
     try {
+      // const res = await fetch("/search_so", {
       const res = await fetch("/api/search_so", {
         method: "GET",
         headers: {
@@ -77,7 +93,8 @@ const SoDashboard = () => {
       setSearchResults(data.matchingMessages);
       setUserName(data.rootUser.name);
       setUserdistrict(data.district);
-      console.log(data.district);
+      // console.log(data.district);
+      // console.log("drive:",data.matchingMessages);
       setLoading(false);
     } catch (err) {
       console.log(err);
@@ -202,43 +219,48 @@ const SoDashboard = () => {
       >
         Registered Teams:
       </h2>
-      <table className="table">
-        {/* The rest of your table rendering logic */}
-        <thead>
-          <tr>
-            <th scope="col">No.</th>
-            <th scope="col">School Name</th>
-            <th scope="col">Team Name</th>
-            <th scope="col">Leader Name</th>
-            <th scope="col">Leader Email</th>
-            <th scope="col">Block Name</th>
-            <th scope="col">District</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            searchResults.length > 0 ? (
-              searchResults.map((row, index) => (
-                <tr key={index} style={{ color: "white" }}>
-                  <th scope="row" data-label="No">
-                    {index + 1}
-                  </th>
-                  <td data-label="School Name">{row.schoolName}</td>
-                  <td data-label="Team Name">{row.teamName}</td>
-                  <td data-label="Leader Name">{row.leaderName}</td>
-                  <td data-label="Leader Email">{row.leaderEmail}</td>
-                  <td data-label="Block Name">{row.block}</td>
-                  <td data-label="District">{row.district}</td>
-                </tr>
-              ))
-            ) : (
-              <tr style={{ color: "white" }}>
-                <td colSpan="7">No results found</td>
-              </tr>
-            )
-          }
-        </tbody>
-      </table>
+<table className="table">
+  {/* The rest of your table rendering logic */}
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">School Name</th>
+      <th scope="col">Team Name</th>
+      <th scope="col">Leader Name</th>
+      <th scope="col">Leader Email</th>
+      <th scope="col">Leader Number</th>
+      <th scope="col">Block Name</th>
+      <th scope="col">District</th>
+    </tr>
+  </thead>
+  <tbody>
+    {searchResults.length > 0 ? (
+      searchResults.map((row, index) => (
+        <tr
+          key={index}
+          style={{ color: "white" }}
+          onClick={() => handleRowClick(row.drive)}
+        >
+          <th scope="row" data-label="No">
+            {index + 1}
+          </th>
+          <td data-label="School Name" style={{wordWrap:'break-word'}}>{row.schoolName}</td>
+          <td data-label="Team Name" style={{wordWrap:'break-word'}}>{row.teamName}</td>
+          <td data-label="Leader Name" style={{wordWrap:'break-word'}}>{row.leaderName}</td>
+          <td data-label="Leader Email" style={{wordWrap:'break-word'}}>{row.leaderEmail}</td>
+          <td data-label="Leader Number" style={{wordWrap:'break-word'}}>{row.number}</td>
+          <td data-label="Block Name" style={{wordWrap:'break-word'}}>{row.block}</td>
+          <td data-label="District" style={{wordWrap:'break-word'}}>{row.district}</td>
+        </tr>
+      ))
+    ) : (
+      <tr style={{ color: "white" }}>
+        <td colSpan="7">No results found</td>
+      </tr>
+    )}
+  </tbody>
+</table>
+
     </div>
   );
 };

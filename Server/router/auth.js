@@ -589,7 +589,9 @@ const arr = {
 "Jharsuguda Women's Higher Secondary School, Jharsuguda":"14082202@gmail.com",
 "Laxmi Narayan Higher Secondary School, Jharsuguda":"14082101@gmail.com",
 "Arda Higher Secondary School, Arda":"14023101@gmail.com",
+"a1":"a1@gmail.com",
 "suraj testing so":"SO_suraj@gmail.com",
+"OUTR Testing Group":"outr@gmail.com",
 "Prof. Ranjan Kumar Pradhan":"rkpradhan@outr.ac.in",
 "Prof. Sudhansu Sekhar Sahoo":"sudhansu@outr.ac.in",
 "Dr. Sanatan Panda":"dhsesec2@gmail.com",
@@ -1582,10 +1584,12 @@ router.get('/registeredteams',authenticate,(req,res)=>{
                 teamName: message.teamName,
                 leaderName: message.leaderName,
                 leaderEmail: message.leaderEmail,
+                number:message.number,
                 district: message.district,
                 block: message.block,
                 schoolName: message.schoolName,
-                topic: message.topic
+                topic: message.topic,
+                drive:message.drive
             }))
         );
     
@@ -1618,10 +1622,12 @@ router.get('/registeredteams',authenticate,(req,res)=>{
     teamName: message.teamName,
     leaderName: message.leaderName,
     leaderEmail: message.leaderEmail,
+    number:message.number,
     district: message.district,
     block: message.block,
     schoolName: message.schoolName,
-    topic: message.topic
+    topic: message.topic,
+    drive:message.drive
   }))
       );
   
@@ -1680,6 +1686,7 @@ const { name,
     teamName,
     leaderName,
     leaderEmail,
+    number,
     topic, 
     district,
     block, 
@@ -1702,6 +1709,7 @@ const allTeams = await User.distinct('messages.teamName');
         !teamName ||
         !leaderName ||
         !leaderEmail ||
+        !number||
         !topic ||
         !district ||
         !block ||
@@ -1715,6 +1723,7 @@ const allTeams = await User.distinct('messages.teamName');
         if (!teamName) missingFields.push('teamName');
         if (!leaderName) missingFields.push('leaderName');
         if (!leaderEmail) missingFields.push('leaderEmail');
+        if (!number) missingFields.push('number');
         if (!topic) missingFields.push('topic');
         if (!district) missingFields.push('district');
         if (!block) missingFields.push('block');
@@ -1739,6 +1748,7 @@ const allTeams = await User.distinct('messages.teamName');
                 teamName,
                 leaderName,
                 leaderEmail,
+                number,
                 topic, 
                 district,
                 block, 

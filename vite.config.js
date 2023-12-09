@@ -19,6 +19,17 @@ export default defineConfig({
       '/api/search':useitforlocal,
       '/api/search_so':useitforlocal,
       '/api/publishstatus':useitforlocal
+
+
+      // '/register': useitforlocal,
+      // '/signin': useitforlocal,
+      // '/about': useitforlocal,
+      // '/contact': useitforlocal,
+      // '/registeredteams': useitforlocal,
+      // '/logout': useitforlocal,
+      // '/search':useitforlocal,
+      // '/search_so':useitforlocal,
+      // '/publishstatus':useitforlocal
     },
   },
 });
