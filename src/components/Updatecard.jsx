@@ -9,6 +9,7 @@ export const UpdateCard = ({ team }) => {
       teamName,
       leaderName,
       leaderEmail,
+      number,
       topic,
       district,
       block,
@@ -31,6 +32,7 @@ export const UpdateCard = ({ team }) => {
 
     try {
         // Make a POST request to the /publishstatus API
+        // const response = await fetch('/publishstatus', {
         const response = await fetch('/api/publishstatus', {
             method: 'POST',
             headers: {
@@ -59,6 +61,7 @@ export const UpdateCard = ({ team }) => {
           
           <li>Team Leader Name: {leaderName}</li>
           <li>Team Leader Email: {leaderEmail}</li>
+          <li>Team Leader Number: {number}</li>
           <li>Approval Status: {approvalStatus ? 'true' : 'false'}</li>
 
           <li>Topic: {topic}</li>

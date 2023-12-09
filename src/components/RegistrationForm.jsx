@@ -35,6 +35,7 @@ const dontallow = () => {
   teamName: "",
   leaderName: "",
   leaderEmail: "",
+  number:"",
   topic: "topic1", // Assuming you want to set a default value for the select field
   district: "district1", // Assuming you want to set a default value for the select field
   block: "",
@@ -51,6 +52,7 @@ const dontallow = () => {
   const callAboutPage = async () => {
     try {
       const res = await fetch('/api/about', {
+      // const res = await fetch('/about', {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -66,6 +68,7 @@ const dontallow = () => {
         teamName: userData.teamName,
         leaderName: userData.leaderName,
         leaderEmail: userData.leaderEmail,
+        number:userData.number,
         topic: userData.topic,
         district: userData.district,
         block: userData.block,
@@ -116,6 +119,7 @@ const dontallow = () => {
       teamName,
       leaderName,
       leaderEmail,
+      number,
       topic, 
       district,
       block,
@@ -128,6 +132,7 @@ const dontallow = () => {
       member3,
       member4
     }=userData;
+    // const res=await fetch('/contact',{
     const res=await fetch('/api/contact',{
       method:"POST",
       headers:{
@@ -139,6 +144,7 @@ const dontallow = () => {
         teamName,
         leaderName,
         leaderEmail,
+        number,
         topic, 
         district,
         block,
@@ -195,8 +201,14 @@ const dontallow = () => {
             <div className="field">
               <input type="email" name="leaderEmail" id="leaderEmail"   value={userData.leaderEmail} onChange={handleInputs} placeholder="Email id of Leader" required />
             </div>
+           
           </div>
-
+          <div className="row">
+          <div className="field">
+              <input type="text" name="number" id="number"   value={userData.number} onChange={handleInputs} placeholder="Phone Number of Leader" required />
+              {/* {console.log("number",userData)} */}
+            </div>
+          </div>
           <div className="row">
             <div className="field">
               <label style={{color:"white"}} htmlFor="topic">Theme:</label>

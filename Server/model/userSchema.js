@@ -54,6 +54,10 @@ const userSchema=new mongoose.Schema({
                 type:String,
                 required:true
                 },
+            number:{
+                type:String,
+                required:true
+                },
             topic:{
                 type:String,
                 required:true
@@ -138,6 +142,7 @@ userSchema.methods.addMessage=async function(name,
     teamName,
     leaderName,
     leaderEmail,
+    number,
     topic, 
     district,
     block,
@@ -155,6 +160,7 @@ userSchema.methods.addMessage=async function(name,
             teamName,
             leaderName,
             leaderEmail,
+            number,
             topic, 
             district,
             block, 
