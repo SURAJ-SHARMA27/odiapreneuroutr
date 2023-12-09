@@ -1207,7 +1207,7 @@ const arr = {
 "OAV BHAINSA":"21241002252@gmail.com",
 "OAV MAHIMUNDA":"21241110352@gmail.com",
 "OAV BIBINA":"21241212403@gmail.com",
-"OAV KUSRUD":"21241307204@gmail.com",
+"OAV KURSUD":"21241307204@gmail.com",
 "OAV JHARNI":"21241405852@gmail.com",
 "OAV TETELENGA":"21220127802@gmail.com",
 "OAV MANIPUR":"21220224002@gmail.com",

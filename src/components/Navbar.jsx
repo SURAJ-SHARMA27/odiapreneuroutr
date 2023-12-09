@@ -1218,7 +1218,7 @@ const Navbar = () => {
 {value:"OAV BHAINSA", label:"OAV BHAINSA"},
 {value:"OAV MAHIMUNDA", label:"OAV MAHIMUNDA"},
 {value:"OAV BIBINA", label:"OAV BIBINA"},
-{value:"OAV KUSRUD", label:"OAV KUSRUD"},
+{value:"OAV KURSUD", label:"OAV KURSUD"},
 {value:"OAV JHARNI", label:"OAV JHARNI"},
 {value:"OAV TETELENGA", label:"OAV TETELENGA"},
 {value:"OAV MANIPUR", label:"OAV MANIPUR"},
@@ -1855,7 +1855,7 @@ const Navbar = () => {
                 </div>
                 <div className="field">
                   <select style={{ backgroundColor: "black" }} className="name_select" value={user.name} onChange={handleInputs} name="name" id="name" required>
-                    <option value="">Institute</option>
+                    <option value="">Institute Name</option>
                     {filteredOptions.map((option, index) => (
                       <option key={index} value={option.value}>
                         {option.label}
