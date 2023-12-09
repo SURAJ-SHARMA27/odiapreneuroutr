@@ -1477,7 +1477,7 @@ format only. After uploading your project to Google Drive, click on the "Share" 
     onChange={handleInputs}
     name="schoolCode"
     id="schoolCode"
-    placeholder="Enter School Code"
+    placeholder="Enter SAMS/UDISE Code"
     required
   />
 </div>
