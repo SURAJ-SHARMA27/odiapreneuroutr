@@ -34,7 +34,7 @@ const Marquee = () => {
           {/* All OAV's are updated at institute list
     |&nbsp;&nbsp;&nbsp; Delete button added at registered teams page; use that if the drive link is not opening upon clicking it and re-register the team */}
   
-   All OAV's are updated at institute list
+  The registration date has been extended to December 18, 2023.
     |&nbsp;&nbsp;&nbsp; Delete button added at registered teams page; use that if the drive link is not opening upon clicking it and re-register the team
     |&nbsp;&nbsp;&nbsp; Download the {" "} 
     <a
