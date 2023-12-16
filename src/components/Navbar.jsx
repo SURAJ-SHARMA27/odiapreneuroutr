@@ -18,6 +18,12 @@ const Navbar = () => {
       '_blank'
     );
   };
+  const handleButtonClick1 = () => {
+    window.open(
+      'https://www.youtube.com/watch?v=mM3l-NWvDwI',
+      '_blank'
+    );
+  };
   const options = [
     
     { value: "Sri Sri Jagannath Higher Secondary School, Badakera", label: "Sri Sri Jagannath Higher Secondary School, Badakera" },
@@ -1451,6 +1457,8 @@ const Navbar = () => {
             <button className={`mr-${!toggle ? 10 : 4}`}>Dashboard</button>
           </Link>
           <button className={`mr-${!toggle ? 10 : 4}`}> About us </button>
+          <button className={`mr-${!toggle ? 10 : 4}`} onClick={handleButtonClick1}> Youtube video </button>
+
           {/* <button className={`mr-${!toggle?10:4}`}> Timeline </button> */}
           <Link to="/logout">
             <button> Logout </button>
@@ -1465,6 +1473,8 @@ const Navbar = () => {
             <button>Dashboard</button>
           </Link>
           <button className={`mr-${!toggle ? 10 : 4}`} onClick={handleButtonClick}> About us </button>
+          <button className={`mr-${!toggle ? 10 : 4}`} onClick={handleButtonClick1}> Youtube video </button>
+
           {/* <button className={`mr-${!toggle?10:4}`}> Timeline </button> */}
           <Link to="/logout">
             <button> Logout </button>
@@ -1478,6 +1488,8 @@ const Navbar = () => {
             <button className={`mr-${!toggle ? 10 : 4}`}> Registered Teams </button>
           </Link>
           <button className={`mr-${!toggle ? 10 : 4}`} onClick={handleButtonClick}> About us </button>
+          <button className={`mr-${!toggle ? 10 : 4}`} onClick={handleButtonClick1}> Youtube video </button>
+
           {/* <button className={`mr-${!toggle?10:4}`}> Timeline </button> */}
           <Link to="/logout">
             <button> Logout </button>
@@ -1488,6 +1500,8 @@ const Navbar = () => {
       return (
         <>
           <button className={`mr-${!toggle ? 10 : 4}`} onClick={handleButtonClick}> About us </button>
+          <button className={`mr-${!toggle ? 10 : 4}`} onClick={handleButtonClick1}> Youtube video </button>
+
           {/* <button className={`mr-${!toggle?10:4}`}> Timeline </button> */}
           <button className={`mr-${!toggle ? 10 : 4}`} onClick={handleLoginClick}>
             Login
