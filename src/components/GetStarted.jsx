@@ -8,9 +8,9 @@ import './MyButton.css';
 const GetStarted = () => {
   return (
     <div className="containers">
-      <Link to="/about">
+      <Link to="">
         <span>
-          Register Now
+          Registrations Closed
         </span>
       </Link>
     </div>

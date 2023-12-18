@@ -18,10 +18,10 @@ const Marquee = () => {
 
   return (
     <>
-      <div className="cont">
-        <div className="headertext">Notice</div>
+      {/* <div className="cont"> */}
+        {/* <div className="headertext">Notice</div> */}
 
-        <div>
+        {/* <div>
           <marquee
             ref={marqueeRef}
             style={{ width: "100%", color: "" }}
@@ -31,9 +31,6 @@ const Marquee = () => {
             behavior="scroll"
             scrollamount="7"
           >
-          {/* All OAV's are updated at institute list
-    |&nbsp;&nbsp;&nbsp; Delete button added at registered teams page; use that if the drive link is not opening upon clicking it and re-register the team */}
-  
   The registration date has been extended to December 18, 2023.
     |&nbsp;&nbsp;&nbsp; Delete button added at registered teams page; use that if the drive link is not opening upon clicking it and re-register the team
     |&nbsp;&nbsp;&nbsp; Download the {" "} 
@@ -50,8 +47,8 @@ const Marquee = () => {
    
 </marquee>
 
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </>
   );
 };
