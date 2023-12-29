@@ -31,8 +31,8 @@ const Timeline = () => {
                         <h1>Registration closes</h1>
                     </div>
                     <div class="scientists">
-                        <h1>27th December,</h1>
-                        <span>2023</span>
+                        <h1>5th January,</h1>
+                        <span>2024</span>
                     </div>
                 </div>
             </li>
