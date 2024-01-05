@@ -31,20 +31,8 @@ const Marquee = () => {
             behavior="scroll"
             scrollamount="7"
           >
-  The registration date has been extended to January 5th, 2024.
-    |&nbsp;&nbsp;&nbsp; Delete button added at registered teams page; use that if the drive link is not opening upon clicking it and re-register the team
-    |&nbsp;&nbsp;&nbsp; Download the {" "} 
-    <a
-        href="/template.pptx"
-        download="template.pptx"
-        style={{ border: "0.1px solid white", textDecoration: "none", color: "yellow", marginLeft: "10px" }}
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Template
-    </a> 
-    {"  "} from here or from the homepage and fill it with your material. Then upload it to Google Drive and share the link. Drive link should be public, not private; otherwise, it will not be considered.
-   
+  Registrations are closed now
+  
 </marquee>
 
         </div>

@@ -24,9 +24,10 @@ body{
   }
   .containers a{
    position:relative;
-   font-size: 16px;
-   width: 200px;
+   font-size: 14px;
+   width: 240px;
    height: 50px;
+   /* text-align: center; */
    background:#fff;
    justify-content: center;
    align-items: center;
