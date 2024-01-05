@@ -43,7 +43,7 @@ export const TeamCard = ({ team,onDelete}) => {
         {member2 && <li>Member 2 Name: {member2}</li>}
         {member3 && <li>Member 3 Name: {member3}</li>}
         {member4 && <li>Member 4 Name: {member4}</li>}
-       <li> <button style={{color:"red"}} onClick={handleDelete}>Delete Team</button></li>
+       {/* <li> <button style={{color:"red"}} onClick={handleDelete}>Delete Team</button></li> */}
       
       </ul>
     </div>

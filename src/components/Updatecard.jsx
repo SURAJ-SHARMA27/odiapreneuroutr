@@ -75,10 +75,10 @@ export const UpdateCard = ({ team }) => {
           <li>Coordinator Name: {coordinatorName}</li>
           <li>Member 1 Name: {member1}</li>
           <li>Member 2 Name: {member2}</li>
-          <li>Update Approval Status:&nbsp;&nbsp;&nbsp;&nbsp;<label className="switch">
+          {/* <li>Update Approval Status:&nbsp;&nbsp;&nbsp;&nbsp;<label className="switch">
         <input type="checkbox" checked={isChecked} onChange={handleCheckboxClick} />
         <span className="slider round"></span>
-      </label> </li>
+      </label> </li> */}
         </ul>
        
       </div>

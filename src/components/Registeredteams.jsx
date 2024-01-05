@@ -69,7 +69,7 @@ const Registeredteams = () => {
       <div style={{textAlign:"center",marginTop:"200px",marginBottom:"50px"}}>   
      
       <Link to="">
-      <button
+      {/* <button
   style={{
     background: 'linear-gradient(200deg, black, black,black, #3ef4b1)',
     color: 'white',
@@ -91,7 +91,7 @@ const Registeredteams = () => {
   title="This button will be enabled after registration closes"
 >
   Update Approval Status
-</button>
+</button> */}
 </Link>
 <Link to="/">
 <button
